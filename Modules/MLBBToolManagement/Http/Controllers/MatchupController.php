@@ -78,14 +78,30 @@ class MatchupController extends Controller
 
             return back()->withErrors(['error' => $e->getMessage()]);
         } catch (\Exception $e) {
+            // Log the actual error for debugging
+            \Log::error('Matchup analysis error', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
+
+            $errorMessage = config('app.debug') 
+                ? $e->getMessage() 
+                : 'An error occurred during analysis';
+
             if ($request->expectsJson()) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'An error occurred during analysis',
+                    'message' => $errorMessage,
+                    'debug' => config('app.debug') ? [
+                        'file' => $e->getFile(),
+                        'line' => $e->getLine(),
+                    ] : null,
                 ], 500);
             }
 
-            return back()->withErrors(['error' => 'An error occurred during analysis']);
+            return back()->withErrors(['error' => $errorMessage]);
         }
     }
 
