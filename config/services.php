@@ -35,11 +35,23 @@ return [
         ],
     ],
 
+    // AI Configuration for matchup analysis
+    'ai' => [
+        'provider' => env('AI_PROVIDER', 'github'), // openai or github
+    ],
+
     'openai' => [
         'api_key' => env('OPENAI_API_KEY'),
         'model' => env('OPENAI_MODEL', 'gpt-3.5-turbo'),
         'max_tokens' => env('OPENAI_MAX_TOKENS', 500),
         'temperature' => env('OPENAI_TEMPERATURE', 0.7),
+    ],
+
+    'github' => [
+        'token' => env('GITHUB_TOKEN'),
+        'model' => env('GITHUB_MODEL', 'gpt-4o-mini'),
+        'max_tokens' => env('GITHUB_MAX_TOKENS', 500),
+        'temperature' => env('GITHUB_TEMPERATURE', 0.7),
     ],
 
 ];

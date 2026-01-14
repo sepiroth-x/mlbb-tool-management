@@ -6,29 +6,41 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 /**
- * OpenAI Service
+ * AI Service
  * 
- * Handles communication with OpenAI API (ChatGPT)
- * Uses your personal ChatGPT API key for AI-powered analysis
+ * Handles communication with AI providers (OpenAI or GitHub Models)
+ * Supports multiple AI backends for matchup analysis
  */
 class OpenAIService
 {
+    protected string $provider;
     protected string $apiKey;
     protected string $model;
     protected int $maxTokens;
     protected float $temperature;
-    protected string $apiUrl = 'https://api.openai.com/v1/chat/completions';
+    protected string $apiUrl;
 
     public function __construct()
     {
-        $this->apiKey = config('services.openai.api_key');
-        $this->model = config('services.openai.model', 'gpt-3.5-turbo');
-        $this->maxTokens = config('services.openai.max_tokens', 500);
-        $this->temperature = config('services.openai.temperature', 0.7);
+        $this->provider = config('services.ai.provider', 'github');
+        
+        if ($this->provider === 'github') {
+            $this->apiKey = config('services.github.token');
+            $this->model = config('services.github.model', 'gpt-4o-mini');
+            $this->maxTokens = config('services.github.max_tokens', 500);
+            $this->temperature = config('services.github.temperature', 0.7);
+            $this->apiUrl = 'https://models.inference.ai.azure.com/chat/completions';
+        } else {
+            $this->apiKey = config('services.openai.api_key');
+            $this->model = config('services.openai.model', 'gpt-3.5-turbo');
+            $this->maxTokens = config('services.openai.max_tokens', 500);
+            $this->temperature = config('services.openai.temperature', 0.7);
+            $this->apiUrl = 'https://api.openai.com/v1/chat/completions';
+        }
     }
 
     /**
-     * Check if OpenAI API is configured
+     * Check if AI API is configured
      */
     public function isConfigured(): bool
     {
@@ -140,15 +152,23 @@ PROMPT;
     }
 
     /**
-     * Call ChatGPT API
+     * Call AI API (OpenAI or GitHub Models)
      */
     protected function callChatGPT(string $prompt): ?string
     {
         try {
-            $response = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $this->apiKey,
+            $headers = [
                 'Content-Type' => 'application/json',
-            ])
+            ];
+
+            // Set authentication header based on provider
+            if ($this->provider === 'github') {
+                $headers['Authorization'] = 'Bearer ' . $this->apiKey;
+            } else {
+                $headers['Authorization'] = 'Bearer ' . $this->apiKey;
+            }
+
+            $response = Http::withHeaders($headers)
             ->timeout(30)
             ->post($this->apiUrl, [
                 'model' => $this->model,
@@ -171,11 +191,11 @@ PROMPT;
                 return $data['choices'][0]['message']['content'] ?? null;
             }
 
-            Log::error('OpenAI API Error: ' . $response->body());
+            Log::error("AI API Error ({$this->provider}): " . $response->body());
             return null;
 
         } catch (\Exception $e) {
-            Log::error('OpenAI API Request Failed: ' . $e->getMessage());
+            Log::error("AI API Request Failed ({$this->provider}): " . $e->getMessage());
             return null;
         }
     }
