@@ -339,10 +339,10 @@
                         <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
                         <li><a href="/features" class="{{ request()->is('features') ? 'active' : '' }}">Features</a></li>
                         <li><a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">About</a></li>
-                        <li><a href="/mlbb/matchup" class="{{ request()->is('mlbb/matchup*') ? 'active' : '' }}">Matchup Tool</a></li>
-                        <li><a href="/mlbb/overlay/admin" class="{{ request()->is('mlbb/overlay*') ? 'active' : '' }}">Tournament Overlay</a></li>
+                        <li><a href="/mlbb/matchup" class="{{ request()->is('mlbb/matchup*') ? 'active' : '' }}">Analyze</a></li>
+                        <li><a href="/mlbb/overlay/admin" class="{{ request()->is('mlbb/overlay*') ? 'active' : '' }}">Overlay</a></li>
                         @auth
-                            <li><a href="/admin">Admin Panel</a></li>
+                            <li><a href="/admin">Admin</a></li>
                         @endauth
                     </ul>
                 </nav>
@@ -394,10 +394,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/mlbb/matchup">Matchup Tool</a></li>
-                        <li><a href="/mlbb/overlay/admin">Tournament Overlay</a></li>
+                        <li><a href="/mlbb/matchup">Analyze</a></li>
+                        <li><a href="/mlbb/overlay/admin">Overlay</a></li>
                         @auth
-                            <li><a href="/admin">Admin Dashboard</a></li>
+                            <li><a href="/admin">Admin</a></li>
                         @else
                             <li><a href="/admin/login">Login</a></li>
                         @endauth

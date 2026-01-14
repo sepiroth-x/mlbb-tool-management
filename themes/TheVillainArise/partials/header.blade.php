@@ -78,7 +78,7 @@
                 @auth
                     <a href="{{ url('/admin') }}" 
                        class="bg-villain-600 hover:bg-villain-700 text-white px-4 py-2 rounded font-medium text-sm transition">
-                        Admin Panel
+                        Admin
                     </a>
                     @if(function_exists('vp_get_current_user_profile'))
                         <a href="{{ url('/profile') }}" 
