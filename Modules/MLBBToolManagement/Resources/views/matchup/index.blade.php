@@ -1027,28 +1027,47 @@
         btn.innerHTML = '⏳ Analyzing...';
 
         try {
+            const payload = {
+                team_a: matchupState.teamA.filter(h => h),
+                team_b: matchupState.teamB.filter(h => h)
+            };
+            
+            console.log('Sending analysis request:', payload);
+            
             const response = await fetch('/mlbb/matchup/analyze', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
                 },
-                body: JSON.stringify({
-                    team_a: matchupState.teamA.filter(h => h),
-                    team_b: matchupState.teamB.filter(h => h)
-                })
+                body: JSON.stringify(payload)
             });
 
-            const result = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response headers:', [...response.headers.entries()]);
+            
+            const responseText = await response.text();
+            console.log('Response text:', responseText.substring(0, 500));
+            
+            let result;
+            try {
+                result = JSON.parse(responseText);
+            } catch (e) {
+                console.error('Failed to parse JSON:', e);
+                console.error('Response was:', responseText);
+                alert('Server error: Response is not valid JSON. Check console for details.');
+                return;
+            }
 
             if (result.success) {
                 displayResults(result.data);
             } else {
-                alert('Analysis failed: ' + result.message);
+                console.error('Analysis failed:', result);
+                alert('Analysis failed: ' + (result.message || 'Unknown error'));
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('An error occurred during analysis');
+            alert('An error occurred during analysis: ' + error.message);
         } finally {
             btn.disabled = false;
             btn.innerHTML = '⚡ Analyze Matchup';
