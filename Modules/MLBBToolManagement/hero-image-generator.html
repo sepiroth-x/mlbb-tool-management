@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Hero Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0f0f23;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero-card {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover {
+            background: #1557b0;
+        }
+        .download-all {
+            margin: 30px 0;
+            padding: 15px 40px;
+            font-size: 18px;
+        }
+        .hero-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fbbc04;
+        }
+        .hero-role {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 MLBB Hero Image Generator</h1>
+    
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <ol style="text-align: left; display: inline-block;">
+            <li>Click "Download" on each hero image below (or "Download All")</li>
+            <li>Save images to: <code>public/modules/mlbb-tool-management/images/heroes/</code></li>
+            <li>Images are named correctly (e.g., tigreal.png, balmond.png)</li>
+            <li>Replace these placeholders with actual MLBB hero portraits for production</li>
+        </ol>
+    </div>
+
+    <button class="download-all" onclick="downloadAll()">📦 Download All Heroes</button>
+
+    <div class="hero-grid" id="heroGrid"></div>
+
+    <script>
+        const heroes = [
+            {name: "Tigreal", slug: "tigreal", role: "Tank", color: "#3498db"},
+            {name: "Balmond", slug: "balmond", role: "Fighter", color: "#e74c3c"},
+            {name: "Saber", slug: "saber", role: "Assassin", color: "#9b59b6"},
+            {name: "Alice", slug: "alice", role: "Mage", color: "#e67e22"},
+            {name: "Miya", slug: "miya", role: "Marksman", color: "#1abc9c"},
+            {name: "Nana", slug: "nana", role: "Support", color: "#f39c12"},
+            {name: "Chou", slug: "chou", role: "Fighter", color: "#34495e"},
+            {name: "Fanny", slug: "fanny", role: "Assassin", color: "#c0392b"},
+            {name: "Kagura", slug: "kagura", role: "Mage", color: "#8e44ad"},
+            {name: "Layla", slug: "layla", role: "Marksman", color: "#16a085"},
+            {name: "Franco", slug: "franco", role: "Tank", color: "#27ae60"},
+            {name: "Gusion", slug: "gusion", role: "Assassin", color: "#2c3e50"},
+            {name: "Lunox", slug: "lunox", role: "Mage", color: "#d35400"},
+            {name: "Granger", slug: "granger", role: "Marksman", color: "#7f8c8d"},
+            {name: "Estes", slug: "estes", role: "Support", color: "#2ecc71"},
+            {name: "Khufra", slug: "khufra", role: "Tank", color: "#95a5a6"},
+            {name: "Ling", slug: "ling", role: "Assassin", color: "#c0392b"},
+            {name: "Pharsa", slug: "pharsa", role: "Mage", color: "#9b59b6"},
+            {name: "Brody", slug: "brody", role: "Marksman", color: "#34495e"},
+            {name: "Mathilda", slug: "mathilda", role: "Support", color: "#e91e63"},
+            {name: "Aulus", slug: "aulus", role: "Fighter", color: "#ff9800"},
+            {name: "Beatrix", slug: "beatrix", role: "Marksman", color: "#00bcd4"},
+            {name: "Valentina", slug: "valentina", role: "Mage", color: "#9c27b0"},
+            {name: "Edith", slug: "edith", role: "Tank", color: "#607d8b"},
+            {name: "Joy", slug: "joy", role: "Assassin", color: "#ff5722"}
+        ];
+
+        const gridContainer = document.getElementById('heroGrid');
+
+        heroes.forEach(hero => {
+            const card = document.createElement('div');
+            card.className = 'hero-card';
+
+            const canvas = document.createElement('canvas');
+            canvas.width = 256;
+            canvas.height = 256;
+            canvas.id = `canvas-${hero.slug}`;
+
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'hero-name';
+            nameDiv.textContent = hero.name;
+
+            const roleDiv = document.createElement('div');
+            roleDiv.className = 'hero-role';
+            roleDiv.textContent = hero.role;
+
+            const button = document.createElement('button');
+            button.textContent = 'Download';
+            button.onclick = () => downloadImage(hero.slug);
+
+            card.appendChild(canvas);
+            card.appendChild(nameDiv);
+            card.appendChild(roleDiv);
+            card.appendChild(button);
+            gridContainer.appendChild(card);
+
+            // Draw image
+            drawHeroImage(canvas, hero);
+        });
+
+        // Also create default image
+        const defaultCard = document.createElement('div');
+        defaultCard.className = 'hero-card';
+        const defaultCanvas = document.createElement('canvas');
+        defaultCanvas.width = 256;
+        defaultCanvas.height = 256;
+        defaultCanvas.id = 'canvas-default';
+        const defaultName = document.createElement('div');
+        defaultName.className = 'hero-name';
+        defaultName.textContent = 'Default';
+        const defaultRole = document.createElement('div');
+        defaultRole.className = 'hero-role';
+        defaultRole.textContent = 'Fallback';
+        const defaultButton = document.createElement('button');
+        defaultButton.textContent = 'Download';
+        defaultButton.onclick = () => downloadImage('default');
+        defaultCard.appendChild(defaultCanvas);
+        defaultCard.appendChild(defaultName);
+        defaultCard.appendChild(defaultRole);
+        defaultCard.appendChild(defaultButton);
+        gridContainer.appendChild(defaultCard);
+
+        drawHeroImage(defaultCanvas, {name: 'MLBB\nHERO', color: '#2c3e50'});
+
+        function drawHeroImage(canvas, hero) {
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = hero.color;
+            ctx.fillRect(0, 0, 256, 256);
+
+            // Gradient overlay
+            const gradient = ctx.createLinearGradient(0, 0, 0, 256);
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.2)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.6)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 256, 256);
+
+            // Text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const lines = hero.name.split('\n');
+            if (lines.length > 1) {
+                ctx.fillText(lines[0], 128, 110);
+                ctx.fillText(lines[1], 128, 146);
+            } else {
+                ctx.fillText(hero.name.toUpperCase(), 128, 128);
+            }
+
+            // Role (if exists)
+            if (hero.role) {
+                ctx.font = '16px Arial';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                ctx.fillText(hero.role, 128, 200);
+            }
+
+            // Border
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(2, 2, 252, 252);
+        }
+
+        function downloadImage(slug) {
+            const canvas = document.getElementById(`canvas-${slug}`);
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${slug}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function downloadAll() {
+            heroes.forEach((hero, index) => {
+                setTimeout(() => {
+                    downloadImage(hero.slug);
+                }, index * 200);
+            });
+            
+            // Download default last
+            setTimeout(() => {
+                downloadImage('default');
+            }, heroes.length * 200);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+    "name": "MLBB Tournament Manager Theme",
+    "slug": "mlbb-tool-management-theme",
+    "version": "1.0.0",
+    "description": "Professional responsive theme for MLBB esports tournament management system with modern UI/UX",
+    "author": "Sepiroth X (VantaPress)",
+    "author_email": "chardy.tsadiq02@gmail.com",
+    "author_url": "https://github.com/sepiroth-x",
+    "license": "MIT",
+    "parent": null,
+    "preview": "screenshot.png",
+    "supports": {
+        "widgets": true,
+        "menus": true,
+        "custom-logo": true,
+        "dark-mode": false,
+        "responsive": true,
+        "mobile-menu": true
+    },
+    "settings": {
+        "primary_color": "#667eea",
+        "secondary_color": "#764ba2",
+        "accent_color": "#f093fb",
+        "background_color": "#ffffff",
+        "text_color": "#2d3748",
+        "hero_gradient_start": "#667eea",
+        "hero_gradient_end": "#764ba2"
+    },
+    "features": [
+        "Fully responsive design (mobile, tablet, desktop)",
+        "Modern gradient hero sections",
+        "Professional tournament tools integration",
+        "Mobile-first navigation",
+        "Sticky header with blur effect",
+        "Animated feature cards",
+        "Social media integration",
+        "SEO optimized structure"
+    ],
+    "pages": {
+        "home": "pages/home.blade.php"
+    },
+    "layouts": {
+        "main": "layouts/app.blade.php"
+    }
+}

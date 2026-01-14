@@ -1,0 +1,21 @@
+{
+    "name": "MLBBToolManagement",
+    "alias": "mlbb-tool-management",
+    "description": "Professional MLBB esports tournament management system with team matchup analysis and live pick/ban overlay",
+    "keywords": [
+        "mlbb",
+        "esports",
+        "tournament",
+        "mobile legends",
+        "pick ban",
+        "matchup"
+    ],
+    "priority": 100,
+    "version": "1.0.0",
+    "providers": [
+        "Modules\\MLBBToolManagement\\Providers\\MLBBToolManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

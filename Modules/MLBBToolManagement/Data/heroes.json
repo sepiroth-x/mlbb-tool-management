@@ -1,0 +1,4204 @@
+﻿{
+    "heroes":  [
+                   {
+                       "durability":  3,
+                       "control":  4,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "tank",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "support",
+                                            "peel"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Marksman",
+                       "image":  "miya.png",
+                       "mid_game":  6,
+                       "id":  1,
+                       "late_game":  10,
+                       "description":  "Late-game hypercarry marksman with devastating sustained damage.",
+                       "slug":  "miya",
+                       "early_game":  3,
+                       "weak_against":  [
+                                            "assassin",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Finisher",
+                                           "DPS",
+                                           "Late Game"
+                                       ],
+                       "name":  "Miya"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  5,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "tank",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "support"
+                                        ],
+                       "difficulty":  2,
+                       "role":  "Fighter",
+                       "image":  "balmond.png",
+                       "mid_game":  6,
+                       "id":  2,
+                       "late_game":  5,
+                       "description":  "Fighter with high sustain and true damage, excellent against tanky compositions.",
+                       "slug":  "balmond",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "crowd-control",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Regen",
+                                           "True Damage",
+                                           "Execute"
+                                       ],
+                       "name":  "Balmond"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "mage",
+                                              "marksman",
+                                              "assassin"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "initiator"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Assassin",
+                       "image":  "saber.png",
+                       "mid_game":  9,
+                       "id":  3,
+                       "late_game":  7,
+                       "description":  "Deadly assassin with targeted burst damage, perfect for eliminating key targets.",
+                       "slug":  "saber",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "tank",
+                                            "purify"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Single Target",
+                                           "Lock-on"
+                                       ],
+                       "name":  "Saber"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  6,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "squishy",
+                                              "grouped-enemies"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Mage",
+                       "image":  "alice.png",
+                       "mid_game":  7,
+                       "id":  4,
+                       "late_game":  9,
+                       "description":  "Mage/Tank hybrid with excellent sustain and area damage in prolonged fights.",
+                       "slug":  "alice",
+                       "early_game":  4,
+                       "weak_against":  [
+                                            "anti-heal",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "AoE Damage",
+                                           "Sustain",
+                                           "Team Fight"
+                                       ],
+                       "name":  "Alice"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  8,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "melee",
+                                              "assassin"
+                                          ],
+                       "synergy_with":  [
+                                            "marksman",
+                                            "mage"
+                                        ],
+                       "difficulty":  2,
+                       "role":  "Mage",
+                       "image":  "nana.png",
+                       "mid_game":  6,
+                       "id":  5,
+                       "late_game":  5,
+                       "description":  "Annoying support mage with transformation and poke abilities to protect carries.",
+                       "slug":  "nana",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "long-range",
+                                            "sustain"
+                                        ],
+                       "specialties":  [
+                                           "Poke",
+                                           "Crowd Control",
+                                           "Transform"
+                                       ],
+                       "name":  "Nana"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  4,
+                       "strong_against":  [
+                                              "marksman",
+                                              "mage"
+                                          ],
+                       "synergy_with":  [
+                                            "mage",
+                                            "marksman"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Tank",
+                       "image":  "tigreal.png",
+                       "mid_game":  8,
+                       "id":  6,
+                       "late_game":  7,
+                       "description":  "Durable tank with powerful crowd control abilities, excellent for initiating team fights.",
+                       "slug":  "tigreal",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "true-damage",
+                                            "anti-tank"
+                                        ],
+                       "specialties":  [
+                                           "Initiator",
+                                           "Crowd Control",
+                                           "Team Fight"
+                                       ],
+                       "name":  "Tigreal"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  4,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "support",
+                                            "heal"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "alucard.png",
+                       "mid_game":  7,
+                       "id":  7,
+                       "late_game":  6,
+                       "description":  "Lifesteal fighter that excels in 1v1 duels and chasing down isolated targets.",
+                       "slug":  "alucard",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "crowd-control",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Lifesteal",
+                                           "Chase",
+                                           "Burst"
+                                       ],
+                       "name":  "Alucard"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-hp"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Assassin",
+                       "image":  "karina.png",
+                       "mid_game":  8,
+                       "id":  8,
+                       "late_game":  7,
+                       "description":  "Magic assassin with high burst and reset potential on kills.",
+                       "slug":  "karina",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "tank",
+                                            "crowd-control"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Magic Damage",
+                                           "Finisher"
+                                       ],
+                       "name":  "Karina"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  8,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "grouped-enemies",
+                                              "dash"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "burst"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Tank",
+                       "image":  "akai.png",
+                       "mid_game":  7,
+                       "id":  9,
+                       "late_game":  7,
+                       "description":  "Disruptive tank with rolling ultimate that scatters enemy formations.",
+                       "slug":  "akai",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "true-damage",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "Disrupt",
+                                           "Crowd Control",
+                                           "Guard"
+                                       ],
+                       "name":  "Akai"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  10,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "squishy",
+                                              "positioning-reliant"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Tank",
+                       "image":  "franco.png",
+                       "mid_game":  8,
+                       "id":  10,
+                       "late_game":  6,
+                       "description":  "Hook specialist that can instantly turn fights by catching key targets.",
+                       "slug":  "franco",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "mobility",
+                                            "minions"
+                                        ],
+                       "specialties":  [
+                                           "Hook",
+                                           "Suppress",
+                                           "Pick"
+                                       ],
+                       "name":  "Franco"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  5,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "tower",
+                                              "structure"
+                                          ],
+                       "synergy_with":  [
+                                            "split-push",
+                                            "poke"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Fighter",
+                       "image":  "bane.png",
+                       "mid_game":  6,
+                       "id":  11,
+                       "late_game":  6,
+                       "description":  "Fighter/Mage hybrid with strong pushing and poking capabilities.",
+                       "slug":  "bane",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "mobility"
+                                        ],
+                       "specialties":  [
+                                           "Push",
+                                           "Poke",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Bane"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "tank"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Marksman",
+                       "image":  "bruno.png",
+                       "mid_game":  7,
+                       "id":  12,
+                       "late_game":  8,
+                       "description":  "Mobile marksman with critical strikes and burst potential.",
+                       "slug":  "bruno",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Crit",
+                                           "Mobility"
+                                       ],
+                       "name":  "Bruno"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  4,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-hp"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Marksman",
+                       "image":  "clint.png",
+                       "mid_game":  7,
+                       "id":  13,
+                       "late_game":  8,
+                       "description":  "Burst marksman with powerful skill-based damage.",
+                       "slug":  "clint",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "gap-close"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Poke",
+                                           "Finisher"
+                                       ],
+                       "name":  "Clint"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  7,
+                       "offense":  4,
+                       "strong_against":  [
+                                              "poke",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "marksman",
+                                            "fighter"
+                                        ],
+                       "difficulty":  2,
+                       "role":  "Support",
+                       "image":  "rafaela.png",
+                       "mid_game":  6,
+                       "id":  14,
+                       "late_game":  6,
+                       "description":  "Healing support with speed boosts and slows for team utility.",
+                       "slug":  "rafaela",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Heal",
+                                           "Speed Boost",
+                                           "Slow"
+                                       ],
+                       "name":  "Rafaela"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Mage",
+                       "image":  "eudora.png",
+                       "mid_game":  8,
+                       "id":  15,
+                       "late_game":  6,
+                       "description":  "High burst mage with powerful single-target damage and stun.",
+                       "slug":  "eudora",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Stun",
+                                           "Single Target"
+                                       ],
+                       "name":  "Eudora"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "marksman",
+                                              "mage"
+                                          ],
+                       "synergy_with":  [
+                                            "split-push",
+                                            "dive"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "zilong.png",
+                       "mid_game":  7,
+                       "id":  16,
+                       "late_game":  6,
+                       "description":  "Aggressive fighter that can flip and chase down priority targets.",
+                       "slug":  "zilong",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "crowd-control"
+                                        ],
+                       "specialties":  [
+                                           "Chase",
+                                           "Finisher",
+                                           "Flip"
+                                       ],
+                       "name":  "Zilong"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  6,
+                       "offense":  10,
+                       "strong_against":  [
+                                              "squishy",
+                                              "no-cc"
+                                          ],
+                       "synergy_with":  [
+                                            "buff",
+                                            "blue-buff"
+                                        ],
+                       "difficulty":  10,
+                       "role":  "Assassin",
+                       "image":  "fanny.png",
+                       "mid_game":  10,
+                       "id":  17,
+                       "late_game":  8,
+                       "description":  "Most difficult hero with unmatched mobility and devastating damage when mastered.",
+                       "slug":  "fanny",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "crowd-control",
+                                            "targeted-cc"
+                                        ],
+                       "specialties":  [
+                                           "Hyper Mobility",
+                                           "Burst",
+                                           "Snowball"
+                                       ],
+                       "name":  "Fanny"
+                   },
+                   {
+                       "durability":  2,
+                       "control":  3,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "short-range",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "peel",
+                                            "support"
+                                        ],
+                       "difficulty":  2,
+                       "role":  "Marksman",
+                       "image":  "layla.png",
+                       "mid_game":  5,
+                       "id":  18,
+                       "late_game":  9,
+                       "description":  "Long-range marksman with increasing range, vulnerable to dives.",
+                       "slug":  "layla",
+                       "early_game":  2,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin",
+                                            "gap-close"
+                                        ],
+                       "specialties":  [
+                                           "Long Range",
+                                           "DPS",
+                                           "Poke"
+                                       ],
+                       "name":  "Layla"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  9,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "grouped-enemies",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "burst"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Tank",
+                       "image":  "minotaur.png",
+                       "mid_game":  8,
+                       "id":  19,
+                       "late_game":  7,
+                       "description":  "Rage-based tank with massive AoE crowd control when enraged.",
+                       "slug":  "minotaur",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "poke",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Crowd Control",
+                                           "Rage",
+                                           "AoE"
+                                       ],
+                       "name":  "Minotaur"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  8,
+                       "offense":  4,
+                       "strong_against":  [
+                                              "projectile",
+                                              "marksman"
+                                          ],
+                       "synergy_with":  [
+                                            "marksman",
+                                            "ranged"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Support",
+                       "image":  "lolita.png",
+                       "mid_game":  7,
+                       "id":  20,
+                       "late_game":  6,
+                       "description":  "Shield support that blocks projectiles and protects teammates.",
+                       "slug":  "lolita",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "melee",
+                                            "true-damage"
+                                        ],
+                       "specialties":  [
+                                           "Shield",
+                                           "Guard",
+                                           "Crowd Control"
+                                       ],
+                       "name":  "Lolita"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "split",
+                                            "map-pressure"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "hayabusa.png",
+                       "mid_game":  9,
+                       "id":  21,
+                       "late_game":  7,
+                       "description":  "Mobile ninja assassin with shadow clones and split-pushing power.",
+                       "slug":  "hayabusa",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "tank",
+                                            "crowd-control"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Mobility",
+                                           "Split Push"
+                                       ],
+                       "name":  "Hayabusa"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  5,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "engage"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "freya.png",
+                       "mid_game":  7,
+                       "id":  22,
+                       "late_game":  7,
+                       "description":  "Valkyrie fighter with shields and gap-closing ultimate.",
+                       "slug":  "freya",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "kite",
+                                            "range"
+                                        ],
+                       "specialties":  [
+                                           "Chase",
+                                           "Shield",
+                                           "Burst"
+                                       ],
+                       "name":  "Freya"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "grouped-enemies",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Mage",
+                       "image":  "gord.png",
+                       "mid_game":  8,
+                       "id":  23,
+                       "late_game":  8,
+                       "description":  "Zone control mage with powerful laser beams and area denial.",
+                       "slug":  "gord",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Poke",
+                                           "Zone Control"
+                                       ],
+                       "name":  "Gord"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "isolated",
+                                              "squishy"
+                                          ],
+                       "synergy_with":  [
+                                            "pick",
+                                            "ambush"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Assassin",
+                       "image":  "natalia.png",
+                       "mid_game":  8,
+                       "id":  24,
+                       "late_game":  6,
+                       "description":  "Stealth assassin that silences and ambushes unsuspecting targets.",
+                       "slug":  "natalia",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "vision",
+                                            "grouped"
+                                        ],
+                       "specialties":  [
+                                           "Stealth",
+                                           "Silence",
+                                           "Ambush"
+                                       ],
+                       "name":  "Natalia"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "peel"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Mage",
+                       "image":  "kagura.png",
+                       "mid_game":  9,
+                       "id":  25,
+                       "late_game":  8,
+                       "description":  "High burst mage with umbrella mechanics and excellent poke damage.",
+                       "slug":  "kagura",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Poke",
+                                           "Mobility"
+                                       ],
+                       "name":  "Kagura"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  9,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "marksman",
+                                              "mage",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  9,
+                       "role":  "Fighter",
+                       "image":  "chou.png",
+                       "mid_game":  9,
+                       "id":  26,
+                       "late_game":  7,
+                       "description":  "High skill-cap fighter with immunity and displacement abilities.",
+                       "slug":  "chou",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "crowd-control-immune",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Mobility",
+                                           "Immune",
+                                           "Displacement"
+                                       ],
+                       "name":  "Chou"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  4,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "tower",
+                                              "1v1"
+                                          ],
+                       "synergy_with":  [
+                                            "split-push",
+                                            "objective"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Fighter",
+                       "image":  "sun.png",
+                       "mid_game":  7,
+                       "id":  27,
+                       "late_game":  7,
+                       "description":  "Clone fighter that excels at split-pushing and confusing enemies.",
+                       "slug":  "sun",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "AoE",
+                                            "clear"
+                                        ],
+                       "specialties":  [
+                                           "Clone",
+                                           "Push",
+                                           "Split"
+                                       ],
+                       "name":  "Sun"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "melee",
+                                              "duel"
+                                          ],
+                       "synergy_with":  [
+                                            "sustain",
+                                            "frontline"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "alpha.png",
+                       "mid_game":  7,
+                       "id":  28,
+                       "late_game":  7,
+                       "description":  "Cyborg fighter with lifesteal marks and sustained damage.",
+                       "slug":  "alpha",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "anti-heal"
+                                        ],
+                       "specialties":  [
+                                           "Lifesteal",
+                                           "Mark",
+                                           "Sustained"
+                                       ],
+                       "name":  "Alpha"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  9,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "melee",
+                                              "dash"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "ruby.png",
+                       "mid_game":  8,
+                       "id":  29,
+                       "late_game":  7,
+                       "description":  "Crowd control fighter with lifesteal and hook abilities.",
+                       "slug":  "ruby",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "anti-heal",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Crowd Control",
+                                           "Lifesteal",
+                                           "Hook"
+                                       ],
+                       "name":  "Ruby"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-hp"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "siege"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Assassin",
+                       "image":  "yi-sun-shin.png",
+                       "mid_game":  8,
+                       "id":  30,
+                       "late_game":  7,
+                       "description":  "Hybrid assassin/marksman with global ultimate and poke damage.",
+                       "slug":  "yi-sun-shin",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Hybrid",
+                                           "Global Ult",
+                                           "Poke"
+                                       ],
+                       "name":  "Yi Sun-shin"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "tank",
+                                              "wall-near"
+                                          ],
+                       "synergy_with":  [
+                                            "terrain",
+                                            "wall-comp"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Marksman",
+                       "image":  "moskov.png",
+                       "mid_game":  8,
+                       "id":  31,
+                       "late_game":  9,
+                       "description":  "Penetrating marksman that stuns enemies against walls.",
+                       "slug":  "moskov",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Stun",
+                                           "Finisher",
+                                           "Chase"
+                                       ],
+                       "name":  "Moskov"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "grouped-enemies",
+                                              "surprise"
+                                          ],
+                       "synergy_with":  [
+                                            "carry-ally",
+                                            "engage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Tank",
+                       "image":  "johnson.png",
+                       "mid_game":  8,
+                       "id":  32,
+                       "late_game":  7,
+                       "description":  "Transforming tank that carries allies for surprise engages.",
+                       "slug":  "johnson",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "cc-chain",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Transform",
+                                           "Initiate",
+                                           "Support"
+                                       ],
+                       "name":  "Johnson"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "poke"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Mage",
+                       "image":  "cyclops.png",
+                       "mid_game":  8,
+                       "id":  33,
+                       "late_game":  7,
+                       "description":  "Spam mage with cooldown reduction and continuous damage output.",
+                       "slug":  "cyclops",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Spam",
+                                           "Poke",
+                                           "CDR"
+                                       ],
+                       "name":  "Cyclops"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  3,
+                       "strong_against":  [
+                                              "poke",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "fighter",
+                                            "sustain"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Support",
+                       "image":  "estes.png",
+                       "mid_game":  7,
+                       "id":  34,
+                       "late_game":  8,
+                       "description":  "Healing support that excels in prolonged team fights with sustain.",
+                       "slug":  "estes",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "burst",
+                                            "anti-heal",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Heal",
+                                           "Sustain",
+                                           "Team Fight"
+                                       ],
+                       "name":  "Estes"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  6,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "squishy",
+                                              "jungle"
+                                          ],
+                       "synergy_with":  [
+                                            "bush-control",
+                                            "gank"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Fighter",
+                       "image":  "hilda.png",
+                       "mid_game":  7,
+                       "id":  35,
+                       "late_game":  6,
+                       "description":  "Fighter that gains power in bushes with high regeneration.",
+                       "slug":  "hilda",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "kite",
+                                            "ranged"
+                                        ],
+                       "specialties":  [
+                                           "Regen",
+                                           "Bush Power",
+                                           "Damage"
+                                       ],
+                       "name":  "Hilda"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  9,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Mage",
+                       "image":  "aurora.png",
+                       "mid_game":  8,
+                       "id":  36,
+                       "late_game":  7,
+                       "description":  "Freeze mage with powerful crowd control and area damage.",
+                       "slug":  "aurora",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "purify",
+                                            "spread"
+                                        ],
+                       "specialties":  [
+                                           "Freeze",
+                                           "Crowd Control",
+                                           "Burst"
+                                       ],
+                       "name":  "Aurora"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "engage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "lapu-lapu.png",
+                       "mid_game":  8,
+                       "id":  37,
+                       "late_game":  7,
+                       "description":  "Dual-form fighter with immunity and devastating burst damage.",
+                       "slug":  "lapu-lapu",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "kite",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Immune",
+                                           "Dual Form"
+                                       ],
+                       "name":  "Lapu-Lapu"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  8,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "tank-puppet"
+                                          ],
+                       "synergy_with":  [
+                                            "puppet",
+                                            "control"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Mage",
+                       "image":  "vexana.png",
+                       "mid_game":  7,
+                       "id":  38,
+                       "late_game":  8,
+                       "description":  "Necromancer mage that turns dead enemies into puppets.",
+                       "slug":  "vexana",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "burst",
+                                            "cleanse"
+                                        ],
+                       "specialties":  [
+                                           "Puppet",
+                                           "DoT",
+                                           "Control"
+                                       ],
+                       "name":  "Vexana"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "jungle"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "roger.png",
+                       "mid_game":  8,
+                       "id":  39,
+                       "late_game":  7,
+                       "description":  "Werewolf fighter that transforms between human and wolf forms.",
+                       "slug":  "roger",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "tank",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Transform",
+                                           "Burst",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Roger"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "tank",
+                                              "high-hp"
+                                          ],
+                       "synergy_with":  [
+                                            "tank-shred",
+                                            "peel"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Marksman",
+                       "image":  "karrie.png",
+                       "mid_game":  7,
+                       "id":  40,
+                       "late_game":  9,
+                       "description":  "Anti-tank marksman with true damage based on max HP.",
+                       "slug":  "karrie",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "burst",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "True Damage",
+                                           "Anti-Tank",
+                                           "Mobility"
+                                       ],
+                       "name":  "Karrie"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "physical",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "magic-comp",
+                                            "engage"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Tank",
+                       "image":  "gatotkaca.png",
+                       "mid_game":  8,
+                       "id":  41,
+                       "late_game":  7,
+                       "description":  "Tank with taunt and magic damage that scales with defense.",
+                       "slug":  "gatotkaca",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "magic-damage",
+                                            "spread"
+                                        ],
+                       "specialties":  [
+                                           "Taunt",
+                                           "Magic Damage",
+                                           "Global Ult"
+                                       ],
+                       "name":  "Gatotkaca"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "poke"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Assassin",
+                       "image":  "harley.png",
+                       "mid_game":  9,
+                       "id":  42,
+                       "late_game":  7,
+                       "description":  "Magical assassin with poker and teleport abilities.",
+                       "slug":  "harley",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "sustain"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Poke",
+                                           "Mobility"
+                                       ],
+                       "name":  "Harley"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  4,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "grouped",
+                                              "tank"
+                                          ],
+                       "synergy_with":  [
+                                            "frontline",
+                                            "peel"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Marksman",
+                       "image":  "irithel.png",
+                       "mid_game":  7,
+                       "id":  43,
+                       "late_game":  9,
+                       "description":  "Mounted marksman with AoE heavy crossbow attacks.",
+                       "slug":  "irithel",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "AoE",
+                                           "Heavy Crossbow",
+                                           "DPS"
+                                       ],
+                       "name":  "Irithel"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "squishy",
+                                              "near-wall"
+                                          ],
+                       "synergy_with":  [
+                                            "terrain",
+                                            "wall"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Tank",
+                       "image":  "grock.png",
+                       "mid_game":  8,
+                       "id":  44,
+                       "late_game":  7,
+                       "description":  "Stone tank that gains power near walls and terrain.",
+                       "slug":  "grock",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "kite",
+                                            "open-field"
+                                        ],
+                       "specialties":  [
+                                           "Wall Power",
+                                           "Damage",
+                                           "Initiator"
+                                       ],
+                       "name":  "Grock"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  4,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "burst",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "sustain"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "argus.png",
+                       "mid_game":  7,
+                       "id":  45,
+                       "late_game":  8,
+                       "description":  "Immortal fighter with wings and temporary invincibility.",
+                       "slug":  "argus",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "kite",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Immortality",
+                                           "Wings",
+                                           "DPS"
+                                       ],
+                       "name":  "Argus"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "grouped",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "protect"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Mage",
+                       "image":  "odette.png",
+                       "mid_game":  8,
+                       "id":  46,
+                       "late_game":  8,
+                       "description":  "Swan princess mage with channeling AoE ultimate.",
+                       "slug":  "odette",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "cc-interrupt",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "AoE",
+                                           "Channeling",
+                                           "Burst"
+                                       ],
+                       "name":  "Odette"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  10,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "lancelot.png",
+                       "mid_game":  9,
+                       "id":  47,
+                       "late_game":  8,
+                       "description":  "Immune assassin with multiple dashes and burst combos.",
+                       "slug":  "lancelot",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Immune",
+                                           "Dash",
+                                           "Burst"
+                                       ],
+                       "name":  "Lancelot"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  8,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "crowd-control",
+                                              "assassin"
+                                          ],
+                       "synergy_with":  [
+                                            "anti-cc",
+                                            "vision"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "diggie.png",
+                       "mid_game":  7,
+                       "id":  48,
+                       "late_game":  6,
+                       "description":  "Time-keeper support with anti-CC ultimate and egg revival.",
+                       "slug":  "diggie",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "sustained",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Anti-CC",
+                                           "Revive",
+                                           "Vision"
+                                       ],
+                       "name":  "Diggie"
+                   },
+                   {
+                       "durability":  10,
+                       "control":  7,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "burst",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "frontline",
+                                            "sustain"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Tank",
+                       "image":  "hylos.png",
+                       "mid_game":  8,
+                       "id":  49,
+                       "late_game":  8,
+                       "description":  "Massive HP tank with mana-to-HP conversion and regeneration.",
+                       "slug":  "hylos",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "true-damage",
+                                            "%-damage"
+                                        ],
+                       "specialties":  [
+                                           "HP Pool",
+                                           "Regen",
+                                           "Slow"
+                                       ],
+                       "name":  "Hylos"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "tower",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "push",
+                                            "spawn"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "zhask.png",
+                       "mid_game":  9,
+                       "id":  50,
+                       "late_game":  8,
+                       "description":  "Summoner mage with spawnable turrets and zone control.",
+                       "slug":  "zhask",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "mobility"
+                                        ],
+                       "specialties":  [
+                                           "Summon",
+                                           "Push",
+                                           "Zone"
+                                       ],
+                       "name":  "Zhask"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "vision-reliant"
+                                          ],
+                       "synergy_with":  [
+                                            "vision-deny",
+                                            "pick"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Assassin",
+                       "image":  "helcurt.png",
+                       "mid_game":  9,
+                       "id":  51,
+                       "late_game":  7,
+                       "description":  "Shadow assassin that silences and blocks enemy vision globally.",
+                       "slug":  "helcurt",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "grouped"
+                                        ],
+                       "specialties":  [
+                                           "Silence",
+                                           "Vision Block",
+                                           "Burst"
+                                       ],
+                       "name":  "Helcurt"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "grouped",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "siege",
+                                            "poke"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "pharsa.png",
+                       "mid_game":  8,
+                       "id":  52,
+                       "late_game":  7,
+                       "description":  "Long-range artillery mage with massive AoE damage from safe distance.",
+                       "slug":  "pharsa",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Long Range",
+                                           "AoE",
+                                           "Poke"
+                                       ],
+                       "name":  "Pharsa"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "assassin"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Marksman",
+                       "image":  "lesley.png",
+                       "mid_game":  8,
+                       "id":  53,
+                       "late_game":  8,
+                       "description":  "Sniper marksman with camouflage and critical burst damage.",
+                       "slug":  "lesley",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "vision"
+                                        ],
+                       "specialties":  [
+                                           "Crit",
+                                           "Camouflage",
+                                           "Burst"
+                                       ],
+                       "name":  "Lesley"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  8,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "positioning",
+                                              "single-target"
+                                          ],
+                       "synergy_with":  [
+                                            "throw-combo",
+                                            "disrupt"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "jawhead.png",
+                       "mid_game":  7,
+                       "id":  54,
+                       "late_game":  6,
+                       "description":  "Robot fighter that can throw allies and enemies.",
+                       "slug":  "jawhead",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "mobile",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Throw",
+                                           "Disrupt",
+                                           "Support"
+                                       ],
+                       "name":  "Jawhead"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "poke",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "carry",
+                                            "attach"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "angela.png",
+                       "mid_game":  8,
+                       "id":  55,
+                       "late_game":  7,
+                       "description":  "Puppet support that can attach to allies and empower them.",
+                       "slug":  "angela",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Attach",
+                                           "Shield",
+                                           "Poke"
+                                       ],
+                       "name":  "Angela"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  10,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "split",
+                                            "pick"
+                                        ],
+                       "difficulty":  9,
+                       "role":  "Assassin",
+                       "image":  "gusion.png",
+                       "mid_game":  10,
+                       "id":  56,
+                       "late_game":  7,
+                       "description":  "Combo-based assassin with high burst and mobility, deadly when snowballing.",
+                       "slug":  "gusion",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "tank",
+                                            "group"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Mobility",
+                                           "Combo"
+                                       ],
+                       "name":  "Gusion"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  9,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "dive"
+                                          ],
+                       "synergy_with":  [
+                                            "anti-dive",
+                                            "zone"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Mage",
+                       "image":  "valir.png",
+                       "mid_game":  8,
+                       "id":  57,
+                       "late_game":  8,
+                       "description":  "Fire mage with constant knockbacks and damage over time.",
+                       "slug":  "valir",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "poke",
+                                            "range"
+                                        ],
+                       "specialties":  [
+                                           "Knockback",
+                                           "DoT",
+                                           "Zone"
+                                       ],
+                       "name":  "Valir"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "cc-reliant"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "immune"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "martis.png",
+                       "mid_game":  8,
+                       "id":  58,
+                       "late_game":  7,
+                       "description":  "Ashura fighter with CC immunity and crowd control abilities.",
+                       "slug":  "martis",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "kite",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "CC Immune",
+                                           "Burst",
+                                           "Control"
+                                       ],
+                       "name":  "Martis"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  5,
+                       "offense":  4,
+                       "strong_against":  [
+                                              "sustained",
+                                              "poke"
+                                          ],
+                       "synergy_with":  [
+                                            "frontline",
+                                            "sustain"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Tank",
+                       "image":  "uranus.png",
+                       "mid_game":  8,
+                       "id":  59,
+                       "late_game":  9,
+                       "description":  "Regenerating tank with stacking shields that becomes unkillable.",
+                       "slug":  "uranus",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "anti-heal"
+                                        ],
+                       "specialties":  [
+                                           "Regen",
+                                           "Shield Stack",
+                                           "Sustain"
+                                       ],
+                       "name":  "Uranus"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "grouped",
+                                              "tank"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Marksman",
+                       "image":  "hanabi.png",
+                       "mid_game":  7,
+                       "id":  60,
+                       "late_game":  10,
+                       "description":  "Late-game marksman with bouncing attacks and lifesteal shield.",
+                       "slug":  "hanabi",
+                       "early_game":  4,
+                       "weak_against":  [
+                                            "burst",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Bounce",
+                                           "Shield",
+                                           "Late Game"
+                                       ],
+                       "name":  "Hanabi"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "low-mobility",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "range"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Mage",
+                       "image":  "change.png",
+                       "mid_game":  8,
+                       "id":  61,
+                       "late_game":  8,
+                       "description":  "Long-range spam mage with moon-powered abilities.",
+                       "slug":  "change",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "gap-close"
+                                        ],
+                       "specialties":  [
+                                           "Long Range",
+                                           "Spam",
+                                           "Poke"
+                                       ],
+                       "name":  "Chang\u0027e"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  9,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "burst"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "kaja.png",
+                       "mid_game":  8,
+                       "id":  62,
+                       "late_game":  6,
+                       "description":  "Suppression support that catches priority targets for allies.",
+                       "slug":  "kaja",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "cleanse",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Suppress",
+                                           "Catch",
+                                           "Peel"
+                                       ],
+                       "name":  "Kaja"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "skillshot-hit"
+                                          ],
+                       "synergy_with":  [
+                                            "pick",
+                                            "initiate"
+                                        ],
+                       "difficulty":  9,
+                       "role":  "Assassin",
+                       "image":  "selena.png",
+                       "mid_game":  9,
+                       "id":  63,
+                       "late_game":  7,
+                       "description":  "Dual-form assassin with long-range stun and devastating burst.",
+                       "slug":  "selena",
+                       "early_game":  9,
+                       "weak_against":  [
+                                            "tank",
+                                            "mobile"
+                                        ],
+                       "specialties":  [
+                                           "Stun",
+                                           "Burst",
+                                           "Dual Form"
+                                       ],
+                       "name":  "Selena"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "stacked"
+                                          ],
+                       "synergy_with":  [
+                                            "late-game",
+                                            "shield"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "aldous.png",
+                       "mid_game":  7,
+                       "id":  64,
+                       "late_game":  10,
+                       "description":  "Stacking fighter that becomes unstoppable in late game with soul stacks.",
+                       "slug":  "aldous",
+                       "early_game":  4,
+                       "weak_against":  [
+                                            "early-game",
+                                            "pressure"
+                                        ],
+                       "specialties":  [
+                                           "Stack",
+                                           "Global Ult",
+                                           "Late Game"
+                                       ],
+                       "name":  "Aldous"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "sustained",
+                                              "steal-buffs"
+                                          ],
+                       "synergy_with":  [
+                                            "buff-steal",
+                                            "mobility"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Marksman",
+                       "image":  "claude.png",
+                       "mid_game":  8,
+                       "id":  65,
+                       "late_game":  9,
+                       "description":  "Monkey marksman with teleport and ability to steal enemy stats.",
+                       "slug":  "claude",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Mobility",
+                                           "Steal",
+                                           "DPS"
+                                       ],
+                       "name":  "Claude"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  8,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "grouped",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "vale.png",
+                       "mid_game":  8,
+                       "id":  66,
+                       "late_game":  7,
+                       "description":  "Wind mage with crowd control and flexible skill mechanics.",
+                       "slug":  "vale",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "spread",
+                                            "mobile"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Crowd Control",
+                                           "Combo"
+                                       ],
+                       "name":  "Vale"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "mounted"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "engage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "leomord.png",
+                       "mid_game":  8,
+                       "id":  67,
+                       "late_game":  8,
+                       "description":  "Mounted fighter that becomes devastating when riding his nightmare steed.",
+                       "slug":  "leomord",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "cc-chain",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Mount",
+                                           "Burst",
+                                           "Immune"
+                                       ],
+                       "name":  "Leomord"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "single-target"
+                                          ],
+                       "synergy_with":  [
+                                            "tank",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Mage",
+                       "image":  "lunox.png",
+                       "mid_game":  9,
+                       "id":  68,
+                       "late_game":  9,
+                       "description":  "Powerful mage with chaos/order mechanics and immunity ultimate.",
+                       "slug":  "lunox",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "sustained",
+                                            "anti-mage"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Immunity",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Lunox"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "split"
+                                          ],
+                       "synergy_with":  [
+                                            "split",
+                                            "pick"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "hanzo.png",
+                       "mid_game":  8,
+                       "id":  69,
+                       "late_game":  7,
+                       "description":  "Demon ninja that sends his soul to fight while body stays hidden.",
+                       "slug":  "hanzo",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "body-vulnerable",
+                                            "grouped"
+                                        ],
+                       "specialties":  [
+                                           "Possession",
+                                           "Split",
+                                           "Burst"
+                                       ],
+                       "name":  "Hanzo"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "auto-attackers",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "reflect",
+                                            "frontline"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Tank",
+                       "image":  "belerick.png",
+                       "mid_game":  7,
+                       "id":  70,
+                       "late_game":  8,
+                       "description":  "Tree tank that reflects damage and controls with roots.",
+                       "slug":  "belerick",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "magic"
+                                        ],
+                       "specialties":  [
+                                           "Reflect",
+                                           "Crowd Control",
+                                           "Sustain"
+                                       ],
+                       "name":  "Belerick"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "tank",
+                                              "poke"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "magic-damage"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Marksman",
+                       "image":  "kimmy.png",
+                       "mid_game":  8,
+                       "id":  71,
+                       "late_game":  8,
+                       "description":  "Hybrid marksman/mage with magic damage and high mobility.",
+                       "slug":  "kimmy",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Magic Damage",
+                                           "Mobility",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Kimmy"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "sustain"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "thamuz.png",
+                       "mid_game":  8,
+                       "id":  72,
+                       "late_game":  7,
+                       "description":  "Lava fighter with scythe mechanics and high sustain.",
+                       "slug":  "thamuz",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "kite",
+                                            "anti-heal"
+                                        ],
+                       "specialties":  [
+                                           "Sustain",
+                                           "Scythe",
+                                           "Damage"
+                                       ],
+                       "name":  "Thamuz"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "shield"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Mage",
+                       "image":  "harith.png",
+                       "mid_game":  9,
+                       "id":  73,
+                       "late_game":  9,
+                       "description":  "Time-traveling mage with shields and incredible mobility.",
+                       "slug":  "harith",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "cc-chain",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Mobility",
+                                           "Shield",
+                                           "Burst"
+                                       ],
+                       "name":  "Harith"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  9,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "dash-heroes",
+                                              "mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "anti-mobility",
+                                            "zone"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "minsitthar.png",
+                       "mid_game":  8,
+                       "id":  74,
+                       "late_game":  7,
+                       "description":  "Anti-mobility fighter that prevents dashes in his ultimate zone.",
+                       "slug":  "minsitthar",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "range",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Anti-Dash",
+                                           "Crowd Control",
+                                           "Summon"
+                                       ],
+                       "name":  "Minsitthar"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "kadita.png",
+                       "mid_game":  8,
+                       "id":  75,
+                       "late_game":  8,
+                       "description":  "Ocean goddess mage with burst damage and temporary immunity.",
+                       "slug":  "kadita",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "spread",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Immunity",
+                                           "AoE"
+                                       ],
+                       "name":  "Kadita"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "team-fight",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "team-fight",
+                                            "revive"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Support",
+                       "image":  "faramis.png",
+                       "mid_game":  7,
+                       "id":  76,
+                       "late_game":  8,
+                       "description":  "Undying support that can revive dead allies in team fights.",
+                       "slug":  "faramis",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "pick",
+                                            "isolated"
+                                        ],
+                       "specialties":  [
+                                           "Revive",
+                                           "Crowd Control",
+                                           "Team Fight"
+                                       ],
+                       "name":  "Faramis"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "wall-near",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "wall",
+                                            "terrain"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "badang.png",
+                       "mid_game":  8,
+                       "id":  77,
+                       "late_game":  7,
+                       "description":  "Fist fighter that traps enemies with walls for devastating combos.",
+                       "slug":  "badang",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "range",
+                                            "open-field"
+                                        ],
+                       "specialties":  [
+                                           "Fist",
+                                           "Wall Combo",
+                                           "Burst"
+                                       ],
+                       "name":  "Badang"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  9,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "dash-heroes",
+                                              "mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "burst"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Tank",
+                       "image":  "khufra.png",
+                       "mid_game":  9,
+                       "id":  78,
+                       "late_game":  7,
+                       "description":  "Anti-mobility tank that counters dash heroes and controls team fights.",
+                       "slug":  "khufra",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "true-damage",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Anti-Dash",
+                                           "Crowd Control",
+                                           "Initiator"
+                                       ],
+                       "name":  "Khufra"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-hp"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "siege"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Marksman",
+                       "image":  "granger.png",
+                       "mid_game":  9,
+                       "id":  79,
+                       "late_game":  8,
+                       "description":  "Burst marksman with high mobility and execute damage.",
+                       "slug":  "granger",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Mobility",
+                                           "Poke"
+                                       ],
+                       "name":  "Granger"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "grouped",
+                                              "squishy"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "magic-comp"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Fighter",
+                       "image":  "guinevere.png",
+                       "mid_game":  9,
+                       "id":  80,
+                       "late_game":  7,
+                       "description":  "Magic fighter with devastating AoE burst ultimate.",
+                       "slug":  "guinevere",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "spread",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Magic Damage",
+                                           "Jump"
+                                       ],
+                       "name":  "Guinevere"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  6,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "shield-heroes",
+                                              "tank"
+                                          ],
+                       "synergy_with":  [
+                                            "magic-damage",
+                                            "frontline"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Tank",
+                       "image":  "esmeralda.png",
+                       "mid_game":  8,
+                       "id":  81,
+                       "late_game":  8,
+                       "description":  "Shield-stealing mage tank that absorbs enemy shields.",
+                       "slug":  "esmeralda",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "anti-shield",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Shield Steal",
+                                           "Magic Damage",
+                                           "Sustain"
+                                       ],
+                       "name":  "Esmeralda"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  8,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "slow",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "terizla.png",
+                       "mid_game":  8,
+                       "id":  82,
+                       "late_game":  8,
+                       "description":  "Massive fighter with powerful slows and crowd control.",
+                       "slug":  "terizla",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "range",
+                                            "mobile"
+                                        ],
+                       "specialties":  [
+                                           "Slow",
+                                           "Crowd Control",
+                                           "Burst"
+                                       ],
+                       "name":  "Terizla"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "melee",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "zone",
+                                            "damage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "xborg.png",
+                       "mid_game":  8,
+                       "id":  83,
+                       "late_game":  7,
+                       "description":  "Armored fighter that deals damage over time and controls zones.",
+                       "slug":  "xborg",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "burst-armor",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Armor",
+                                           "DoT",
+                                           "Zone"
+                                       ],
+                       "name":  "X.Borg"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "no-cc"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "split"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "ling.png",
+                       "mid_game":  10,
+                       "id":  84,
+                       "late_game":  8,
+                       "description":  "Unique assassin that jumps on walls with high mobility and crit damage.",
+                       "slug":  "ling",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "crowd-control",
+                                            "anti-crit"
+                                        ],
+                       "specialties":  [
+                                           "Wall Jump",
+                                           "Mobility",
+                                           "Crit"
+                                       ],
+                       "name":  "Ling"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "tank",
+                                              "high-defense"
+                                          ],
+                       "synergy_with":  [
+                                            "penetration",
+                                            "burst"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "dyrroth.png",
+                       "mid_game":  8,
+                       "id":  85,
+                       "late_game":  7,
+                       "description":  "Penetration fighter that shreds through high defense enemies.",
+                       "slug":  "dyrroth",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "kite",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Penetration",
+                                           "Burst",
+                                           "Charge"
+                                       ],
+                       "name":  "Dyrroth"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "poke",
+                                              "zone-control"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "magic-damage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "lylia.png",
+                       "mid_game":  8,
+                       "id":  86,
+                       "late_game":  7,
+                       "description":  "Child mage with rewind ultimate and strong zone control.",
+                       "slug":  "lylia",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Poke",
+                                           "Zone",
+                                           "Rewind"
+                                       ],
+                       "name":  "Lylia"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "heal-reliant",
+                                              "mobile"
+                                          ],
+                       "synergy_with":  [
+                                            "anti-heal",
+                                            "mobility"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Tank",
+                       "image":  "baxia.png",
+                       "mid_game":  8,
+                       "id":  87,
+                       "late_game":  7,
+                       "description":  "Rolling turtle tank with anti-heal and mobility.",
+                       "slug":  "baxia",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "cc-stop",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Roll",
+                                           "Anti-Heal",
+                                           "Taunt"
+                                       ],
+                       "name":  "Baxia"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  4,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "tower",
+                                              "1v1"
+                                          ],
+                       "synergy_with":  [
+                                            "split-push",
+                                            "sustain"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "masha.png",
+                       "mid_game":  7,
+                       "id":  88,
+                       "late_game":  7,
+                       "description":  "Triple HP fighter with powerful split-pushing capabilities.",
+                       "slug":  "masha",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "cc-chain",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "Triple HP",
+                                           "Lifesteal",
+                                           "Push"
+                                       ],
+                       "name":  "Masha"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "marked",
+                                              "tank"
+                                          ],
+                       "synergy_with":  [
+                                            "mark",
+                                            "mobile"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Marksman",
+                       "image":  "wanwan.png",
+                       "mid_game":  8,
+                       "id":  89,
+                       "late_game":  9,
+                       "description":  "Agile marksman that exploits enemy weaknesses for massive damage.",
+                       "slug":  "wanwan",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Weakness Mark",
+                                           "Mobility",
+                                           "Finisher"
+                                       ],
+                       "name":  "Wanwan"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  8,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "cage",
+                                            "follow-up"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "silvanna.png",
+                       "mid_game":  8,
+                       "id":  90,
+                       "late_game":  7,
+                       "description":  "Imperial fighter with magic damage and trapping ultimate.",
+                       "slug":  "silvanna",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "Cage",
+                                           "Magic Damage",
+                                           "Initiate"
+                                       ],
+                       "name":  "Silvanna"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "range",
+                                              "stacked"
+                                          ],
+                       "synergy_with":  [
+                                            "late-game",
+                                            "poke"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "cecilion.png",
+                       "mid_game":  8,
+                       "id":  91,
+                       "late_game":  10,
+                       "description":  "Stacking mage with infinite scaling and long-range poke.",
+                       "slug":  "cecilion",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "early-game",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Stack",
+                                           "Long Range",
+                                           "Late Game"
+                                       ],
+                       "name":  "Cecilion"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  9,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "linked-enemies",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "link",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "carmilla.png",
+                       "mid_game":  8,
+                       "id":  92,
+                       "late_game":  7,
+                       "description":  "Link support that connects enemies for shared damage and CC.",
+                       "slug":  "carmilla",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "spread",
+                                            "cleanse"
+                                        ],
+                       "specialties":  [
+                                           "Link",
+                                           "Crowd Control",
+                                           "Damage"
+                                       ],
+                       "name":  "Carmilla"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  10,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "grouped",
+                                              "squishy"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Tank",
+                       "image":  "atlas.png",
+                       "mid_game":  9,
+                       "id":  93,
+                       "late_game":  8,
+                       "description":  "Chaining tank with powerful hook and crowd control combo.",
+                       "slug":  "atlas",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "poke",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Hook Chain",
+                                           "Crowd Control",
+                                           "Initiator"
+                                       ],
+                       "name":  "Atlas"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "zone-control",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "pet",
+                                            "zone"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Marksman",
+                       "image":  "popol-and-kupa.png",
+                       "mid_game":  7,
+                       "id":  94,
+                       "late_game":  7,
+                       "description":  "Duo marksman with wolf companion for zone control.",
+                       "slug":  "popol-and-kupa",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "AoE"
+                                        ],
+                       "specialties":  [
+                                           "Pet",
+                                           "Zone",
+                                           "Push"
+                                       ],
+                       "name":  "Popol and Kupa"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "sustained",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "sustain",
+                                            "frontline"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "yu-zhong.png",
+                       "mid_game":  8,
+                       "id":  95,
+                       "late_game":  9,
+                       "description":  "Dragon fighter with incredible lifesteal and sustain.",
+                       "slug":  "yu-zhong",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "anti-heal",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Lifesteal",
+                                           "Dragon",
+                                           "Sustain"
+                                       ],
+                       "name":  "Yu Zhong"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  9,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "combo",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "teleport",
+                                            "control"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Mage",
+                       "image":  "luo-yi.png",
+                       "mid_game":  8,
+                       "id":  96,
+                       "late_game":  7,
+                       "description":  "Yin-yang mage with mark combos and team teleportation.",
+                       "slug":  "luo-yi",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "mobile",
+                                            "spread"
+                                        ],
+                       "specialties":  [
+                                           "Yin-Yang",
+                                           "Teleport",
+                                           "Control"
+                                       ],
+                       "name":  "Luo Yi"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "skillshot"
+                                          ],
+                       "synergy_with":  [
+                                            "immune",
+                                            "dive"
+                                        ],
+                       "difficulty":  9,
+                       "role":  "Assassin",
+                       "image":  "benedetta.png",
+                       "mid_game":  9,
+                       "id":  97,
+                       "late_game":  8,
+                       "description":  "Shadow assassin with immunity frames and high mobility.",
+                       "slug":  "benedetta",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Mobility",
+                                           "Immunity",
+                                           "Burst"
+                                       ],
+                       "name":  "Benedetta"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "sustained",
+                                              "poke"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "sustain"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "khaleed.png",
+                       "mid_game":  8,
+                       "id":  98,
+                       "late_game":  7,
+                       "description":  "Desert fighter that surfs on sand with regeneration.",
+                       "slug":  "khaleed",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Sand",
+                                           "Regen",
+                                           "Poke"
+                                       ],
+                       "name":  "Khaleed"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  8,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "stacked",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "stack",
+                                            "zone"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Tank",
+                       "image":  "barats.png",
+                       "mid_game":  8,
+                       "id":  99,
+                       "late_game":  8,
+                       "description":  "Dinosaur-riding tank that grows bigger by eating enemies.",
+                       "slug":  "barats",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "%-damage",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Stack Size",
+                                           "Eat",
+                                           "Crowd Control"
+                                       ],
+                       "name":  "Barats"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "tank",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "crowd-control",
+                                            "slow"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Marksman",
+                       "image":  "brody.png",
+                       "mid_game":  9,
+                       "id":  100,
+                       "late_game":  8,
+                       "description":  "Unique marksman with burst stacks and slow, good against tanks.",
+                       "slug":  "brody",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "long-range",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Slow",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Brody"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  9,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "low-mobility",
+                                              "zone"
+                                          ],
+                       "synergy_with":  [
+                                            "zone",
+                                            "slow"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "yve.png",
+                       "mid_game":  8,
+                       "id":  101,
+                       "late_game":  8,
+                       "description":  "Zone control mage with massive slow field ultimate.",
+                       "slug":  "yve",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "mobile",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Zone",
+                                           "Slow",
+                                           "Control"
+                                       ],
+                       "name":  "Yve"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "squishy",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "assassin",
+                                            "fighter",
+                                            "engage"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Support",
+                       "image":  "mathilda.png",
+                       "mid_game":  8,
+                       "id":  102,
+                       "late_game":  6,
+                       "description":  "Mobile support with shields and engage tools, enables aggressive plays.",
+                       "slug":  "mathilda",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "Mobility",
+                                           "Shield",
+                                           "Engage"
+                                       ],
+                       "name":  "Mathilda"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "combo-hit"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "shield"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Fighter",
+                       "image":  "paquito.png",
+                       "mid_game":  9,
+                       "id":  103,
+                       "late_game":  7,
+                       "description":  "Boxing fighter with combo mechanics and shield generation.",
+                       "slug":  "paquito",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "tank",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Combo",
+                                           "Shield",
+                                           "Burst"
+                                       ],
+                       "name":  "Paquito"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  8,
+                       "offense":  6,
+                       "strong_against":  [
+                                              "sustained",
+                                              "attached"
+                                          ],
+                       "synergy_with":  [
+                                            "attach",
+                                            "sustain"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Tank",
+                       "image":  "gloo.png",
+                       "mid_game":  7,
+                       "id":  104,
+                       "late_game":  8,
+                       "description":  "Goo tank that attaches to enemies and splits into pieces.",
+                       "slug":  "gloo",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "AoE"
+                                        ],
+                       "specialties":  [
+                                           "Attach",
+                                           "Split",
+                                           "Regen"
+                                       ],
+                       "name":  "Gloo"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "poke"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Marksman",
+                       "image":  "beatrix.png",
+                       "mid_game":  9,
+                       "id":  105,
+                       "late_game":  8,
+                       "description":  "Versatile marksman with multiple weapons for different situations.",
+                       "slug":  "beatrix",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "dive",
+                                            "assassin"
+                                        ],
+                       "specialties":  [
+                                           "Multi-Weapon",
+                                           "Versatile",
+                                           "Poke"
+                                       ],
+                       "name":  "Beatrix"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "dash-heroes",
+                                              "mobile"
+                                          ],
+                       "synergy_with":  [
+                                            "anti-mobility",
+                                            "burst"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "phoveus.png",
+                       "mid_game":  8,
+                       "id":  106,
+                       "late_game":  7,
+                       "description":  "Counter fighter that punishes enemy dashes with devastating damage.",
+                       "slug":  "phoveus",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "no-dash",
+                                            "poke"
+                                        ],
+                       "specialties":  [
+                                           "Anti-Dash",
+                                           "Counter",
+                                           "Burst"
+                                       ],
+                       "name":  "Phoveus"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  5,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "sustained",
+                                              "range"
+                                          ],
+                       "synergy_with":  [
+                                            "magic-damage",
+                                            "poke"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Marksman",
+                       "image":  "natan.png",
+                       "mid_game":  8,
+                       "id":  107,
+                       "late_game":  9,
+                       "description":  "Time-traveling marksman with mirror images and hybrid damage.",
+                       "slug":  "natan",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Mirror",
+                                           "Hybrid",
+                                           "Magic Damage"
+                                       ],
+                       "name":  "Natan"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  5,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "tank",
+                                              "fighter"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "sustain"
+                                        ],
+                       "difficulty":  4,
+                       "role":  "Fighter",
+                       "image":  "aulus.png",
+                       "mid_game":  7,
+                       "id":  108,
+                       "late_game":  9,
+                       "description":  "Scaling fighter that becomes unstoppable with axe stacks in late game.",
+                       "slug":  "aulus",
+                       "early_game":  5,
+                       "weak_against":  [
+                                            "burst",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Stack",
+                                           "DPS",
+                                           "Scaling"
+                                       ],
+                       "name":  "Aulus"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "stealth",
+                                            "burst"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "aamon.png",
+                       "mid_game":  9,
+                       "id":  109,
+                       "late_game":  7,
+                       "description":  "Invisible assassin with shard mechanics and high burst damage.",
+                       "slug":  "aamon",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "vision",
+                                            "tank"
+                                        ],
+                       "specialties":  [
+                                           "Invisibility",
+                                           "Shards",
+                                           "Burst"
+                                       ],
+                       "name":  "Aamon"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "ultimate-reliant",
+                                              "squishy"
+                                          ],
+                       "synergy_with":  [
+                                            "strong-ultimates",
+                                            "burst"
+                                        ],
+                       "difficulty":  9,
+                       "role":  "Mage",
+                       "image":  "valentina.png",
+                       "mid_game":  9,
+                       "id":  110,
+                       "late_game":  8,
+                       "description":  "Unique mage that copies enemy ultimates, extremely versatile.",
+                       "slug":  "valentina",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "sustained",
+                                            "non-ultimate"
+                                        ],
+                       "specialties":  [
+                                           "Ultimate Copy",
+                                           "Burst",
+                                           "Versatile"
+                                       ],
+                       "name":  "Valentina"
+                   },
+                   {
+                       "durability":  9,
+                       "control":  7,
+                       "offense":  7,
+                       "strong_against":  [
+                                              "squishy",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "follow-up",
+                                            "engage"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Tank",
+                       "image":  "edith.png",
+                       "mid_game":  8,
+                       "id":  111,
+                       "late_game":  8,
+                       "description":  "Transforming tank/marksman with strong engage and dueling potential.",
+                       "slug":  "edith",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "true-damage",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Transform",
+                                           "Shield",
+                                           "Hybrid"
+                                       ],
+                       "name":  "Edith"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "sustained",
+                                              "poke"
+                                          ],
+                       "synergy_with":  [
+                                            "heal",
+                                            "poke"
+                                        ],
+                       "difficulty":  3,
+                       "role":  "Support",
+                       "image":  "floryn.png",
+                       "mid_game":  7,
+                       "id":  112,
+                       "late_game":  7,
+                       "description":  "Plant support with healing seeds and poke abilities.",
+                       "slug":  "floryn",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Heal",
+                                           "Plant",
+                                           "Poke"
+                                       ],
+                       "name":  "Floryn"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "1v1"
+                                          ],
+                       "synergy_with":  [
+                                            "isolate",
+                                            "burst"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Fighter",
+                       "image":  "yin.png",
+                       "mid_game":  9,
+                       "id":  113,
+                       "late_game":  7,
+                       "description":  "Fighter that creates a 1v1 domain to isolate and eliminate targets.",
+                       "slug":  "yin",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "domain-escape"
+                                        ],
+                       "specialties":  [
+                                           "Domain",
+                                           "1v1",
+                                           "Burst"
+                                       ],
+                       "name":  "Yin"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "auto-attackers",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "puppet",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Marksman",
+                       "image":  "melissa.png",
+                       "mid_game":  8,
+                       "id":  114,
+                       "late_game":  9,
+                       "description":  "Cursed doll marksman that puppeteers enemies and controls their movement.",
+                       "slug":  "melissa",
+                       "early_game":  6,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Puppet",
+                                           "Crowd Control",
+                                           "DPS"
+                                       ],
+                       "name":  "Melissa"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "poke"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Mage",
+                       "image":  "xavier.png",
+                       "mid_game":  9,
+                       "id":  115,
+                       "late_game":  8,
+                       "description":  "Light mage with penetrating abilities and high burst damage.",
+                       "slug":  "xavier",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "mobile"
+                                        ],
+                       "specialties":  [
+                                           "Penetration",
+                                           "Burst",
+                                           "Poke"
+                                       ],
+                       "name":  "Xavier"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  10,
+                       "strong_against":  [
+                                              "squishy",
+                                              "combo"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "magic-damage"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "julian.png",
+                       "mid_game":  10,
+                       "id":  116,
+                       "late_game":  8,
+                       "description":  "Hybrid fighter/assassin with devastating magic burst combos.",
+                       "slug":  "julian",
+                       "early_game":  8,
+                       "weak_against":  [
+                                            "tank",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Hybrid",
+                                           "Burst",
+                                           "Magic Damage"
+                                       ],
+                       "name":  "Julian"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  7,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "magic-damage",
+                                              "sustained"
+                                          ],
+                       "synergy_with":  [
+                                            "shield",
+                                            "frontline"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "fredrinn.png",
+                       "mid_game":  8,
+                       "id":  117,
+                       "late_game":  8,
+                       "description":  "Shield fighter that converts damage into his own power.",
+                       "slug":  "fredrinn",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "physical-burst",
+                                            "anti-shield"
+                                        ],
+                       "specialties":  [
+                                           "Shield",
+                                           "Convert",
+                                           "Damage"
+                                       ],
+                       "name":  "Fredrinn"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "poke",
+                                            "pick"
+                                        ],
+                       "difficulty":  8,
+                       "role":  "Assassin",
+                       "image":  "joy.png",
+                       "mid_game":  9,
+                       "id":  118,
+                       "late_game":  7,
+                       "description":  "Mobile assassin with burst damage and strong poke abilities.",
+                       "slug":  "joy",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "group"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Mobility",
+                                           "Poke"
+                                       ],
+                       "name":  "Joy"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "zone"
+                                          ],
+                       "synergy_with":  [
+                                            "zone",
+                                            "burst"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "novaria.png",
+                       "mid_game":  9,
+                       "id":  119,
+                       "late_game":  8,
+                       "description":  "Star mage with zone control and burst damage.",
+                       "slug":  "novaria",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "mobile",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Star",
+                                           "Burst",
+                                           "Zone"
+                                       ],
+                       "name":  "Novaria"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "charge"
+                                          ],
+                       "synergy_with":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Fighter",
+                       "image":  "arlott.png",
+                       "mid_game":  8,
+                       "id":  120,
+                       "late_game":  8,
+                       "description":  "Charging fighter with high mobility and burst potential.",
+                       "slug":  "arlott",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Charge",
+                                           "Burst",
+                                           "Mobility"
+                                       ],
+                       "name":  "Arlott"
+                   },
+                   {
+                       "durability":  3,
+                       "control":  5,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "sustained",
+                                              "tank"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Marksman",
+                       "image":  "ixia.png",
+                       "mid_game":  8,
+                       "id":  121,
+                       "late_game":  9,
+                       "description":  "High DPS marksman with strong finishing power.",
+                       "slug":  "ixia",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "dive",
+                                            "burst"
+                                        ],
+                       "specialties":  [
+                                           "DPS",
+                                           "Finisher",
+                                           "Range"
+                                       ],
+                       "name":  "Ixia"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "pick"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Assassin",
+                       "image":  "nolan.png",
+                       "mid_game":  9,
+                       "id":  122,
+                       "late_game":  7,
+                       "description":  "Mobile assassin with chase potential and burst damage.",
+                       "slug":  "nolan",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "grouped"
+                                        ],
+                       "specialties":  [
+                                           "Burst",
+                                           "Mobility",
+                                           "Chase"
+                                       ],
+                       "name":  "Nolan"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "sustained",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "pet",
+                                            "sustain"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "cici.png",
+                       "mid_game":  8,
+                       "id":  123,
+                       "late_game":  7,
+                       "description":  "Pet fighter with Yoyo companion and regeneration.",
+                       "slug":  "cici",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "kite"
+                                        ],
+                       "specialties":  [
+                                           "Pet",
+                                           "Damage",
+                                           "Regen"
+                                       ],
+                       "name":  "Cici"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  9,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "melee",
+                                              "dive"
+                                          ],
+                       "synergy_with":  [
+                                            "crowd-control",
+                                            "protect"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "chip.png",
+                       "mid_game":  8,
+                       "id":  124,
+                       "late_game":  7,
+                       "description":  "Tech support with crowd control and protective abilities.",
+                       "slug":  "chip",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "poke",
+                                            "sustained"
+                                        ],
+                       "specialties":  [
+                                           "Crowd Control",
+                                           "Shield",
+                                           "Support"
+                                       ],
+                       "name":  "Chip"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "grouped",
+                                              "low-mobility"
+                                          ],
+                       "synergy_with":  [
+                                            "crowd-control",
+                                            "burst"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "zhuxin.png",
+                       "mid_game":  9,
+                       "id":  125,
+                       "late_game":  8,
+                       "description":  "Spirit mage with crowd control and burst damage.",
+                       "slug":  "zhuxin",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "mobile",
+                                            "spread"
+                                        ],
+                       "specialties":  [
+                                           "Spirit",
+                                           "Crowd Control",
+                                           "Burst"
+                                       ],
+                       "name":  "Zhuxin"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "chase"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "mobility"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Assassin",
+                       "image":  "suyou.png",
+                       "mid_game":  9,
+                       "id":  126,
+                       "late_game":  7,
+                       "description":  "Masked assassin with burst combos and chase potential.",
+                       "slug":  "suyou",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Mask",
+                                           "Burst",
+                                           "Chase"
+                                       ],
+                       "name":  "Suyou"
+                   },
+                   {
+                       "durability":  8,
+                       "control":  6,
+                       "offense":  8,
+                       "strong_against":  [
+                                              "sustained",
+                                              "melee"
+                                          ],
+                       "synergy_with":  [
+                                            "sustain",
+                                            "frontline"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Fighter",
+                       "image":  "lukas.png",
+                       "mid_game":  8,
+                       "id":  127,
+                       "late_game":  8,
+                       "description":  "Beast fighter with regeneration and sustained damage.",
+                       "slug":  "lukas",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "kite",
+                                            "anti-heal"
+                                        ],
+                       "specialties":  [
+                                           "Beast",
+                                           "Regen",
+                                           "Damage"
+                                       ],
+                       "name":  "Lukas"
+                   },
+                   {
+                       "durability":  6,
+                       "control":  9,
+                       "offense":  5,
+                       "strong_against":  [
+                                              "melee",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "crowd-control",
+                                            "sustain"
+                                        ],
+                       "difficulty":  5,
+                       "role":  "Support",
+                       "image":  "kalea.png",
+                       "mid_game":  8,
+                       "id":  128,
+                       "late_game":  7,
+                       "description":  "Wave support with crowd control and regeneration abilities.",
+                       "slug":  "kalea",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "poke",
+                                            "spread"
+                                        ],
+                       "specialties":  [
+                                           "Wave",
+                                           "Crowd Control",
+                                           "Regen"
+                                       ],
+                       "name":  "Kalea"
+                   },
+                   {
+                       "durability":  5,
+                       "control":  8,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "grouped"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "crowd-control"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Mage",
+                       "image":  "zetian.png",
+                       "mid_game":  9,
+                       "id":  129,
+                       "late_game":  8,
+                       "description":  "Empress mage with powerful burst and crowd control.",
+                       "slug":  "zetian",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "mobile",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Empress",
+                                           "Burst",
+                                           "Control"
+                                       ],
+                       "name":  "Zetian"
+                   },
+                   {
+                       "durability":  4,
+                       "control":  6,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "sustained",
+                                              "isolated"
+                                          ],
+                       "synergy_with":  [
+                                            "peel",
+                                            "frontline"
+                                        ],
+                       "difficulty":  6,
+                       "role":  "Marksman",
+                       "image":  "obsidia.png",
+                       "mid_game":  8,
+                       "id":  130,
+                       "late_game":  9,
+                       "description":  "Dark marksman with finishing power and high DPS.",
+                       "slug":  "obsidia",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "specialties":  [
+                                           "Darkness",
+                                           "Finisher",
+                                           "DPS"
+                                       ],
+                       "name":  "Obsidia"
+                   },
+                   {
+                       "durability":  7,
+                       "control":  7,
+                       "offense":  9,
+                       "strong_against":  [
+                                              "squishy",
+                                              "mobile"
+                                          ],
+                       "synergy_with":  [
+                                            "burst",
+                                            "dive"
+                                        ],
+                       "difficulty":  7,
+                       "role":  "Fighter",
+                       "image":  "sora.png",
+                       "mid_game":  8,
+                       "id":  131,
+                       "late_game":  8,
+                       "description":  "Cloud fighter with burst damage and high mobility.",
+                       "slug":  "sora",
+                       "early_game":  7,
+                       "weak_against":  [
+                                            "tank",
+                                            "cc-chain"
+                                        ],
+                       "specialties":  [
+                                           "Cloud",
+                                           "Burst",
+                                           "Mobility"
+                                       ],
+                       "name":  "Sora"
+                   }
+               ]
+}

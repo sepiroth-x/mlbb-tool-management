@@ -1,0 +1,17 @@
+{
+    "name": "vantapress/mlbb-tool-management",
+    "description": "MLBB Tournament Management Module",
+    "type": "vantapress-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "VantaPress",
+            "email": "info@vantapress.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\MLBBToolManagement\\": ""
+        }
+    }
+}
