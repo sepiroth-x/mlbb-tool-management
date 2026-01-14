@@ -22,19 +22,20 @@ class OpenAIService
 
     public function __construct()
     {
-        $this->provider = config('services.ai.provider', 'github');
+        // Use env() directly to avoid container issues
+        $this->provider = env('AI_PROVIDER', 'github');
         
         if ($this->provider === 'github') {
-            $this->apiKey = config('services.github.token');
-            $this->model = config('services.github.model', 'gpt-4o-mini');
-            $this->maxTokens = config('services.github.max_tokens', 500);
-            $this->temperature = config('services.github.temperature', 0.7);
+            $this->apiKey = env('GITHUB_TOKEN');
+            $this->model = env('GITHUB_MODEL', 'gpt-4o-mini');
+            $this->maxTokens = (int) env('GITHUB_MAX_TOKENS', 500);
+            $this->temperature = (float) env('GITHUB_TEMPERATURE', 0.7);
             $this->apiUrl = 'https://models.inference.ai.azure.com/chat/completions';
         } else {
-            $this->apiKey = config('services.openai.api_key');
-            $this->model = config('services.openai.model', 'gpt-3.5-turbo');
-            $this->maxTokens = config('services.openai.max_tokens', 500);
-            $this->temperature = config('services.openai.temperature', 0.7);
+            $this->apiKey = env('OPENAI_API_KEY');
+            $this->model = env('OPENAI_MODEL', 'gpt-3.5-turbo');
+            $this->maxTokens = (int) env('OPENAI_MAX_TOKENS', 500);
+            $this->temperature = (float) env('OPENAI_TEMPERATURE', 0.7);
             $this->apiUrl = 'https://api.openai.com/v1/chat/completions';
         }
     }
