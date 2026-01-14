@@ -188,6 +188,10 @@
     .analyze-section {
         text-align: center;
         margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .btn-large {
@@ -206,6 +210,21 @@
     .btn-large:hover {
         transform: translateY(-2px);
         box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+    }
+
+    .btn-large.btn-clear {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-large.btn-clear:hover {
+        box-shadow: 0 0 40px rgba(239, 68, 68, 0.6);
+    }
+
+    .btn-large:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
     }
 
     .btn-large:disabled {
@@ -754,6 +773,423 @@
             grid-template-columns: 1fr;
         }
     }
+
+    /* Hero Details Section */
+    .hero-details-section {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 12px;
+    }
+
+    .hero-details-section h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e2e8f0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .hero-details-teams {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-details-team h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .hero-details-team-a h4 {
+        color: #00d9ff;
+    }
+
+    .hero-details-team-b h4 {
+        color: #ffd700;
+    }
+
+    .hero-details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 1rem;
+    }
+
+    .hero-detail-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .hero-detail-card:hover {
+        transform: translateY(-4px);
+        border-color: #00d9ff;
+        box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
+    }
+
+    .hero-detail-card img {
+        width: 100%;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-detail-card .hero-name-small {
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        font-weight: 600;
+    }
+
+    /* Hero Detail Overlay */
+    .hero-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        overflow-y: auto;
+    }
+
+    .hero-overlay.active {
+        display: flex;
+    }
+
+    .hero-overlay-content {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+        border: 2px solid rgba(0, 217, 255, 0.5);
+        border-radius: 16px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+        position: relative;
+    }
+
+    .hero-overlay-header {
+        background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(255, 215, 0, 0.2));
+        padding: 2rem;
+        border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .hero-overlay-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 3px solid rgba(0, 217, 255, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+    }
+
+    .hero-overlay-title-section {
+        flex: 1;
+    }
+
+    .hero-overlay-title {
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00d9ff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-overlay-role {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 217, 255, 0.2);
+        border: 1px solid rgba(0, 217, 255, 0.5);
+        border-radius: 20px;
+        color: #00d9ff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+
+    .hero-overlay-difficulty {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 215, 0, 0.2);
+        border: 1px solid rgba(255, 215, 0, 0.5);
+        border-radius: 20px;
+        color: #ffd700;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .hero-overlay-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        background: rgba(239, 68, 68, 0.2);
+        border: 2px solid rgba(239, 68, 68, 0.5);
+        border-radius: 50%;
+        color: #ef4444;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .hero-overlay-close:hover {
+        background: rgba(239, 68, 68, 0.4);
+        transform: rotate(90deg);
+    }
+
+    .hero-overlay-body {
+        padding: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: rgba(0, 217, 255, 0.05);
+        border-left: 3px solid #00d9ff;
+        border-radius: 6px;
+    }
+
+    .hero-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-stat-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .hero-stat-card h5 {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .hero-stat-bar {
+        background: rgba(15, 23, 42, 0.9);
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 0.5rem;
+    }
+
+    .hero-stat-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00d9ff, #0ea5e9);
+        border-radius: 5px;
+        transition: width 0.8s ease;
+    }
+
+    .hero-phase-ratings {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-phase-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .hero-phase-card h5 {
+        font-size: 1rem;
+        color: #00d9ff;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .hero-phase-value {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00d9ff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-detail-section {
+        margin-bottom: 2rem;
+    }
+
+    .hero-detail-section h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #e2e8f0;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+    }
+
+    .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-tag {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(139, 92, 246, 0.2));
+        border: 1px solid rgba(0, 217, 255, 0.4);
+        border-radius: 20px;
+        color: #00d9ff;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .hero-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .hero-list li {
+        padding: 0.75rem;
+        padding-left: 2rem;
+        position: relative;
+        color: #cbd5e1;
+        margin-bottom: 0.5rem;
+        background: rgba(0, 217, 255, 0.05);
+        border-left: 3px solid #00d9ff;
+        border-radius: 6px;
+    }
+
+    .hero-list li:before {
+        content: "⚡";
+        position: absolute;
+        left: 0.75rem;
+        color: #00d9ff;
+    }
+
+    .hero-list.weak li {
+        background: rgba(239, 68, 68, 0.05);
+        border-left-color: #ef4444;
+    }
+
+    .hero-list.weak li:before {
+        content: "⚠️";
+    }
+
+    .hero-list.synergy li {
+        background: rgba(34, 197, 94, 0.05);
+        border-left-color: #22c55e;
+    }
+
+    .hero-list.synergy li:before {
+        content: "🤝";
+    }
+
+    .hero-map-strategies {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .hero-map-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .hero-map-card h5 {
+        font-size: 1.1rem;
+        color: #ffd700;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .hero-map-card p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* AI Disclaimer */
+    .ai-disclaimer {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+        border: 2px solid rgba(139, 92, 246, 0.4);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .ai-disclaimer-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ai-disclaimer h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #a78bfa;
+        margin-bottom: 0.75rem;
+    }
+
+    .ai-disclaimer p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-size: 1rem;
+    }
+
+    .ai-disclaimer strong {
+        color: #c4b5fd;
+    }
+
+    @media (max-width: 768px) {
+        .hero-details-teams {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-overlay-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero-stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-phase-ratings {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-overlay-content {
+            margin: 1rem;
+        }
+    }
 </style>
 
 <div class="matchup-tool-container">
@@ -868,6 +1304,9 @@
         <div class="analyze-section">
             <button id="analyzeBtn" class="btn-large" onclick="analyzeMatchup()">
                 ⚡ Analyze Matchup
+            </button>
+            <button id="clearBtn" class="btn-large btn-clear" onclick="clearTeams()">
+                🗑️ Clear Teams
             </button>
         </div>
 
@@ -989,6 +1428,50 @@
         `;
     }
 
+    // Clear all teams
+    function clearTeams() {
+        if (confirm('Are you sure you want to clear both teams?')) {
+            // Clear state
+            matchupState.teamA = [];
+            matchupState.teamB = [];
+
+            // Clear Team A UI
+            for (let i = 0; i < 5; i++) {
+                const slotElement = document.querySelector(`#teamASelected .hero-slot[data-slot="${i}"]`);
+                slotElement.classList.remove('filled');
+                slotElement.innerHTML = `
+                    <span class="slot-number">${i + 1}</span>
+                    <span class="slot-label">Select Hero</span>
+                `;
+            }
+
+            // Clear Team B UI
+            for (let i = 0; i < 5; i++) {
+                const slotElement = document.querySelector(`#teamBSelected .hero-slot[data-slot="${i}"]`);
+                slotElement.classList.remove('filled');
+                slotElement.innerHTML = `
+                    <span class="slot-number">${i + 1}</span>
+                    <span class="slot-label">Select Hero</span>
+                `;
+            }
+
+            // Hide results if shown
+            const resultsSection = document.getElementById('resultsSection');
+            if (resultsSection) {
+                resultsSection.style.display = 'none';
+                resultsSection.innerHTML = '';
+            }
+
+            // Show success feedback
+            const clearBtn = document.getElementById('clearBtn');
+            const originalText = clearBtn.innerHTML;
+            clearBtn.innerHTML = '✅ Cleared!';
+            setTimeout(() => {
+                clearBtn.innerHTML = originalText;
+            }, 1500);
+        }
+    }
+
     // Filter heroes by role
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -1038,7 +1521,9 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify(payload)
             });
@@ -1224,6 +1709,59 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Hero Details Section -->
+                <div class="hero-details-section">
+                    <h3>📊 Detailed Hero Analysis</h3>
+                    <p style="text-align: center; color: #94a3b8; margin-bottom: 1.5rem;">Click on any hero to view detailed stats, strengths, weaknesses, and strategic insights</p>
+                    
+                    <div class="hero-details-teams">
+                        <div class="hero-details-team hero-details-team-a">
+                            <h4>🔵 Team A Heroes</h4>
+                            <div class="hero-details-grid">
+                                ${matchupState.teamA.filter(h => h).map(slug => {
+                                    const hero = matchupState.allHeroes.find(h => h.slug === slug);
+                                    return hero ? `
+                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
+                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" alt="${hero.name}">
+                                            <div class="hero-name-small">${hero.name}</div>
+                                        </div>
+                                    ` : '';
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <div class="hero-details-team hero-details-team-b">
+                            <h4>🟡 Team B Heroes</h4>
+                            <div class="hero-details-grid">
+                                ${matchupState.teamB.filter(h => h).map(slug => {
+                                    const hero = matchupState.allHeroes.find(h => h.slug === slug);
+                                    return hero ? `
+                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
+                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" alt="${hero.name}">
+                                            <div class="hero-name-small">${hero.name}</div>
+                                        </div>
+                                    ` : '';
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Disclaimer -->
+                <div class="ai-disclaimer">
+                    <div class="ai-disclaimer-icon">🤖⚠️</div>
+                    <h4>AI-Powered Analysis Disclaimer</h4>
+                    <p>
+                        This matchup analysis is generated using <strong>artificial intelligence</strong> and statistical calculations. 
+                        While our AI provides valuable insights based on hero data, meta trends, and strategic patterns, 
+                        <strong>the results are not 100% accurate</strong> and should be used as a <strong>reference tool</strong> for strategic game analysis.
+                        <br><br>
+                        Actual match outcomes depend on many factors including player skill, team coordination, real-time decision making, 
+                        draft strategy, and in-game execution. Use this tool to enhance your understanding and planning, 
+                        but remember that <strong>player performance is the ultimate determining factor</strong> in competitive play.
+                    </p>
+                </div>
             </div>
         `;
 
@@ -1231,5 +1769,201 @@
         resultsSection.style.display = 'block';
         resultsSection.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Show hero details in overlay
+    function showHeroDetails(slug) {
+        const hero = matchupState.allHeroes.find(h => h.slug === slug);
+        if (!hero) return;
+
+        // Create overlay if it doesn't exist
+        let overlay = document.getElementById('heroOverlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'heroOverlay';
+            overlay.className = 'hero-overlay';
+            document.body.appendChild(overlay);
+        }
+
+        // Map strategies based on hero characteristics
+        const mapStrategies = [];
+        if (hero.early_game >= 7) {
+            mapStrategies.push({
+                map: 'All Maps',
+                strategy: 'Excel in early rotations and jungle invades. Secure first turtle and establish gold lead through aggressive early game pressure.'
+            });
+        }
+        if (hero.role === 'Marksman' || hero.role === 'Mage') {
+            mapStrategies.push({
+                map: 'Lane Control',
+                strategy: 'Focus on wave management and farming efficiency. Maintain vision control and safe positioning for sustained damage output.'
+            });
+        }
+        if (hero.specialties.includes('Crowd Control') || hero.control >= 7) {
+            mapStrategies.push({
+                map: 'Objective Control',
+                strategy: 'Utilize crowd control to secure Lord and Turtle objectives. Excel in team fight initiation around key map objectives.'
+            });
+        }
+        if (hero.late_game >= 8) {
+            mapStrategies.push({
+                map: 'Late Game Focus',
+                strategy: 'Prioritize safe farming and scaling. Avoid risky plays early, focus on reaching power spikes for dominant late game impact.'
+            });
+        }
+        if (mapStrategies.length === 0) {
+            mapStrategies.push({
+                map: 'General Strategy',
+                strategy: 'Adapt playstyle based on team composition and enemy threats. Balance between farming, objectives, and team fights.'
+            });
+        }
+
+        // Build skills/specialties display
+        const skillsHtml = hero.specialties && hero.specialties.length > 0 
+            ? hero.specialties.map(spec => `<span class="hero-tag">${spec}</span>`).join('')
+            : '<span class="hero-tag">Versatile</span>';
+
+        // Build strong/weak against
+        const strongAgainst = hero.strong_against && hero.strong_against.length > 0
+            ? hero.strong_against.map(role => `<li>${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
+            : '<li>Versatile against multiple roles</li>';
+
+        const weakAgainst = hero.weak_against && hero.weak_against.length > 0
+            ? hero.weak_against.map(role => `<li>${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
+            : '<li>Requires careful positioning</li>';
+
+        const synergyWith = hero.synergy_with && hero.synergy_with.length > 0
+            ? hero.synergy_with.map(role => `<li>Teams with ${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
+            : '<li>Flexible team compositions</li>';
+
+        overlay.innerHTML = `
+            <div class="hero-overlay-content">
+                <button class="hero-overlay-close" onclick="closeHeroOverlay()">✕</button>
+                
+                <div class="hero-overlay-header">
+                    <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
+                         alt="${hero.name}" 
+                         class="hero-overlay-image">
+                    <div class="hero-overlay-title-section">
+                        <h2 class="hero-overlay-title">${hero.name}</h2>
+                        <div>
+                            <span class="hero-overlay-role">${hero.role}</span>
+                            <span class="hero-overlay-difficulty">Difficulty: ${hero.difficulty}/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-overlay-body">
+                    <div class="hero-description">
+                        ${hero.description || 'A versatile hero with unique abilities and playstyle.'}
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>⚡ Specialties & Skills</h4>
+                        <div class="hero-tags">
+                            ${skillsHtml}
+                        </div>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>📊 Combat Statistics</h4>
+                        <div class="hero-stats-grid">
+                            <div class="hero-stat-card">
+                                <h5>Offense</h5>
+                                <div class="hero-stat-bar">
+                                    <div class="hero-stat-fill" style="width: ${(hero.offense / 10) * 100}%"></div>
+                                </div>
+                                <p style="color: #cbd5e1; margin-top: 0.5rem;">${hero.offense}/10</p>
+                            </div>
+                            <div class="hero-stat-card">
+                                <h5>Durability</h5>
+                                <div class="hero-stat-bar">
+                                    <div class="hero-stat-fill" style="width: ${(hero.durability / 10) * 100}%"></div>
+                                </div>
+                                <p style="color: #cbd5e1; margin-top: 0.5rem;">${hero.durability}/10</p>
+                            </div>
+                            <div class="hero-stat-card">
+                                <h5>Control</h5>
+                                <div class="hero-stat-bar">
+                                    <div class="hero-stat-fill" style="width: ${(hero.control / 10) * 100}%"></div>
+                                </div>
+                                <p style="color: #cbd5e1; margin-top: 0.5rem;">${hero.control}/10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>⏱️ Game Phase Performance</h4>
+                        <div class="hero-phase-ratings">
+                            <div class="hero-phase-card">
+                                <h5>Early Game</h5>
+                                <div class="hero-phase-value">${hero.early_game}<span style="font-size: 1.2rem; color: #64748b;">/10</span></div>
+                            </div>
+                            <div class="hero-phase-card">
+                                <h5>Mid Game</h5>
+                                <div class="hero-phase-value">${hero.mid_game}<span style="font-size: 1.2rem; color: #64748b;">/10</span></div>
+                            </div>
+                            <div class="hero-phase-card">
+                                <h5>Late Game</h5>
+                                <div class="hero-phase-value">${hero.late_game}<span style="font-size: 1.2rem; color: #64748b;">/10</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>💪 Strong Against</h4>
+                        <ul class="hero-list">
+                            ${strongAgainst}
+                        </ul>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>⚠️ Weak Against</h4>
+                        <ul class="hero-list weak">
+                            ${weakAgainst}
+                        </ul>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>🤝 Synergy With</h4>
+                        <ul class="hero-list synergy">
+                            ${synergyWith}
+                        </ul>
+                    </div>
+
+                    <div class="hero-detail-section">
+                        <h4>🗺️ Map & Strategic Gameplay</h4>
+                        <div class="hero-map-strategies">
+                            ${mapStrategies.map(strat => `
+                                <div class="hero-map-card">
+                                    <h5>📍 ${strat.map}</h5>
+                                    <p>${strat.strategy}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close hero overlay
+    function closeHeroOverlay() {
+        const overlay = document.getElementById('heroOverlay');
+        if (overlay) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Close overlay when clicking outside
+    document.addEventListener('click', function(e) {
+        const overlay = document.getElementById('heroOverlay');
+        if (overlay && e.target === overlay) {
+            closeHeroOverlay();
+        }
+    });
 </script>
 @endsection
