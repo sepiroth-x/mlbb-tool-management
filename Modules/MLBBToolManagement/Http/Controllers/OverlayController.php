@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\MLBBToolManagement\Services\HeroDataService;
 use Modules\MLBBToolManagement\Services\OverlaySyncService;
-use Modules\MLBBToolManagement\Models\Match;
+use Modules\MLBBToolManagement\Models\Match as MatchModel;
 
 /**
  * Overlay Controller
@@ -31,7 +31,7 @@ class OverlayController extends Controller
      */
     public function admin()
     {
-        $matches = Match::orderBy('created_at', 'desc')->take(20)->get();
+        $matches = MatchModel::orderBy('created_at', 'desc')->take(20)->get();
         $heroes = $this->heroDataService->getAllHeroes();
 
         return view('mlbb-tool-management::overlay.admin', [
@@ -263,7 +263,7 @@ class OverlayController extends Controller
     {
         $status = $request->query('status');
         
-        $query = Match::orderBy('created_at', 'desc');
+        $query = MatchModel::orderBy('created_at', 'desc');
         
         if ($status) {
             $query->where('status', $status);
