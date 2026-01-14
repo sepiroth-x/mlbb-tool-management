@@ -30,6 +30,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'module' => \App\Http\Middleware\ModuleMiddleware::class,
         ]);
+
+        // Configure CSRF exceptions
+        $middleware->validateCsrfTokens(except: [
+            'mlbb/matchup/analyze',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // Suppress PHP 8.5 deprecation warnings for vendor packages
