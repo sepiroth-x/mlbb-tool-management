@@ -3074,9 +3074,15 @@
 
     // Initialize chat with matchup context
     function initializeChatForMatchup(analysis) {
+        // Convert hero slugs to hero objects with name, slug, role
+        const getHeroDetails = (slug) => {
+            const hero = matchupState.allHeroes.find(h => h.slug === slug);
+            return hero ? { slug: hero.slug, name: hero.name, role: hero.role } : null;
+        };
+        
         chatState.matchupContext = {
-            teamA: matchupState.teamA.filter(h => h !== null),
-            teamB: matchupState.teamB.filter(h => h !== null),
+            teamA: matchupState.teamA.filter(h => h !== null).map(getHeroDetails).filter(h => h !== null),
+            teamB: matchupState.teamB.filter(h => h !== null).map(getHeroDetails).filter(h => h !== null),
             analysis: analysis
         };
         chatState.conversationHistory = [];
