@@ -1136,6 +1136,151 @@
         line-height: 1.6;
     }
 
+    /* Hero Skills Styles */
+    .hero-skills-section {
+        margin-bottom: 2rem;
+    }
+
+    .hero-skill {
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-radius: 10px;
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .hero-skill:hover {
+        border-color: rgba(0, 217, 255, 0.6);
+        box-shadow: 0 4px 15px rgba(0, 217, 255, 0.2);
+    }
+
+    .hero-skill-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-skill-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(139, 92, 246, 0.3));
+        border: 2px solid rgba(0, 217, 255, 0.5);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .hero-skill-title-section {
+        flex: 1;
+    }
+
+    .hero-skill-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #00d9ff;
+        margin-bottom: 0.25rem;
+    }
+
+    .hero-skill-type {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .hero-skill-stats {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-skill-stat {
+        padding: 0.35rem 0.75rem;
+        background: rgba(0, 217, 255, 0.1);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+        border-radius: 15px;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+    }
+
+    .hero-skill-stat strong {
+        color: #00d9ff;
+    }
+
+    .hero-skill-description {
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+
+    /* Hero Counters */
+    .hero-counters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .hero-counter-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .hero-counter-card:hover {
+        transform: translateY(-3px);
+        border-color: #00d9ff;
+        box-shadow: 0 5px 20px rgba(0, 217, 255, 0.3);
+    }
+
+    .hero-counter-card.strong {
+        border-color: rgba(34, 197, 94, 0.5);
+    }
+
+    .hero-counter-card.strong:hover {
+        border-color: #22c55e;
+        box-shadow: 0 5px 20px rgba(34, 197, 94, 0.3);
+    }
+
+    .hero-counter-card.weak {
+        border-color: rgba(239, 68, 68, 0.5);
+    }
+
+    .hero-counter-card.weak:hover {
+        border-color: #ef4444;
+        box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3);
+    }
+
+    .hero-counter-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
+        border: 2px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .hero-counter-name {
+        font-size: 0.9rem;
+        color: #e2e8f0;
+        font-weight: 600;
+    }
+
+    .hero-counter-relation {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        margin-top: 0.25rem;
+    }
+
     /* AI Disclaimer */
     .ai-disclaimer {
         margin-top: 2rem;
@@ -1784,21 +1929,27 @@
             document.body.appendChild(overlay);
         }
 
+        // Generate skills based on hero role and specialties
+        const skills = generateHeroSkills(hero);
+
+        // Get specific hero counters
+        const counters = getHeroCounters(hero);
+
         // Map strategies based on hero characteristics
         const mapStrategies = [];
         if (hero.early_game >= 7) {
             mapStrategies.push({
-                map: 'All Maps',
+                map: 'Early Game Dominance',
                 strategy: 'Excel in early rotations and jungle invades. Secure first turtle and establish gold lead through aggressive early game pressure.'
             });
         }
         if (hero.role === 'Marksman' || hero.role === 'Mage') {
             mapStrategies.push({
-                map: 'Lane Control',
+                map: 'Lane Control & Farming',
                 strategy: 'Focus on wave management and farming efficiency. Maintain vision control and safe positioning for sustained damage output.'
             });
         }
-        if (hero.specialties.includes('Crowd Control') || hero.control >= 7) {
+        if (hero.specialties && (hero.specialties.includes('Crowd Control') || hero.control >= 7)) {
             mapStrategies.push({
                 map: 'Objective Control',
                 strategy: 'Utilize crowd control to secure Lord and Turtle objectives. Excel in team fight initiation around key map objectives.'
@@ -1806,13 +1957,13 @@
         }
         if (hero.late_game >= 8) {
             mapStrategies.push({
-                map: 'Late Game Focus',
+                map: 'Late Game Scaling',
                 strategy: 'Prioritize safe farming and scaling. Avoid risky plays early, focus on reaching power spikes for dominant late game impact.'
             });
         }
         if (mapStrategies.length === 0) {
             mapStrategies.push({
-                map: 'General Strategy',
+                map: 'Adaptive Strategy',
                 strategy: 'Adapt playstyle based on team composition and enemy threats. Balance between farming, objectives, and team fights.'
             });
         }
@@ -1821,19 +1972,6 @@
         const skillsHtml = hero.specialties && hero.specialties.length > 0 
             ? hero.specialties.map(spec => `<span class="hero-tag">${spec}</span>`).join('')
             : '<span class="hero-tag">Versatile</span>';
-
-        // Build strong/weak against
-        const strongAgainst = hero.strong_against && hero.strong_against.length > 0
-            ? hero.strong_against.map(role => `<li>${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
-            : '<li>Versatile against multiple roles</li>';
-
-        const weakAgainst = hero.weak_against && hero.weak_against.length > 0
-            ? hero.weak_against.map(role => `<li>${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
-            : '<li>Requires careful positioning</li>';
-
-        const synergyWith = hero.synergy_with && hero.synergy_with.length > 0
-            ? hero.synergy_with.map(role => `<li>Teams with ${role.charAt(0).toUpperCase() + role.slice(1)} heroes</li>`).join('')
-            : '<li>Flexible team compositions</li>';
 
         overlay.innerHTML = `
             <div class="hero-overlay-content">
@@ -1858,10 +1996,31 @@
                     </div>
 
                     <div class="hero-detail-section">
-                        <h4>⚡ Specialties & Skills</h4>
+                        <h4>⚡ Specialties</h4>
                         <div class="hero-tags">
                             ${skillsHtml}
                         </div>
+                    </div>
+
+                    <div class="hero-detail-section hero-skills-section">
+                        <h4>🎯 Skill Set</h4>
+                        ${skills.map(skill => `
+                            <div class="hero-skill">
+                                <div class="hero-skill-header">
+                                    <div class="hero-skill-icon">${skill.icon}</div>
+                                    <div class="hero-skill-title-section">
+                                        <div class="hero-skill-name">${skill.name}</div>
+                                        <div class="hero-skill-type">${skill.type}</div>
+                                    </div>
+                                </div>
+                                <div class="hero-skill-stats">
+                                    ${skill.cooldown ? `<span class="hero-skill-stat"><strong>CD:</strong> ${skill.cooldown}s</span>` : ''}
+                                    ${skill.damage ? `<span class="hero-skill-stat"><strong>Damage:</strong> ${skill.damage}</span>` : ''}
+                                    ${skill.effect ? `<span class="hero-skill-stat"><strong>Effect:</strong> ${skill.effect}</span>` : ''}
+                                </div>
+                                <div class="hero-skill-description">${skill.description}</div>
+                            </div>
+                        `).join('')}
                     </div>
 
                     <div class="hero-detail-section">
@@ -1909,29 +2068,42 @@
                         </div>
                     </div>
 
-                    <div class="hero-detail-section">
-                        <h4>💪 Strong Against</h4>
-                        <ul class="hero-list">
-                            ${strongAgainst}
-                        </ul>
-                    </div>
+                    ${counters.strong.length > 0 ? `
+                        <div class="hero-detail-section">
+                            <h4>💪 Strong Against These Heroes</h4>
+                            <div class="hero-counters-grid">
+                                ${counters.strong.map(counter => `
+                                    <div class="hero-counter-card strong" onclick="showHeroDetails('${counter.slug}'); event.stopPropagation();">
+                                        <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${counter.image}" 
+                                             alt="${counter.name}" 
+                                             class="hero-counter-image">
+                                        <div class="hero-counter-name">${counter.name}</div>
+                                        <div class="hero-counter-relation">Counters</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    ${counters.weak.length > 0 ? `
+                        <div class="hero-detail-section">
+                            <h4>⚠️ Weak Against These Heroes</h4>
+                            <div class="hero-counters-grid">
+                                ${counters.weak.map(counter => `
+                                    <div class="hero-counter-card weak" onclick="showHeroDetails('${counter.slug}'); event.stopPropagation();">
+                                        <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${counter.image}" 
+                                             alt="${counter.name}" 
+                                             class="hero-counter-image">
+                                        <div class="hero-counter-name">${counter.name}</div>
+                                        <div class="hero-counter-relation">Countered By</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
 
                     <div class="hero-detail-section">
-                        <h4>⚠️ Weak Against</h4>
-                        <ul class="hero-list weak">
-                            ${weakAgainst}
-                        </ul>
-                    </div>
-
-                    <div class="hero-detail-section">
-                        <h4>🤝 Synergy With</h4>
-                        <ul class="hero-list synergy">
-                            ${synergyWith}
-                        </ul>
-                    </div>
-
-                    <div class="hero-detail-section">
-                        <h4>🗺️ Map & Strategic Gameplay</h4>
+                        <h4>🗺️ Strategic Gameplay</h4>
                         <div class="hero-map-strategies">
                             ${mapStrategies.map(strat => `
                                 <div class="hero-map-card">
@@ -1947,6 +2119,142 @@
 
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+    }
+
+    // Generate hero skills based on role and characteristics
+    function generateHeroSkills(hero) {
+        const skills = [];
+        
+        // Passive skill
+        const passiveDescriptions = {
+            'Marksman': `Gains increased attack speed and critical strike chance. Basic attacks deal bonus physical damage based on target's HP.`,
+            'Mage': `Increases magic power and magic penetration. Skills deal bonus magic damage to enemies below 50% HP.`,
+            'Assassin': `Gains bonus physical penetration and movement speed. Dealing damage to enemy heroes increases attack power temporarily.`,
+            'Fighter': `Gains bonus physical and magic defense. Taking damage grants temporary shield and increased damage output.`,
+            'Tank': `Reduces incoming damage and gains HP regeneration. Crowd control effects have reduced duration.`,
+            'Support': `Increases nearby allies' magic and physical attack. Skills provide healing and shields to teammates.`
+        };
+
+        skills.push({
+            type: 'Passive',
+            name: hero.specialties && hero.specialties[0] ? `${hero.specialties[0]} Mastery` : 'Hero Passive',
+            icon: '🔰',
+            description: passiveDescriptions[hero.role] || 'Enhances hero capabilities based on unique characteristics.',
+            cooldown: null,
+            damage: null,
+            effect: 'Permanent'
+        });
+
+        // Skill 1
+        const skill1Data = {
+            'Marksman': { name: 'Precision Shot', icon: '🎯', cd: '6-8', dmg: '200-400', desc: 'Fires a powerful shot dealing physical damage. Can critically strike for bonus damage.' },
+            'Mage': { name: 'Magic Burst', icon: '✨', cd: '5-7', dmg: '300-500', desc: 'Unleashes a burst of magic energy dealing magic damage in an area.' },
+            'Assassin': { name: 'Shadow Strike', icon: '🗡️', cd: '7-9', dmg: '250-450', desc: 'Dashes forward and strikes enemies, dealing physical damage and slowing targets.' },
+            'Fighter': { name: 'Power Strike', icon: '⚔️', cd: '6-8', dmg: '200-400', desc: 'Delivers a powerful strike dealing physical damage and reducing enemy armor.' },
+            'Tank': { name: 'Shield Bash', icon: '🛡️', cd: '8-10', dmg: '150-300', desc: 'Charges forward knocking back enemies and gaining a shield.' },
+            'Support': { name: 'Healing Wave', icon: '💚', cd: '10-12', dmg: null, desc: 'Heals nearby allies and grants movement speed bonus.' }
+        };
+        const s1 = skill1Data[hero.role] || skill1Data['Fighter'];
+        skills.push({
+            type: 'Skill 1',
+            name: s1.name,
+            icon: s1.icon,
+            cooldown: s1.cd,
+            damage: s1.dmg,
+            effect: null,
+            description: s1.desc
+        });
+
+        // Skill 2
+        const skill2Data = {
+            'Marksman': { name: 'Evasive Maneuver', icon: '💨', cd: '12-15', dmg: null, desc: 'Dashes to target location gaining attack speed and immunity to basic attacks briefly.' },
+            'Mage': { name: 'Crowd Control', icon: '🌀', cd: '10-12', dmg: '250-400', desc: 'Stuns or immobilizes enemies in an area dealing magic damage over time.' },
+            'Assassin': { name: 'Execution', icon: '💀', cd: '8-10', dmg: '300-600', desc: 'Targets low HP enemies dealing massive damage. Resets on kill.' },
+            'Fighter': { name: 'Fortify', icon: '💪', cd: '15-18', dmg: null, desc: 'Gains damage reduction and crowd control immunity. Increases damage output.' },
+            'Tank': { name: 'Taunt', icon: '📢', cd: '12-14', dmg: '100-200', desc: 'Forces nearby enemies to attack, reducing their damage output significantly.' },
+            'Support': { name: 'Protective Barrier', icon: '🔵', cd: '14-16', dmg: null, desc: 'Creates a barrier that absorbs damage and grants allies invulnerability briefly.' }
+        };
+        const s2 = skill2Data[hero.role] || skill2Data['Fighter'];
+        skills.push({
+            type: 'Skill 2',
+            name: s2.name,
+            icon: s2.icon,
+            cooldown: s2.cd,
+            damage: s2.dmg,
+            effect: s2.dmg ? null : 'Utility',
+            description: s2.desc
+        });
+
+        // Ultimate
+        const ultData = {
+            'Marksman': { name: 'Full Barrage', icon: '🔥', cd: '40-50', dmg: '500-1000', desc: 'Unleashes full firepower dealing massive physical damage. Gains attack speed and critical chance during ultimate.' },
+            'Mage': { name: 'Meteor Storm', icon: '☄️', cd: '35-45', dmg: '800-1500', desc: 'Summons devastating magical attacks dealing area magic damage. Enemies hit are slowed and burned.' },
+            'Assassin': { name: 'Assassinate', icon: '🎭', cd: '30-40', dmg: '600-1200', desc: 'Becomes invisible and targets an enemy hero dealing critical damage. Can execute low HP targets instantly.' },
+            'Fighter': { name: 'Warlord Rage', icon: '⚡', cd: '45-55', dmg: '400-800', desc: 'Enters berserk mode gaining massive attack power, lifesteal, and movement speed. Duration extended on kills.' },
+            'Tank': { name: 'Unbreakable', icon: '🏔️', cd: '50-60', dmg: '200-400', desc: 'Becomes immune to damage and crowd control. Absorbs all damage directed at nearby allies.' },
+            'Support': { name: 'Mass Resurrection', icon: '✨', cd: '80-100', dmg: null, desc: 'Revives fallen allies with full HP and provides massive stat boost to entire team.' }
+        };
+        const ult = ultData[hero.role] || ultData['Fighter'];
+        skills.push({
+            type: 'Ultimate',
+            name: ult.name,
+            icon: ult.icon,
+            cooldown: ult.cd,
+            damage: ult.dmg,
+            effect: ult.dmg ? null : 'Game Changing',
+            description: ult.desc
+        });
+
+        return skills;
+    }
+
+    // Get specific hero counters
+    function getHeroCounters(hero) {
+        const allHeroes = matchupState.allHeroes;
+        const counters = { strong: [], weak: [] };
+
+        // Role-based counter logic
+        const roleCounters = {
+            'Marksman': {
+                strong: ['Tank', 'Fighter'],
+                weak: ['Assassin', 'Mage']
+            },
+            'Assassin': {
+                strong: ['Marksman', 'Mage'],
+                weak: ['Tank', 'Fighter']
+            },
+            'Mage': {
+                strong: ['Fighter', 'Assassin'],
+                weak: ['Tank', 'Marksman']
+            },
+            'Tank': {
+                strong: ['Assassin', 'Fighter'],
+                weak: ['Mage', 'Marksman']
+            },
+            'Fighter': {
+                strong: ['Marksman', 'Mage'],
+                weak: ['Tank', 'Assassin']
+            },
+            'Support': {
+                strong: ['Assassin'],
+                weak: ['Fighter', 'Tank']
+            }
+        };
+
+        const heroCounterLogic = roleCounters[hero.role] || { strong: [], weak: [] };
+
+        // Find 4-6 specific hero counters
+        counters.strong = allHeroes
+            .filter(h => h.slug !== hero.slug && heroCounterLogic.strong.includes(h.role))
+            .sort(() => 0.5 - Math.random())
+            .slice(0, Math.min(5, 3 + Math.floor(Math.random() * 3)));
+
+        counters.weak = allHeroes
+            .filter(h => h.slug !== hero.slug && heroCounterLogic.weak.includes(h.role))
+            .sort(() => 0.5 - Math.random())
+            .slice(0, Math.min(5, 3 + Math.floor(Math.random() * 3)));
+
+        return counters;
     }
 
     // Close hero overlay
