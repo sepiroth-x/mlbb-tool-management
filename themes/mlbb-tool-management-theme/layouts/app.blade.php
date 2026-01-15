@@ -419,11 +419,20 @@
                     Richard Cebel Cupal, LPT</p>
                     <p>📧 chardy.tsadiq02@gmail.com<br>
                     📱 +63 915 0388 448</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>Need a website?</strong><br>
+                        Available for web development projects.<br>
+                        Contact me for custom solutions!
+                    </p>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; {{ date('Y') }} MLBB Coach by Sepiroth X. Built with VantaPress CMS. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #94a3b8;">
+                    This website is not affiliated with, endorsed, sponsored, or specifically approved by Moonton. 
+                    Mobile Legends: Bang Bang and all related marks and logos are trademarks of Moonton.
+                </p>
             </div>
         </div>
     </footer>
