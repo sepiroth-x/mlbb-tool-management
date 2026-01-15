@@ -1313,6 +1313,94 @@
         color: #c4b5fd;
     }
 
+    /* Support Section */
+    .support-section {
+        margin-top: 2rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+        border: 2px solid rgba(255, 215, 0, 0.4);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .support-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .support-section h4 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ffd700;
+        margin-bottom: 1rem;
+    }
+
+    .support-section p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .support-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+
+    .support-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #0a0e1a;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .support-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+    }
+
+    .support-btn.gcash {
+        background: linear-gradient(135deg, #00a8ff, #0090e7);
+        color: white;
+    }
+
+    .gcash-number {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid rgba(0, 168, 255, 0.5);
+        border-radius: 8px;
+        color: #00d9ff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 1px;
+    }
+
+    .support-promise {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: rgba(15, 23, 42, 0.6);
+        border-left: 4px solid #ffd700;
+        border-radius: 6px;
+        text-align: left;
+    }
+
+    .support-promise strong {
+        color: #ffd700;
+    }
+
     @media (max-width: 768px) {
         .hero-details-teams {
             grid-template-columns: 1fr;
@@ -1906,6 +1994,35 @@
                         draft strategy, and in-game execution. Use this tool to enhance your understanding and planning, 
                         but remember that <strong>player performance is the ultimate determining factor</strong> in competitive play.
                     </p>
+                </div>
+
+                <!-- Support Section -->
+                <div class="support-section">
+                    <div class="support-icon">☕💖</div>
+                    <h4>Support This Free Tool</h4>
+                    <p>
+                        I promise this website will <strong>never run ads</strong>. MLBB Coach is completely free and will remain that way. 
+                        However, I'm asking for your support to keep developing and improving this tool.
+                    </p>
+                    
+                    <div class="support-buttons">
+                        <a href="https://buymeacoffee.com/richardcupal" target="_blank" rel="noopener noreferrer" class="support-btn">
+                            ☕ Buy Me a Coffee
+                        </a>
+                        <div>
+                            <p style="margin-bottom: 0.5rem; color: #94a3b8; font-size: 0.9rem;">Or send via GCash:</p>
+                            <div class="gcash-number">+639150388448</div>
+                        </div>
+                    </div>
+
+                    <div class="support-promise">
+                        <p style="margin: 0;">
+                            <strong>🎁 Supporter Benefits:</strong> 
+                            Contributors will receive <strong>early access</strong> to future advanced tools and features 
+                            specifically designed for competitive esports teams and coaches. Your support directly helps 
+                            develop more powerful analytics, strategy tools, and exclusive features!
+                        </p>
+                    </div>
                 </div>
             </div>
         `;

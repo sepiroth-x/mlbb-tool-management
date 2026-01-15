@@ -341,9 +341,7 @@
                         <li><a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">About</a></li>
                         <li><a href="/mlbb/matchup" class="{{ request()->is('mlbb/matchup*') ? 'active' : '' }}">Analyze</a></li>
                         <li><a href="/mlbb/overlay/admin" class="{{ request()->is('mlbb/overlay*') ? 'active' : '' }}">Overlay</a></li>
-                        @auth
-                            <li><a href="/admin">Admin</a></li>
-                        @endauth
+                        <li><a href="https://buymeacoffee.com/richardcupal" target="_blank" rel="noopener noreferrer">☕ Support</a></li>
                     </ul>
                 </nav>
                 
@@ -396,6 +394,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/mlbb/matchup">Analyze</a></li>
                         <li><a href="/mlbb/overlay/admin">Overlay</a></li>
+                        <li><a href="https://buymeacoffee.com/richardcupal" target="_blank" rel="noopener noreferrer">☕ Support</a></li>
                         @auth
                             <li><a href="/admin">Admin</a></li>
                         @else
