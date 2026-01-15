@@ -1445,6 +1445,275 @@
         color: #ffd700;
     }
 
+    /* Chat Section Styles */
+    .chat-section {
+        margin-top: 2rem;
+        background: rgba(15, 23, 42, 0.8);
+        border: 2px solid rgba(139, 92, 246, 0.4);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .chat-header {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.2));
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .chat-header:hover {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(99, 102, 241, 0.3));
+    }
+
+    .chat-header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .chat-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .chat-header h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #a78bfa;
+        margin: 0;
+    }
+
+    .chat-subtitle {
+        font-size: 0.9rem;
+        color: #94a3b8;
+    }
+
+    .chat-toggle-icon {
+        font-size: 1.5rem;
+        color: #a78bfa;
+        transition: transform 0.3s ease;
+    }
+
+    .chat-toggle-icon.expanded {
+        transform: rotate(180deg);
+    }
+
+    .chat-container {
+        max-height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 1.5rem;
+        overflow-y: auto;
+        max-height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .chat-messages::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .chat-messages::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 4px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+        background: rgba(139, 92, 246, 0.5);
+        border-radius: 4px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb:hover {
+        background: rgba(139, 92, 246, 0.7);
+    }
+
+    .chat-message {
+        display: flex;
+        gap: 1rem;
+        animation: messageSlideIn 0.3s ease;
+    }
+
+    @keyframes messageSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .chat-message.user {
+        flex-direction: row-reverse;
+    }
+
+    .message-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        background: rgba(139, 92, 246, 0.2);
+        border: 2px solid rgba(139, 92, 246, 0.4);
+    }
+
+    .chat-message.user .message-avatar {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: rgba(0, 217, 255, 0.4);
+    }
+
+    .message-content {
+        flex: 1;
+        padding: 1rem 1.25rem;
+        background: rgba(30, 41, 59, 0.8);
+        border-radius: 12px;
+        color: #e2e8f0;
+        line-height: 1.6;
+    }
+
+    .chat-message.user .message-content {
+        background: rgba(0, 217, 255, 0.15);
+        border: 1px solid rgba(0, 217, 255, 0.3);
+    }
+
+    .message-content p {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .message-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .message-content ul {
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .message-content li {
+        margin: 0.25rem 0;
+        color: #cbd5e1;
+    }
+
+    .chat-input-container {
+        padding: 1rem 1.5rem;
+        background: rgba(15, 23, 42, 0.6);
+        border-top: 1px solid rgba(139, 92, 246, 0.3);
+        display: flex;
+        gap: 1rem;
+    }
+
+    .chat-input {
+        flex: 1;
+        padding: 0.875rem 1.25rem;
+        background: rgba(30, 41, 59, 0.8);
+        border: 2px solid rgba(139, 92, 246, 0.3);
+        border-radius: 8px;
+        color: #e2e8f0;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .chat-input:focus {
+        outline: none;
+        border-color: rgba(139, 92, 246, 0.6);
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+
+    .chat-input::placeholder {
+        color: #64748b;
+    }
+
+    .chat-send-btn {
+        padding: 0.875rem 1.5rem;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .chat-send-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+    }
+
+    .chat-send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .chat-loading {
+        padding: 0 1.5rem 1rem;
+    }
+
+    .typing-indicator {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .typing-indicator span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #a78bfa;
+        animation: typingBounce 1.4s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes typingBounce {
+        0%, 60%, 100% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .chat-header-content {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .chat-subtitle {
+            display: none;
+        }
+        
+        .chat-input-container {
+            flex-direction: column;
+        }
+        
+        .chat-send-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
     @media (max-width: 768px) {
         .hero-details-teams {
             grid-template-columns: 1fr;
@@ -2324,11 +2593,65 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Interactive Chat Section -->
+            <div class="chat-section">
+                <div class="chat-header" onclick="toggleChat()">
+                    <div class="chat-header-content">
+                        <span class="chat-icon">💬</span>
+                        <h4>Ask AI About This Analysis</h4>
+                        <span class="chat-subtitle">Have questions? Chat with AI for more insights</span>
+                    </div>
+                    <span class="chat-toggle-icon" id="chatToggleIcon">▼</span>
+                </div>
+                <div class="chat-container" id="chatContainer" style="display: none;">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message assistant">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hi! I've analyzed this matchup. Feel free to ask me questions like:</p>
+                                <ul>
+                                    <li>"What items should I build on [hero]?"</li>
+                                    <li>"How should we play early game?"</li>
+                                    <li>"What are our win conditions?"</li>
+                                    <li>"Why is [hero] strong/weak here?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" 
+                               id="chatInput" 
+                               class="chat-input" 
+                               placeholder="Ask a question about this matchup..."
+                               onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                        <button class="chat-send-btn" onclick="sendChatMessage()" id="chatSendBtn">
+                            <span>Send</span>
+                            <span style="margin-left: 0.5rem;">➤</span>
+                        </button>
+                    </div>
+                    <div class="chat-loading" id="chatLoading" style="display: none;">
+                        <div class="chat-message assistant">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="typing-indicator">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         `;
 
         resultsSection.innerHTML = html;
         resultsSection.style.display = 'block';
         resultsSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Initialize chat state
+        initializeChatForMatchup(analysis);
     }
 
     // Show hero details in overlay
@@ -2701,5 +3024,118 @@
             closeHeroOverlay();
         }
     });
+
+    // ===== CHAT FUNCTIONALITY =====
+    let chatState = {
+        conversationHistory: [],
+        matchupContext: null,
+        isProcessing: false
+    };
+
+    // Initialize chat with matchup context
+    function initializeChatForMatchup(analysis) {
+        chatState.matchupContext = {
+            teamA: matchupState.teamA.filter(h => h !== null),
+            teamB: matchupState.teamB.filter(h => h !== null),
+            analysis: analysis
+        };
+        chatState.conversationHistory = [];
+    }
+
+    // Toggle chat visibility
+    function toggleChat() {
+        const chatContainer = document.getElementById('chatContainer');
+        const toggleIcon = document.getElementById('chatToggleIcon');
+        
+        if (chatContainer.style.display === 'none') {
+            chatContainer.style.display = 'flex';
+            toggleIcon.classList.add('expanded');
+        } else {
+            chatContainer.style.display = 'none';
+            toggleIcon.classList.remove('expanded');
+        }
+    }
+
+    // Send chat message
+    async function sendChatMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        
+        if (!message || chatState.isProcessing) return;
+        
+        // Add user message to chat
+        addChatMessage(message, 'user');
+        input.value = '';
+        chatState.isProcessing = true;
+        
+        // Show loading indicator
+        document.getElementById('chatLoading').style.display = 'block';
+        document.getElementById('chatSendBtn').disabled = true;
+        
+        try {
+            const response = await fetch('/mlbb/matchup/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify({
+                    message: message,
+                    context: chatState.matchupContext,
+                    history: chatState.conversationHistory
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to get response');
+            }
+            
+            const data = await response.json();
+            
+            // Add assistant response to chat
+            addChatMessage(data.response, 'assistant');
+            
+            // Update conversation history
+            chatState.conversationHistory.push({
+                role: 'user',
+                content: message
+            });
+            chatState.conversationHistory.push({
+                role: 'assistant',
+                content: data.response
+            });
+            
+        } catch (error) {
+            console.error('Chat error:', error);
+            addChatMessage('Sorry, I encountered an error. Please try again.', 'assistant');
+        } finally {
+            document.getElementById('chatLoading').style.display = 'none';
+            document.getElementById('chatSendBtn').disabled = false;
+            chatState.isProcessing = false;
+        }
+    }
+
+    // Add message to chat display
+    function addChatMessage(content, role) {
+        const messagesContainer = document.getElementById('chatMessages');
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${role}`;
+        
+        const avatar = role === 'user' ? '👤' : '🤖';
+        
+        messageDiv.innerHTML = `
+            <div class="message-avatar">${avatar}</div>
+            <div class="message-content">
+                <p>${content.replace(/\n/g, '<br>')}</p>
+            </div>
+        `;
+        
+        messagesContainer.appendChild(messageDiv);
+        
+        // Scroll to bottom
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    // ===== END CHAT FUNCTIONALITY =====
 </script>
 @endsection

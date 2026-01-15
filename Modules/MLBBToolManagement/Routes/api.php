@@ -20,6 +20,7 @@ Route::prefix('mlbb')->name('api.mlbb.')->group(function() {
     Route::prefix('matchup')->group(function() {
         Route::get('/heroes', [MatchupApiController::class, 'getHeroes']);
         Route::post('/analyze', [MatchupApiController::class, 'analyze']);
+        Route::post('/chat', [MatchupApiController::class, 'chat']);
     });
     
     // Overlay API

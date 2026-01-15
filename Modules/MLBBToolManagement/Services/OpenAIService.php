@@ -361,4 +361,120 @@ PROMPT;
             return null;
         }
     }
+
+    /**
+     * Handle chat messages about matchup analysis
+     * 
+     * @param string $message User's question
+     * @param array $context Matchup context (teams and analysis)
+     * @param array $history Conversation history
+     * @return string AI response
+     */
+    public function handleMatchupChat(string $message, array $context, array $history = []): string
+    {
+        try {
+            // Build team composition summaries
+            $teamAHeroes = collect($context['teamA'])->pluck('name')->implode(', ');
+            $teamBHeroes = collect($context['teamB'])->pluck('name')->implode(', ');
+            
+            // Get hero skills for context if available
+            $relevantSkills = $this->getRelevantHeroSkills($context);
+            
+            // Build system context
+            $systemMessage = <<<SYSTEM
+You are an expert Mobile Legends: Bang Bang analyst helping a player understand their team matchup.
+
+MATCHUP CONTEXT:
+Team A: {$teamAHeroes}
+Team B: {$teamBHeroes}
+
+{$relevantSkills}
+
+The player has received a detailed analysis of this matchup and now has follow-up questions.
+
+YOUR ROLE:
+- Answer questions about heroes, strategies, items, and tactics
+- Provide specific, actionable advice
+- Reference the actual team composition in your answers
+- Keep responses concise (2-4 short paragraphs max)
+- Use MLBB terminology and concepts
+- Be encouraging and helpful
+
+GUIDELINES:
+- If asked about items: recommend specific MLBB items with reasoning
+- If asked about strategy: explain early/mid/late game approaches
+- If asked about heroes: discuss their role in THIS specific matchup
+- If asked "why": explain the strategic reasoning clearly
+- Always relate answers back to the current matchup
+SYSTEM;
+
+            // Build messages array
+            $messages = [
+                ['role' => 'system', 'content' => $systemMessage]
+            ];
+            
+            // Add conversation history (limit to last 10 messages to manage token usage)
+            $recentHistory = array_slice($history, -10);
+            foreach ($recentHistory as $msg) {
+                $messages[] = $msg;
+            }
+            
+            // Add current user message
+            $messages[] = ['role' => 'user', 'content' => $message];
+            
+            // Call AI API
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $this->apiKey,
+                'Content-Type' => 'application/json',
+            ])->timeout(30)->post($this->apiUrl, [
+                'model' => $this->model,
+                'messages' => $messages,
+                'max_tokens' => 400,
+                'temperature' => 0.7,
+            ]);
+
+            if ($response->successful()) {
+                $data = $response->json();
+                return $data['choices'][0]['message']['content'] ?? 'I apologize, but I could not generate a response.';
+            }
+
+            Log::error('AI chat API error: ' . $response->body());
+            return 'I\'m having trouble connecting to the AI service. Please try again.';
+
+        } catch (\Exception $e) {
+            Log::error('Matchup chat error: ' . $e->getMessage());
+            return 'I encountered an error processing your question. Please try rephrasing it.';
+        }
+    }
+
+    /**
+     * Get relevant hero skills for the matchup context
+     */
+    protected function getRelevantHeroSkills(array $context): string
+    {
+        if (!$this->heroSkills) {
+            return '';
+        }
+
+        $allHeroNames = array_merge(
+            collect($context['teamA'])->pluck('slug')->toArray(),
+            collect($context['teamB'])->pluck('slug')->toArray()
+        );
+
+        $relevantSkills = [];
+        foreach ($allHeroNames as $heroSlug) {
+            if (isset($this->heroSkills[$heroSlug])) {
+                $hero = $this->heroSkills[$heroSlug];
+                $relevantSkills[] = "{$hero['name']}: " . 
+                    "Passive: {$hero['passive']['name']}, " .
+                    "Ultimate: {$hero['ultimate']['name']}";
+            }
+        }
+
+        if (empty($relevantSkills)) {
+            return '';
+        }
+
+        return "KEY HERO ABILITIES:\n" . implode("\n", $relevantSkills);
+    }
 }

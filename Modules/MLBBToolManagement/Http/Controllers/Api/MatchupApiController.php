@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\MLBBToolManagement\Services\HeroDataService;
 use Modules\MLBBToolManagement\Services\MatchupAnalyzerService;
+use Modules\MLBBToolManagement\Services\OpenAIService;
 
 /**
  * Matchup API Controller
@@ -16,13 +17,16 @@ class MatchupApiController extends Controller
 {
     protected HeroDataService $heroDataService;
     protected MatchupAnalyzerService $matchupAnalyzerService;
+    protected OpenAIService $openAIService;
 
     public function __construct(
         HeroDataService $heroDataService,
-        MatchupAnalyzerService $matchupAnalyzerService
+        MatchupAnalyzerService $matchupAnalyzerService,
+        OpenAIService $openAIService
     ) {
         $this->heroDataService = $heroDataService;
         $this->matchupAnalyzerService = $matchupAnalyzerService;
+        $this->openAIService = $openAIService;
     }
 
     /**
@@ -75,6 +79,40 @@ class MatchupApiController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'An error occurred during analysis',
+            ], 500);
+        }
+    }
+
+    /**
+     * Handle chat messages about matchup analysis
+     */
+    public function chat(Request $request)
+    {
+        $request->validate([
+            'message' => 'required|string|max:500',
+            'context' => 'required|array',
+            'context.teamA' => 'required|array',
+            'context.teamB' => 'required|array',
+            'history' => 'array',
+        ]);
+
+        try {
+            $response = $this->openAIService->handleMatchupChat(
+                $request->input('message'),
+                $request->input('context'),
+                $request->input('history', [])
+            );
+
+            return response()->json([
+                'success' => true,
+                'response' => $response,
+            ]);
+        } catch (\Exception $e) {
+            \Log::error('Matchup chat error: ' . $e->getMessage());
+            
+            return response()->json([
+                'success' => false,
+                'response' => 'I apologize, but I\'m having trouble responding right now. Please try again.',
             ], 500);
         }
     }
