@@ -19,6 +19,7 @@ class OpenAIService
     protected int $maxTokens;
     protected float $temperature;
     protected string $apiUrl;
+    protected ?array $heroSkills = null;
 
     public function __construct()
     {
@@ -38,6 +39,9 @@ class OpenAIService
             $this->temperature = (float) env('OPENAI_TEMPERATURE', 0.7);
             $this->apiUrl = 'https://api.openai.com/v1/chat/completions';
         }
+        
+        // Load hero skills data
+        $this->loadHeroSkills();
     }
 
     /**
@@ -46,6 +50,55 @@ class OpenAIService
     public function isConfigured(): bool
     {
         return !empty($this->apiKey);
+    }
+    
+    /**
+     * Load hero skills data from JSON file
+     */
+    protected function loadHeroSkills(): void
+    {
+        try {
+            $skillsPath = base_path('Modules/MLBBToolManagement/Data/hero-skills.json');
+            if (file_exists($skillsPath)) {
+                $content = file_get_contents($skillsPath);
+                $data = json_decode($content, true);
+                $this->heroSkills = $data['skills'] ?? [];
+                Log::info('Hero skills data loaded', ['hero_count' => count($this->heroSkills)]);
+            } else {
+                Log::warning('Hero skills file not found', ['path' => $skillsPath]);
+                $this->heroSkills = [];
+            }
+        } catch (\Exception $e) {
+            Log::error('Error loading hero skills: ' . $e->getMessage());
+            $this->heroSkills = [];
+        }
+    }
+    
+    /**
+     * Get hero skills data by slug
+     */
+    protected function getHeroSkills(string $heroSlug): ?array
+    {
+        $normalizedSlug = strtolower(str_replace([' ', '-', '_'], '', $heroSlug));
+        
+        // Try direct match first
+        if (isset($this->heroSkills[$heroSlug])) {
+            return $this->heroSkills[$heroSlug];
+        }
+        
+        // Try normalized match
+        if (isset($this->heroSkills[$normalizedSlug])) {
+            return $this->heroSkills[$normalizedSlug];
+        }
+        
+        // Try case-insensitive search
+        foreach ($this->heroSkills as $slug => $skills) {
+            if (strcasecmp($slug, $heroSlug) === 0 || strcasecmp($slug, $normalizedSlug) === 0) {
+                return $skills;
+            }
+        }
+        
+        return null;
     }
 
     /**
@@ -100,16 +153,36 @@ class OpenAIService
     {
         $composition = [];
         foreach ($heroes as $hero) {
-            $composition[] = sprintf(
-                "- %s (%s): Durability %d/10, Offense %d/10, Control %d/10",
+            $heroInfo = sprintf(
+                "**%s** (%s): Durability %d/10, Offense %d/10, Control %d/10",
                 $hero['name'],
                 $hero['role'],
-                $hero['durability'],
-                $hero['offense'],
-                $hero['control']
+                $hero['durability'] ?? 5,
+                $hero['offense'] ?? 5,
+                $hero['control'] ?? 5
             );
+            
+            // Add skills information if available
+            $skills = $this->getHeroSkills($hero['slug']);
+            if ($skills) {
+                $heroInfo .= "\n  Passive: " . ($skills['passive']['name'] ?? 'N/A');
+                $heroInfo .= "\n  Skills: " . 
+                    ($skills['skill1']['name'] ?? 'N/A') . ', ' . 
+                    ($skills['skill2']['name'] ?? 'N/A') . ', ' . 
+                    ($skills['ultimate']['name'] ?? 'N/A');
+                
+                // Add key skill descriptions (abbreviated)
+                if (isset($skills['passive']['description'])) {
+                    $passiveDesc = substr($skills['passive']['description'], 0, 100);
+                    $heroInfo .= "\n  Passive Effect: " . $passiveDesc . (strlen($skills['passive']['description']) > 100 ? '...' : '');
+                }
+            } else {
+                $heroInfo .= "\n  [Note: Detailed skill information not available for this hero]";
+            }
+            
+            $composition[] = $heroInfo;
         }
-        return implode("\n", $composition);
+        return implode("\n\n", $composition);
     }
 
     /**
@@ -124,7 +197,7 @@ class OpenAIService
         $teamBWinRate = $basicAnalysis['team_b']['win_probability'];
 
         return <<<PROMPT
-You are a professional Mobile Legends: Bang Bang (MLBB) analyst. Analyze this matchup between two teams.
+You are a professional Mobile Legends: Bang Bang (MLBB) analyst with deep knowledge of hero abilities, skill interactions, and team compositions. Analyze this matchup between two teams.
 
 **Team A Composition:**
 {$teamAComposition}
@@ -132,15 +205,21 @@ You are a professional Mobile Legends: Bang Bang (MLBB) analyst. Analyze this ma
 **Team B Composition:**
 {$teamBComposition}
 
-**Basic Analysis:**
+**Basic Win Probability Analysis:**
 - Team A Win Probability: {$teamAWinRate}%
 - Team B Win Probability: {$teamBWinRate}%
 
+**IMPORTANT INSTRUCTIONS:**
+- For heroes WITH detailed skill information: Use their ACTUAL abilities, passive effects, and skill synergies in your analysis
+- For heroes WITHOUT skill details: Base your analysis on their role, stats, and general MLBB knowledge
+- Focus on REAL skill interactions, crowd control chains, damage combos, and positioning requirements
+- Consider actual cooldowns, energy costs, and skill mechanics when suggesting strategies
+
 Provide a concise strategic analysis covering:
-1. **Key Matchup Insights**: 2-3 critical observations about this matchup
-2. **Team A Strategy**: Specific tactical advice for Team A to win
-3. **Team B Strategy**: Specific tactical advice for Team B to win
-4. **Game Phase Advantage**: Which team is stronger in early/mid/late game and why
+1. **Key Matchup Insights**: 2-3 critical observations based on actual hero abilities and team synergies
+2. **Team A Strategy**: Specific tactical advice using their heroes' real skill sets
+3. **Team B Strategy**: Specific tactical advice using their heroes' real skill sets
+4. **Game Phase Advantage**: Which team is stronger in early/mid/late game based on hero power spikes and skill scaling
 
 Keep the response focused and actionable. Format your response as JSON with these keys:
 {
