@@ -1,0 +1,337 @@
+{
+  "version": "1.1",
+  "lastUpdated": "2026-01-15",
+  "description": "Accurate MLBB hero skills data from Mobile Legends Wiki - expanded with 11 popular heroes",
+  "skills": {
+    "miya": {
+      "passive": {
+        "name": "Moon Blessing",
+        "description": "Each time Miya hits a target with her Basic Attack, she gains 5% Attack Speed for 4 seconds. Stacks up to 5 times. After reaching full stacks, Miya summons a Moonlight Shadow with each Basic Attack that deals 30 (+25% Total Physical Attack) Physical Damage.",
+        "cooldown": null,
+        "damage": "30 (+25% Total Physical Attack)",
+        "effect": "5% Attack Speed per stack, max 5 stacks"
+      },
+      "skill1": {
+        "name": "Moon Arrow",
+        "description": "Miya shoots two extra arrows with each Basic Attack, dealing 10-35 (+100% Total Physical Attack) Physical Damage to the target enemy and 30% damage to nearby targets. This effect lasts 4 seconds.",
+        "cooldown": "10-8s",
+        "damage": "10-35 (+100% Total Physical Attack)",
+        "effect": "Duration: 4 seconds"
+      },
+      "skill2": {
+        "name": "Arrow of Eclipse",
+        "description": "Miya launches an empowered arrow on the target area, dealing 270-420 (+45% Total Physical Attack) Physical Damage to enemies within and immobilizing them for 1.2 seconds. The arrow then splits into 6 scattering minor arrows, each dealing 40-105 (+20% Total Physical Attack) Physical Damage and slowing by 30% for 2 seconds.",
+        "cooldown": "12-10s",
+        "damage": "270-420 (+45% Total Physical Attack)",
+        "effect": "1.2s immobilize, 30% slow for 2s"
+      },
+      "ultimate": {
+        "name": "Hidden Moonlight",
+        "description": "Miya removes all debuffs and conceals herself, gaining 65% extra Movement Speed. This state lasts 2 seconds or until she launches an attack. Miya gains full stacks of Moon Blessing upon leaving the state.",
+        "cooldown": "40-32s",
+        "damage": null,
+        "effect": "2s concealment, 65% movement speed, full stacks"
+      }
+    },
+    "fanny": {
+      "passive": {
+        "name": "Air Superiority",
+        "description": "During flight, Fanny deals 10%-20% extra damage to enemies hit (scales with flying speed) and applies a stack of Prey Mark to them (up to 2 stacks). Her subsequent skill hits on marked enemy heroes restore 7 energy per stack.",
+        "cooldown": null,
+        "damage": "10%-20% bonus damage",
+        "effect": "7 energy per Prey Mark stack"
+      },
+      "skill1": {
+        "name": "Tornado Strike",
+        "description": "Fanny whirls her blades, dealing 300-540 (+80% Total Physical Attack) Physical Damage to nearby enemies.",
+        "cooldown": "1s",
+        "damage": "300-540 (+80% Total Physical Attack)",
+        "effect": "AoE around Fanny"
+      },
+      "skill2": {
+        "name": "Steel Cable",
+        "description": "Fanny shoots a cable in the target direction that pulls her to the first obstacle hit. She can cast this skill again within 2 seconds until her energy runs out. Each successive cast reduces the skill's energy cost by 2. Fanny automatically casts Tornado Strike upon hitting an enemy mid-flight.",
+        "cooldown": "0.2s",
+        "damage": "Triggers Tornado Strike",
+        "effect": "Energy cost: 10-2 per cast"
+      },
+      "ultimate": {
+        "name": "Cut Throat",
+        "description": "Fanny leaps at the target enemy hero or Creep with her blades, dealing 500-860 (+240% Extra Physical Attack) Physical Damage. Each stack of Prey Mark increases this damage by 20%.",
+        "cooldown": "45-35s",
+        "damage": "500-860 (+240% Extra Physical Attack)",
+        "effect": "+20% damage per Prey Mark stack"
+      }
+    },
+    "ling": {
+      "passive": {
+        "name": "Cloud Walker",
+        "description": "Ling's superb Lightness Skill helps him leap among walls. When resting on the wall, he gains 4 Lightness Points per second and 5 extra Lightness Points each time he deals damage. Ling gains 1.6 times Crit Chance from all sources but only has 150% Critical Damage.",
+        "cooldown": null,
+        "damage": null,
+        "effect": "Wall-walking, 4 energy/s on walls, 150% crit damage"
+      },
+      "skill1": {
+        "name": "Finch Poise",
+        "description": "Passive: Ling's Critical Chance is permanently increased by 2.5%-12.5%. Active: Ling leaps onto the designated wall, entering half-stealth state, restoring Lightness Points more quickly and gaining 30% Movement Speed. When using this skill to jump from a wall to another, it resets the Cooldown.",
+        "cooldown": "7-5s",
+        "damage": null,
+        "effect": "2.5%-12.5% crit chance, 30% movement speed, half-stealth"
+      },
+      "skill2": {
+        "name": "Defiant Sword",
+        "description": "Ling charges in a designated direction and stabs nearby enemies at his destination, dealing 300-400 (+40% Total Physical Attack) Physical Damage. If cast from a wall, deals extra 30% slow for 1.5s. If critically strikes, slows by extra 45% for 0.75s. Restores 35-60 HP per hit.",
+        "cooldown": "6-4s",
+        "damage": "300-400 (+40% Total Physical Attack)",
+        "effect": "30%-75% slow, 35-60 HP restore, 0.75s untargetable"
+      },
+      "ultimate": {
+        "name": "Tempest of Blades",
+        "description": "Ling leaps into the air, becoming invincible and gaining 10% extra Movement Speed for 1.5 seconds. He then lands, dealing 250-450 (+100% Total Physical Attack) Physical Damage, knocking enemies in center airborne for 1 second, and creating a Sword Field for 8 seconds. Four blades appear on edges that reduce Finch Poise CD by 4s when collected.",
+        "cooldown": "50-40s",
+        "damage": "250-450 (+100% Total Physical Attack)",
+        "effect": "1.5s invincibility, 1s knockup, 8s sword field"
+      }
+    },
+    "gusion": {
+      "passive": {
+        "name": "Dagger Specialist",
+        "description": "Each skill cast adds a rune to Gusion's dagger (stacks up to 4 times). Each stack enhances Gusion's next Basic Attack to deal additional damage equal to 3% of the target's max HP and restore 50 (+25% Total Magic Power) HP to himself.",
+        "cooldown": null,
+        "damage": "3% target max HP per stack",
+        "effect": "50 (+25% Total Magic Power) HP restore per rune"
+      },
+      "skill1": {
+        "name": "Sword Spike",
+        "description": "Gusion throws a dagger in the target direction, dealing 200-300 (+50% Total Magic Power) Magic Damage to the first enemy hit and marking them. Use Again: Gusion moves behind the marked enemy, dealing 200-300 (+100% Total Magic Power) Magic Damage to them. This skill cannot be interrupted while moving.",
+        "cooldown": "10-7s",
+        "damage": "200-300 (+50% Magic Power) + 200-300 (+100% Magic Power)",
+        "effect": "Mark duration: 4 seconds"
+      },
+      "skill2": {
+        "name": "Shadowblade Slaughter",
+        "description": "Gusion throws five daggers in the target direction, each dealing 110-210 (+50% Total Magic Power) Magic Damage and slowing by 6% for 2s (stacks up to 30%). Use Again: Gusion recalls the daggers, each dealing 65-115 (+40% Total Magic Power) Magic Damage.",
+        "cooldown": "10-7s",
+        "damage": "110-210 (+50% Magic Power) x5 + 65-115 (+40% Magic Power) x5",
+        "effect": "6%-30% slow for 2 seconds"
+      },
+      "ultimate": {
+        "name": "Incandescence",
+        "description": "Gusion dashes to the target location, resetting the cooldown of Sword Spike and Shadowblade Slaughter. If Shadowblade Slaughter was cast once before the reset, Gusion can throw another five daggers and recall a total of ten daggers. Use Again: Gusion dashes a short distance.",
+        "cooldown": "45-35s",
+        "damage": null,
+        "effect": "Resets all skill cooldowns, allows double Shadowblade Slaughter"
+      }
+    },
+    "lancelot": {
+      "passive": {
+        "name": "Soul Cutter",
+        "description": "Each time Lancelot dashes or charges, his damage is increased by 7.5% for 4 seconds (stacks up to 4 times, max 30% damage increase).",
+        "cooldown": null,
+        "damage": "7.5% damage increase per stack",
+        "effect": "Max 4 stacks (30% total), 4 second duration"
+      },
+      "skill1": {
+        "name": "Puncture",
+        "description": "Lancelot charges in the target direction, dealing 100-250 (+50% Total Physical Attack) Physical Damage to enemies along the way and applying a Sword Mark. If the mark is successfully applied, Puncture's cooldown is reset.",
+        "cooldown": "10-7s",
+        "damage": "100-250 (+50% Total Physical Attack)",
+        "effect": "Applies Sword Mark, CD reset on mark"
+      },
+      "skill2": {
+        "name": "Thorned Rose",
+        "description": "Lancelot performs 3 strikes in the target direction, each dealing 225-400 (+100% Extra Physical Attack) Physical Damage (reduced to 30% on multiple enemies). Lancelot is untargetable and invincible during the skill. Enemies hit are slowed by 20% (stacks up to 60%). Spell Vamp effectiveness reduced to 50%.",
+        "cooldown": "12-10s",
+        "damage": "225-400 (+100% Extra Physical Attack) x3",
+        "effect": "Untargetable during cast, 20%-60% slow, 50% spell vamp"
+      },
+      "ultimate": {
+        "name": "Phantom Execution",
+        "description": "Lancelot charges at the target enemy, dealing 350 (+170% Total Physical Attack) Physical Damage. Lancelot is invincible throughout the dash.",
+        "cooldown": "35-25s",
+        "damage": "350 (+170% Total Physical Attack)",
+        "effect": "Invincible throughout dash"
+      }
+    },
+    "hayabusa": {
+      "passive": {
+        "name": "Ninjutsu: Trace of Shadow",
+        "description": "Hayabusa's attacks apply Shadow Marks on enemies (max 4 stacks). Each stack increases Hayabusa's damage to the target by 5% for 6 seconds (max 20%).",
+        "cooldown": null,
+        "damage": "5% damage increase per stack",
+        "effect": "Max 4 stacks (20% total), 6 second duration"
+      },
+      "skill1": {
+        "name": "Ninjutsu: Phantom Shuriken",
+        "description": "Hayabusa throws 3 returning shurikens in the target direction, each dealing 150-250 (+70% Extra Physical Attack) Physical Damage and slowing by 35% for 2 seconds. Multiple hits deal 30% damage. Passive: Permanently grants 3%-18% Spell Vamp. Restores 10 energy per non-minion hit.",
+        "cooldown": "6-4s",
+        "damage": "150-250 (+70% Extra Physical Attack) x3",
+        "effect": "35% slow for 2s, 3%-18% spell vamp passive, 10 energy per hit"
+      },
+      "skill2": {
+        "name": "Ninjutsu: Quad Shadow",
+        "description": "Hayabusa dashes forward and releases 4 phantoms dealing 130-180 (+30% Extra Physical Attack) Physical Damage and slowing by 40% for 2s. Recast: Hayabusa teleports to a phantom location, reduces Skill 1 CD by 1s, and deals damage if attached to a hero.",
+        "cooldown": "14-12s",
+        "damage": "130-180 (+30% Extra Physical Attack)",
+        "effect": "40% slow for 2s, 4 phantoms, teleport mechanic, -1s Skill 1 CD"
+      },
+      "ultimate": {
+        "name": "Ougi: Shadow Kill",
+        "description": "Hayabusa blends into shadows and launches 6 single-target attacks, each dealing 140 (+75% Extra Physical Attack) Physical Damage. Prioritizes marked enemies, consuming marks for 45-85 (+20% Extra Physical Attack) extra damage. Does not apply new marks.",
+        "cooldown": "40-32s",
+        "damage": "140 (+75% Extra Physical Attack) x6 + mark bonus",
+        "effect": "Untargetable during cast, consumes Shadow Marks for bonus damage"
+      }
+    },
+    "alucard": {
+      "passive": {
+        "name": "Pursuit",
+        "description": "After casting a skill, Alucard's next Basic Attack dashes to the target and deals (+140% Total Physical Attack) Physical Damage.",
+        "cooldown": null,
+        "damage": "+140% Total Physical Attack",
+        "effect": "Enhanced dash attack after each skill"
+      },
+      "skill1": {
+        "name": "Groundsplitter",
+        "description": "Alucard leaps and slashes, dealing 270-370 (+110% Extra Physical Attack) Physical Damage to enemies in an area and slowing them by 40% for 2 seconds.",
+        "cooldown": "10-7s",
+        "damage": "270-370 (+110% Extra Physical Attack)",
+        "effect": "40% slow for 2 seconds"
+      },
+      "skill2": {
+        "name": "Whirling Smash",
+        "description": "Alucard spins his sword in a circle, dealing 345-570 (+120% Extra Physical Attack) Physical Damage to nearby enemies.",
+        "cooldown": "5-3s",
+        "damage": "345-570 (+120% Extra Physical Attack)",
+        "effect": "AOE damage around Alucard"
+      },
+      "ultimate": {
+        "name": "Fission Wave",
+        "description": "Passive: Grants 10%-30% extra Hybrid Lifesteal. Active: Alucard charges power, then releases a shockwave dealing 400-700 (+200% Extra Physical Attack) Physical Damage. During charging, reduces enemy movement by 30% and defense by 10-20, grants 10-20 defense per hero hit, and reduces skill CD by 50% for 6 seconds. Second cast releases the wave.",
+        "cooldown": "45-35s",
+        "damage": "400-700 (+200% Extra Physical Attack)",
+        "effect": "10%-30% lifesteal passive, 30% slow, defense reduction, 50% skill CD reduction for 6s"
+      }
+    },
+    "chou": {
+      "passive": {
+        "name": "Only Fast",
+        "description": "After traveling 5 units, Chou's next Basic Attack deals 180% damage (cannot Crit), slows the target by 80% briefly, and reduces their Physical Defense by 10 (+1 per hero level) for 3 seconds (stacks up to 2 times).",
+        "cooldown": null,
+        "damage": "180% Basic Attack damage",
+        "effect": "80% slow, Physical Defense reduction stacks 2 times"
+      },
+      "skill1": {
+        "name": "Jeet Kune Do",
+        "description": "Chou strikes in the target direction, dealing 180 (+70% Total Physical Attack) Physical Damage to enemies hit. Can be cast 3 times. On the 3rd cast, also knocks enemies airborne. Hitting an enemy hero with the 3rd cast resets Shunpo's cooldown.",
+        "cooldown": "8-6s",
+        "damage": "180 (+70% Total Physical Attack) x3",
+        "effect": "3rd cast knocks airborne, resets Skill 2 CD if hits hero"
+      },
+      "skill2": {
+        "name": "Shunpo",
+        "description": "Chou charges in the target direction, gaining Control Immunity and a 200 (+200% Extra Physical Attack) Physical Damage shield.",
+        "cooldown": "8-6s",
+        "damage": null,
+        "effect": "200 (+200% Extra Physical Attack) shield, Control Immunity"
+      },
+      "ultimate": {
+        "name": "The Way of Dragon",
+        "description": "Chou strikes the target enemy hero with a roundhouse kick, dealing 400 (+200% Extra Physical Attack) Physical Damage and knocking them back. Cast again to chase and deal a total of 480 (+220% Extra Physical Attack) Physical Damage.",
+        "cooldown": "40-32s",
+        "damage": "400-480 (+200%-220% Extra Physical Attack)",
+        "effect": "Knockback, suppression, chase ability"
+      }
+    },
+    "kagura": {
+      "passive": {
+        "name": "Yin Yang Gathering",
+        "description": "Upon retrieving the Seimei Umbrella, Kagura gains a 280 (+50% Total Magic Power) shield, stuns nearby enemies for 0.5 seconds, and slows them by 60% for 1 second. Cooldown: 4.5 seconds.",
+        "cooldown": "4.5s",
+        "damage": null,
+        "effect": "280 (+50% Total Magic Power) shield, 0.5s stun, 60% slow for 1s"
+      },
+      "skill1": {
+        "name": "Seimei Umbrella Open",
+        "description": "Kagura sends the Seimei Umbrella to target location, dealing 315-590 (+105% Total Magic Power) Magic Damage to enemies in its path and slowing them by 60% for 0.5 seconds. The umbrella returns automatically when too far away. Deals 130% damage to non-hero enemies.",
+        "cooldown": "6-4s",
+        "damage": "315-590 (+105% Total Magic Power)",
+        "effect": "60% slow for 0.5s, 130% damage to creeps"
+      },
+      "skill2": {
+        "name": "Rasho Umbrella Flee",
+        "description": "With Umbrella: Kagura removes all debuffs and dashes in target direction, leaving umbrella behind. Without Umbrella: Kagura invokes umbrella power, dealing 330-470 (+105% Total Magic Power) Magic Damage, knocking back and slowing nearby enemies by 60% for 0.5 seconds.",
+        "cooldown": "6-4s",
+        "damage": "330-470 (+105% Total Magic Power) (without umbrella)",
+        "effect": "Remove debuffs, dash/knockback based on umbrella state"
+      },
+      "ultimate": {
+        "name": "Yin Yang Overturn",
+        "description": "With Umbrella: Invokes umbrella power, dealing 330-470 (+105% Total Magic Power) Magic Damage, knocking back and slowing enemies by 60% for 0.5s. Without Umbrella: Kagura dashes to umbrella location, pulling enemies along the path and dealing 400-600 (+120% Total Magic Power) Magic Damage at destination.",
+        "cooldown": "8-6s",
+        "damage": "330-470 or 400-600 (+105%-120% Total Magic Power)",
+        "effect": "Knockback/pull based on umbrella state"
+      }
+    },
+    "granger": {
+      "passive": {
+        "name": "Capriccio",
+        "description": "Granger's unique Demon Hunting Gun and Cannon are powered by Demonic Energy. Gun has 800 base energy (restores 8% per second), Cannon has 800 base energy (restores 2% per second). Each minion/creep kill increases energy cap by 6 and restores 5%. Each hero kill/assist increases cap by 12 and restores 10%. Every 1% CD Reduction converts to 2 Physical Attack.",
+        "cooldown": null,
+        "damage": null,
+        "effect": "800 base energy, +6/+12 cap per kill, CD Reduction converts to Physical Attack"
+      },
+      "skill1": {
+        "name": "Rhapsody",
+        "description": "Granger rapidly fires 6 shots with his Gun, each dealing 60-120 (+50% Total Physical Attack) Physical Damage and consuming 70 Gun Energy. The last bullet is guaranteed to Crit. Each bullet deals 70 extra damage to creeps/minions. Increases Movement Speed by 15% while firing. Stops when energy depleted or recast.",
+        "cooldown": "Brief cooldown, requires 420+ Gun Energy",
+        "damage": "60-120 (+50% Total Physical Attack) x6",
+        "effect": "Last bullet crits, 15% movement speed, 70 bonus to creeps"
+      },
+      "skill2": {
+        "name": "Rondo",
+        "description": "Granger dashes in target direction, instantly restoring 15%-25% Gun Energy. Can be cast while channeling Rhapsody. Each Rhapsody hit reduces Rondo cooldown by 0.5 seconds.",
+        "cooldown": "10-8s",
+        "damage": null,
+        "effect": "15%-25% Gun Energy restore, -0.5s CD per Rhapsody hit"
+      },
+      "ultimate": {
+        "name": "Death Sonata",
+        "description": "Granger fires his Cannon in target direction, dealing 150-300 (+100% Total Physical Attack) Physical Damage to first enemy hero hit and blast radius. Slows and reveals targets briefly. Can roll in joystick direction after each shot. Can cast while firing Rhapsody. Consumes 250 Cannon Energy per shot.",
+        "cooldown": "Brief cooldown, requires 250 Cannon Energy",
+        "damage": "150-300 (+100% Total Physical Attack)",
+        "effect": "Slow, reveal, can roll between shots, passes through creeps"
+      }
+    },
+    "beatrix": {
+      "passive": {
+        "name": "Mechanical Genius",
+        "description": "Beatrix's talent produced 4 weapons of awe-inspiring firepower. Renner Basic Attack - Longshot: Fires powerful shot dealing (+360%-535% Total Physical Attack) Physical Damage to first target hit (can be dodged/blocked, 50% damage to creeps). Beatrix cannot crit, converts every 1% Critical Chance into 2 Physical Attack.",
+        "cooldown": null,
+        "damage": "+360%-535% Total Physical Attack (Renner)",
+        "effect": "4 unique weapons, crit chance converts to Physical Attack"
+      },
+      "skill1": {
+        "name": "Masterful Gunner",
+        "description": "Passive: Beatrix carries 2 weapons at once, gains 5-30 Physical Attack. Active: Beatrix takes 0.6 seconds to swap primary weapon with secondary weapon, gaining new attack and Ultimate.",
+        "cooldown": "1s",
+        "damage": null,
+        "effect": "5-30 Physical Attack passive, weapon swap mechanic"
+      },
+      "skill2": {
+        "name": "Tactical Reposition",
+        "description": "Beatrix moves forward based on current weapon (drops and rolls for Renner, leaps for Bennett, rolls sideways for Wesker, slides for Nibiru) and fully reloads current weapon.",
+        "cooldown": "12-10s",
+        "damage": null,
+        "effect": "Mobility based on weapon, full reload"
+      },
+      "ultimate": {
+        "name": "Renner's Apathy",
+        "description": "Beatrix wields Renner calmly, aiming at enemy. When released, deals 700-1200 (+280% Total Physical Attack) Physical Damage to first enemy hit. Gets 50% Physical Lifesteal (not affected by Spell Vamp). Can aim up to 20 seconds. Can be dodged/blocked.",
+        "cooldown": "40-30s",
+        "damage": "700-1200 (+280% Total Physical Attack)",
+        "effect": "50% Physical Lifesteal, 20s aim time, can be dodged"
+      }
+    }
+  }
+}
