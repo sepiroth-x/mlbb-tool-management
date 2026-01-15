@@ -2550,7 +2550,7 @@
                                 ${matchupState.teamA.filter(h => h).map(slug => {
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
-                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
+                                        <div class="hero-detail-card" style="cursor: default;">
                                             <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
                                                  alt="${hero.name}"
                                                  loading="lazy"
@@ -2570,7 +2570,7 @@
                                 ${matchupState.teamB.filter(h => h).map(slug => {
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
-                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
+                                        <div class="hero-detail-card" style="cursor: default;">
                                             <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
                                                  alt="${hero.name}"
                                                  loading="lazy"
@@ -3123,7 +3123,8 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify({
                     message: message,
@@ -3133,7 +3134,9 @@
             });
             
             if (!response.ok) {
-                throw new Error('Failed to get response');
+                const errorText = await response.text();
+                console.error('Chat API error:', response.status, errorText);
+                throw new Error(`Failed to get response: ${response.status}`);
             }
             
             const data = await response.json();
