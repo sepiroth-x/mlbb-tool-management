@@ -14,5 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         // MLBB Matchup Analysis - Safe to exclude (no sensitive data, read-only calculation)
         'mlbb/matchup/analyze',
+        // MLBB Matchup Chat - Safe to exclude (read-only Q&A about analysis results)
+        'mlbb/matchup/chat',
     ];
 }
