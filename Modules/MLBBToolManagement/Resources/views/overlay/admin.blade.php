@@ -133,7 +133,12 @@
             <div class="hero-grid" id="heroSelectorGrid">
                 @foreach($heroes as $hero)
                 <div class="hero-card-small" data-slug="{{ $hero['slug'] }}" onclick="selectHeroForAction('{{ $hero['slug'] }}')">
-                    <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" alt="{{ $hero['name'] }}">
+                    <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" 
+                         alt="{{ $hero['name'] }}"
+                         loading="lazy"
+                         decoding="async"
+                         width="80"
+                         height="80">
                     <span>{{ $hero['name'] }}</span>
                 </div>
                 @endforeach
@@ -254,7 +259,12 @@
         data.picks_details.forEach(hero => {
             picksContainer.innerHTML += `
                 <div class="hero-slot-filled">
-                    <img src="${hero.image}" alt="${hero.name}">
+                    <img src="${hero.image}" 
+                         alt="${hero.name}"
+                         loading="lazy"
+                         decoding="async"
+                         width="60"
+                         height="60">
                     <span>${hero.name}</span>
                 </div>
             `;
@@ -266,7 +276,12 @@
         data.bans_details.forEach(hero => {
             bansContainer.innerHTML += `
                 <div class="hero-slot-filled">
-                    <img src="${hero.image}" alt="${hero.name}">
+                    <img src="${hero.image}" 
+                         alt="${hero.name}"
+                         loading="lazy"
+                         decoding="async"
+                         width="60"
+                         height="60">
                     <span>${hero.name}</span>
                 </div>
             `;

@@ -130,6 +130,23 @@
         height: 50px;
         border-radius: 6px;
         object-fit: cover;
+        /* Image optimization */
+        image-rendering: -webkit-optimize-contrast;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    /* Global image optimization for all hero images */
+    img[loading="lazy"] {
+        content-visibility: auto;
+    }
+    
+    .hero-card-image {
+        transition: opacity 0.3s ease-in;
+    }
+    
+    .hero-card-image[loading="lazy"]:not([src]) {
+        opacity: 0;
     }
 
     .hero-slot .hero-info {
@@ -401,6 +418,24 @@
         object-fit: cover;
         border-radius: 6px;
         margin-bottom: 0.5rem;
+        /* Image optimization */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        transform: translateZ(0);
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    
+    /* Loading skeleton for images */
+    .hero-card img[loading="lazy"] {
+        background: linear-gradient(90deg, rgba(148, 163, 184, 0.1) 25%, rgba(148, 163, 184, 0.2) 50%, rgba(148, 163, 184, 0.1) 75%);
+        background-size: 200% 100%;
+        animation: loading-skeleton 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes loading-skeleton {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
     }
 
     .hero-card .hero-name {
@@ -1525,7 +1560,13 @@
                          data-name="{{ strtolower($hero['name']) }}"
                          data-hero-name="{{ $hero['name'] }}"
                          data-hero-image="{{ $hero['image'] }}">
-                        <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" alt="{{ $hero['name'] }}">
+                        <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" 
+                             alt="{{ $hero['name'] }}" 
+                             loading="lazy"
+                             decoding="async"
+                             width="120"
+                             height="120"
+                             class="hero-card-image">
                         <span class="hero-name">{{ $hero['name'] }}</span>
                         <span class="hero-role">{{ $hero['role'] }}</span>
                     </div>
@@ -1550,6 +1591,57 @@
 </div>
 
 <script>
+    // ===== IMAGE OPTIMIZATION UTILITIES =====
+    // Preload critical hero images
+    function preloadCriticalImages() {
+        const heroCards = document.querySelectorAll('.hero-card img');
+        const imagesToPreload = Array.from(heroCards).slice(0, 20); // Preload first 20 heroes
+        
+        imagesToPreload.forEach(img => {
+            if (img.loading === 'lazy') {
+                const preloadLink = document.createElement('link');
+                preloadLink.rel = 'preload';
+                preloadLink.as = 'image';
+                preloadLink.href = img.src;
+                document.head.appendChild(preloadLink);
+            }
+        });
+    }
+    
+    // Enhanced lazy loading with Intersection Observer
+    function setupEnhancedLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+            
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+    
+    // Optimize images on load
+    document.addEventListener('DOMContentLoaded', function() {
+        preloadCriticalImages();
+        setupEnhancedLazyLoading();
+    });
+    
+    // ===== END IMAGE OPTIMIZATION =====
+    
     // State management
     const matchupState = {
         teamA: [],
@@ -1651,7 +1743,12 @@
         const slotElement = document.querySelector(`#team${team.toUpperCase()}Selected .hero-slot[data-slot="${slot}"]`);
         slotElement.classList.add('filled');
         slotElement.innerHTML = `
-            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${image}" alt="${name.replace(/'/g, "&apos;")}">
+            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${image}" 
+                 alt="${name.replace(/'/g, "&apos;")}"
+                 loading="lazy"
+                 decoding="async"
+                 width="100"
+                 height="100">
             <div class="hero-info">
                 <span class="hero-name">${name}</span>
                 <span class="hero-role">${role}</span>
@@ -1983,7 +2080,12 @@
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
                                         <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
-                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" alt="${hero.name}">
+                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
+                                                 alt="${hero.name}"
+                                                 loading="lazy"
+                                                 decoding="async"
+                                                 width="80"
+                                                 height="80">
                                             <div class="hero-name-small">${hero.name}</div>
                                         </div>
                                     ` : '';
@@ -1998,7 +2100,12 @@
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
                                         <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')">
-                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" alt="${hero.name}">
+                                            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
+                                                 alt="${hero.name}"
+                                                 loading="lazy"
+                                                 decoding="async"
+                                                 width="80"
+                                                 height="80">
                                             <div class="hero-name-small">${hero.name}</div>
                                         </div>
                                     ` : '';
@@ -2124,6 +2231,10 @@
                 <div class="hero-overlay-header">
                     <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
                          alt="${hero.name}" 
+                         loading="lazy"
+                         decoding="async"
+                         width="150"
+                         height="150"
                          class="hero-overlay-image">
                     <div class="hero-overlay-title-section">
                         <h2 class="hero-overlay-title">${hero.name}</h2>
@@ -2220,6 +2331,10 @@
                                     <div class="hero-counter-card strong" onclick="showHeroDetails('${counter.slug}'); event.stopPropagation();">
                                         <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${counter.image}" 
                                              alt="${counter.name}" 
+                                             loading="lazy"
+                                             decoding="async"
+                                             width="60"
+                                             height="60"
                                              class="hero-counter-image">
                                         <div class="hero-counter-name">${counter.name}</div>
                                         <div class="hero-counter-relation">Counters</div>
@@ -2237,6 +2352,10 @@
                                     <div class="hero-counter-card weak" onclick="showHeroDetails('${counter.slug}'); event.stopPropagation();">
                                         <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${counter.image}" 
                                              alt="${counter.name}" 
+                                             loading="lazy"
+                                             decoding="async"
+                                             width="60"
+                                             height="60"
                                              class="hero-counter-image">
                                         <div class="hero-counter-name">${counter.name}</div>
                                         <div class="hero-counter-relation">Countered By</div>

@@ -338,7 +338,12 @@
                 item.className = 'hero-item';
                 item.style.animationDelay = `${index * 0.1}s`;
                 item.innerHTML = `
-                    <img src="${hero.image}" alt="${hero.name}">
+                    <img src="${hero.image}" 
+                         alt="${hero.name}"
+                         loading="lazy"
+                         decoding="async"
+                         width="80"
+                         height="80">
                     <div class="hero-info">
                         <div class="hero-name">${hero.name}</div>
                         <div class="hero-role">${hero.role}</div>
@@ -356,7 +361,12 @@
                 const item = document.createElement('div');
                 item.className = 'ban-item';
                 item.style.animationDelay = `${index * 0.1}s`;
-                item.innerHTML = `<img src="${hero.image}" alt="${hero.name}">`;
+                item.innerHTML = `<img src="${hero.image}" 
+                                       alt="${hero.name}"
+                                       loading="lazy"
+                                       decoding="async"
+                                       width="50"
+                                       height="50">`;
                 container.appendChild(item);
             });
         }
