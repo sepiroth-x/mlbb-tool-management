@@ -1523,7 +1523,8 @@
                          data-slug="{{ $hero['slug'] }}" 
                          data-role="{{ $hero['role'] }}" 
                          data-name="{{ strtolower($hero['name']) }}"
-                         onclick="selectHero('{{ $hero['slug'] }}', '{{ $hero['name'] }}', '{{ $hero['image'] }}', '{{ $hero['role'] }}')">
+                         data-hero-name="{{ $hero['name'] }}"
+                         data-hero-image="{{ $hero['image'] }}">
                         <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" alt="{{ $hero['name'] }}">
                         <span class="hero-name">{{ $hero['name'] }}</span>
                         <span class="hero-role">{{ $hero['role'] }}</span>
@@ -1613,6 +1614,22 @@
         });
     }
 
+    // Add click event listener to hero cards (instead of inline onclick)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.hero-card').forEach(card => {
+            card.addEventListener('click', function() {
+                if (this.classList.contains('disabled')) return;
+                
+                const slug = this.dataset.slug;
+                const name = this.dataset.heroName;
+                const image = this.dataset.heroImage;
+                const role = this.dataset.role;
+                
+                selectHero(slug, name, image, role);
+            });
+        });
+    });
+
     // Select hero
     function selectHero(slug, name, image, role) {
         const team = matchupState.currentTeam;
@@ -1634,12 +1651,12 @@
         const slotElement = document.querySelector(`#team${team.toUpperCase()}Selected .hero-slot[data-slot="${slot}"]`);
         slotElement.classList.add('filled');
         slotElement.innerHTML = `
-            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${image}" alt="${name}">
+            <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${image}" alt="${name.replace(/'/g, "&apos;")}">
             <div class="hero-info">
                 <span class="hero-name">${name}</span>
                 <span class="hero-role">${role}</span>
             </div>
-            <button class="remove-hero" onclick="removeHero('${team}', ${slot}); event.stopPropagation();">&times;</button>
+            <button class="remove-hero" data-team="${team}" data-slot="${slot}">&times;</button>
         `;
 
         closeHeroPicker();
@@ -1724,6 +1741,16 @@
             const slotIndex = parseInt(this.dataset.slot);
             openHeroPicker(team, slotIndex);
         });
+    });
+
+    // Add event delegation for remove hero buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-hero')) {
+            e.stopPropagation();
+            const team = e.target.dataset.team;
+            const slot = parseInt(e.target.dataset.slot);
+            removeHero(team, slot);
+        }
     });
 
     // Analyze matchup
