@@ -277,7 +277,7 @@
         
         <div class="cta-box">
             <h2>Ready to Get Started?</h2>
-            <p>Experience all these features and more with MLBB Tournament Manager</p>
+            <p>Experience all these features and more with MLBB Coach</p>
             <a href="/mlbb/matchup" class="btn">Launch Matchup Tool</a>
         </div>
     </div>

@@ -111,7 +111,7 @@
 @section('content')
 <div class="about-hero">
     <div class="container">
-        <h1>About MLBB Tournament Manager</h1>
+        <h1>About MLBB Coach</h1>
         <p>Empowering esports organizers and teams with professional tournament management tools</p>
     </div>
 </div>
@@ -120,7 +120,7 @@
     <div class="container">
         <div class="content-section">
             <h2>Our Mission</h2>
-            <p>MLBB Tournament Manager was created to provide professional-grade tournament management tools for the Mobile Legends: Bang Bang esports community. We believe that every tournament organizer, team, and coach deserves access to powerful analytics and management tools.</p>
+            <p>MLBB Coach was created to provide professional-grade tournament management tools for the Mobile Legends: Bang Bang esports community. We believe that every tournament organizer, team, and coach deserves access to powerful analytics and management tools.</p>
             <p>Our platform combines comprehensive hero databases, real-time matchup analysis, and professional streaming overlays to help you organize and broadcast world-class MLBB tournaments.</p>
         </div>
         

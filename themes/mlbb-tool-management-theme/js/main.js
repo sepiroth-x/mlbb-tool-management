@@ -1,7 +1,7 @@
 // MLBB Tournament Management Theme - Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('MLBB Tournament Manager Loaded');
+    console.log('MLBB Coach Loaded');
     
     // Add smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

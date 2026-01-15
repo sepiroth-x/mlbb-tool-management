@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'MLBB Tournament Manager')</title>
+    <title>@yield('title', 'MLBB Coach')</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -324,7 +324,7 @@
             <div class="header-content">
                 <div class="logo">
                     <a href="/" style="text-decoration: none;">
-                        <h1>MLBB Tournament Manager</h1>
+                        <h1>MLBB Coach</h1>
                     </a>
                 </div>
                 
@@ -369,7 +369,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MLBB Tournament Manager</h3>
+                    <h3>MLBB Coach</h3>
                     <p>Professional tournament management tools for Mobile Legends: Bang Bang esports.</p>
                     <div class="social-links">
                         <a href="https://github.com/sepiroth-x/mlbb-tool-management" target="_blank" title="GitHub">
@@ -424,7 +424,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} MLBB Tournament Manager by Sepiroth X. Built with VantaPress CMS. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} MLBB Coach by Sepiroth X. Built with VantaPress CMS. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -461,7 +461,7 @@
     @stack('scripts')
 </body>
 </html>
-            <p>&copy; {{ date('Y') }} MLBB Tournament Manager. Powered by VantaPress.</p>
+            <p>&copy; {{ date('Y') }} MLBB Coach. Powered by VantaPress.</p>
         </div>
     </footer>
 
