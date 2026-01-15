@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Images Test - UPDATED</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .success-banner { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .test-image { 
+            display: inline-block; 
+            margin: 10px; 
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+        img { 
+            width: 100px; 
+            height: 100px; 
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+        }
+        .error { color: red; font-weight: bold; }
+        .success { color: green; font-weight: bold; }
+        .instructions {
+            background: #2196F3;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code { 
+            background: #f4f4f4; 
+            padding: 2px 6px; 
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-banner">
+        ✅ .htaccess has been FIXED! The 'modules' path is now included.
+    </div>
+
+    <h1>🖼️ Hero Images Test - UPDATED</h1>
+    <p>Testing if hero images load correctly after .htaccess fix...</p>
+    
+    <div class="test-image">
+        <h3>Test 1: Miya</h3>
+        <img src="/modules/mlbb-tool-management/images/heroes/miya.png" 
+             alt="Miya" 
+             onload="document.getElementById('status1').innerHTML='✓ SUCCESS'; document.getElementById('status1').className='success';"
+             onerror="document.getElementById('status1').innerHTML='✗ FAILED - Still getting 404'; document.getElementById('status1').className='error';">
+        <p id="status1">⏳ Loading...</p>
+        <code>/modules/mlbb-tool-management/images/heroes/miya.png</code>
+    </div>
+
+    <div class="test-image">
+        <h3>Test 2: Alucard</h3>
+        <img src="/modules/mlbb-tool-management/images/heroes/alucard.png" 
+             alt="Alucard" 
+             onload="document.getElementById('status2').innerHTML='✓ SUCCESS'; document.getElementById('status2').className='success';"
+             onerror="document.getElementById('status2').innerHTML='✗ FAILED - Still getting 404'; document.getElementById('status2').className='error';">
+        <p id="status2">⏳ Loading...</p>
+        <code>/modules/mlbb-tool-management/images/heroes/alucard.png</code>
+    </div>
+
+    <div class="test-image">
+        <h3>Test 3: Fanny</h3>
+        <img src="/modules/mlbb-tool-management/images/heroes/fanny.png" 
+             alt="Fanny" 
+             onload="document.getElementById('status3').innerHTML='✓ SUCCESS'; document.getElementById('status3').className='success';"
+             onerror="document.getElementById('status3').innerHTML='✗ FAILED - Still getting 404'; document.getElementById('status3').className='error';">
+        <p id="status3">⏳ Loading...</p>
+        <code>/modules/mlbb-tool-management/images/heroes/fanny.png</code>
+    </div>
+
+    <hr style="margin: 30px 0;">
+    
+    <div class="instructions">
+        <h2>🔧 What Was Fixed:</h2>
+        <p>✅ Updated <strong>.htaccess</strong> to include "modules" in static asset routes</p>
+        <p>✅ Created <strong>server.php</strong> for php artisan serve compatibility</p>
+    </div>
+
+    <h2>📋 Next Steps:</h2>
+    <ol>
+        <li><strong>Refresh this page</strong> (Ctrl+R or F5) to test the fix</li>
+        <li>If using <code>php artisan serve</code>, restart the server:
+            <ul>
+                <li>Stop the server (Ctrl+C)</li>
+                <li>Run: <code>php artisan serve</code></li>
+            </ul>
+        </li>
+        <li>If using Apache/Nginx, the .htaccess fix should work immediately</li>
+        <li><strong>Clear browser cache</strong> if images still don't load (Ctrl+Shift+Delete)</li>
+    </ol>
+
+    <h3>🔍 Still not working?</h3>
+    <ul>
+        <li>Check if you're using <code>php artisan serve</code> - if yes, make sure to restart it</li>
+        <li>Verify the file path: <code>public/modules/mlbb-tool-management/images/heroes/miya.png</code></li>
+        <li>Open DevTools (F12) → Network tab → Check the actual HTTP status code (should be 200, not 404)</li>
+    </ul>
+</body>
+</html>
