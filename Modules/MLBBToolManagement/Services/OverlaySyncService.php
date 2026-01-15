@@ -3,7 +3,7 @@
 namespace Modules\MLBBToolManagement\Services;
 
 use Illuminate\Support\Facades\Cache;
-use Modules\MLBBToolManagement\Models\Match;
+use Modules\MLBBToolManagement\Models\Match as MatchModel;
 
 /**
  * Overlay Sync Service
@@ -28,7 +28,7 @@ class OverlaySyncService
         $cacheTtl = 5; // 5 seconds
 
         return Cache::remember($cacheKey, $cacheTtl, function () use ($matchId) {
-            $match = Match::findOrFail($matchId);
+            $match = MatchModel::findOrFail($matchId);
             $state = $match->getMatchState();
 
             // Enrich with hero details
@@ -97,7 +97,7 @@ class OverlaySyncService
      */
     public function getAvailableHeroes(int $matchId): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
         $allHeroes = $this->heroDataService->getAllHeroes();
 
         $unavailable = array_merge(
@@ -137,7 +137,7 @@ class OverlaySyncService
      */
     public function executePick(int $matchId, string $team, string $heroSlug): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
 
         if (!$this->validateAction($match, 'pick', $team)) {
             throw new \Exception("Cannot add more picks for this team");
@@ -163,7 +163,7 @@ class OverlaySyncService
      */
     public function executeBan(int $matchId, string $team, string $heroSlug): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
 
         if (!$this->validateAction($match, 'ban', $team)) {
             throw new \Exception("Cannot add more bans for this team");
@@ -189,7 +189,7 @@ class OverlaySyncService
      */
     public function undoLastAction(int $matchId): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
         
         if (!$match->undoLastAction()) {
             throw new \Exception("No actions to undo");
@@ -207,7 +207,7 @@ class OverlaySyncService
      */
     public function resetMatch(int $matchId): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
         $match->resetMatch();
         $match->save();
 
@@ -221,7 +221,7 @@ class OverlaySyncService
      */
     public function setPhase(int $matchId, string $phase): array
     {
-        $match = Match::findOrFail($matchId);
+        $match = MatchModel::findOrFail($matchId);
         
         $validPhases = ['ban', 'pick', 'locked'];
         if (!in_array($phase, $validPhases)) {
@@ -241,7 +241,7 @@ class OverlaySyncService
      */
     public function createMatch(array $data): Match
     {
-        $match = Match::create([
+        $match = MatchModel::create([
             'name' => $data['name'],
             'team_a_name' => $data['team_a_name'] ?? 'Team A',
             'team_b_name' => $data['team_b_name'] ?? 'Team B',
