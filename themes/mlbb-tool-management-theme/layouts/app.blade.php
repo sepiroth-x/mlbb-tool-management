@@ -348,7 +348,12 @@
                 <div class="user-menu">
                     @auth
                         <span>{{ auth()->user()->name }}</span>
-                        <a href="/admin/logout" style="color: #667eea; font-weight: 600; text-decoration: none; margin-left: 10px;">Logout</a>
+                        <form method="POST" action="{{ route('filament.admin.auth.logout') }}" style="display: inline; margin-left: 10px;">
+                            @csrf
+                            <button type="submit" style="color: #667eea; font-weight: 600; background: none; border: none; cursor: pointer; text-decoration: none; font-size: inherit; font-family: inherit; padding: 0;">
+                                Logout
+                            </button>
+                        </form>
                     @else
                         <a href="/admin/login">Login</a>
                     @endauth

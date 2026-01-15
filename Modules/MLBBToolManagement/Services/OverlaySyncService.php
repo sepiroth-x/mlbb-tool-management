@@ -115,7 +115,7 @@ class OverlaySyncService
     /**
      * Validate pick/ban action
      */
-    public function validateAction(Match $match, string $action, string $team): bool
+    public function validateAction(MatchModel $match, string $action, string $team): bool
     {
         if ($action === 'pick') {
             $field = $team === 'a' ? 'team_a_picks' : 'team_b_picks';
@@ -239,7 +239,7 @@ class OverlaySyncService
     /**
      * Create new match
      */
-    public function createMatch(array $data): Match
+    public function createMatch(array $data): MatchModel
     {
         $match = MatchModel::create([
             'name' => $data['name'],
