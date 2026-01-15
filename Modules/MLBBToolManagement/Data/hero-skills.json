@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "lastUpdated": "2026-01-15",
-  "description": "Accurate MLBB hero skills data from Mobile Legends Wiki - expanded with 11 popular heroes",
+  "description": "Accurate MLBB hero skills data from Mobile Legends Wiki - expanded with 31 popular meta heroes",
   "skills": {
     "miya": {
       "passive": {
@@ -332,6 +332,483 @@
         "damage": "700-1200 (+280% Total Physical Attack)",
         "effect": "50% Physical Lifesteal, 20s aim time, can be dodged"
       }
-    }
-  }
-}
+    },
+    "wanwan": {
+      "passive": {
+        "name": "Tiger Pace",
+        "description": "Enemy heroes hit by Wanwan's attacks will have their weakness exposed for 5 seconds. When hitting an enemy's weakness, Wanwan deals 67 (+3 × Hero Level) Extra True Damage and increases damage taken from her by 10% for 5 seconds. Wanwan can dash short distance after each Basic Attack, dash speed scales with Attack Speed.",
+        "cooldown": null,
+        "damage": "67 (+3 × Hero Level) True Damage",
+        "effect": "Expose 3 weaknesses, dash after each attack, 10% increased damage taken"
+      },
+      "skill1": {
+        "name": "Swallow's Path",
+        "description": "Wanwan throws Fire Swallow in target direction, dealing 120 (+40% Total Physical Attack) Physical Damage. Fire Swallow turns into 3 rotating Swallow Daggers that fly back, each dealing 60 (+65% Total Physical Attack) Physical Damage and slowing by 30% for 1.5s. Enemies hit twice are immobilized for 0.5s.",
+        "cooldown": "11-9s",
+        "damage": "120 (+40% Total Physical Attack), daggers: 60 (+65% Total Physical Attack) each",
+        "effect": "30% slow, 0.5s immobilize if hit twice"
+      },
+      "skill2": {
+        "name": "Needles in Flowers",
+        "description": "Wanwan removes all control effects on herself and triggers Tiger Pace. Shoots Deadly Needles in all directions, dealing 150 (+60% Total Physical Attack) Physical Damage to enemies hit.",
+        "cooldown": "14-12s",
+        "damage": "150 (+60% Total Physical Attack)",
+        "effect": "Purify, 360° damage, triggers Tiger Pace dash"
+      },
+      "ultimate": {
+        "name": "Crossbow of Tang",
+        "description": "Wanwan leaps into air and fires arrows at target enemy hero for 2.5 seconds, dealing 60 (+35% Total Physical Attack) Physical Damage per arrow. If target is killed, switches to another enemy, gains 30% Attack Speed, extends duration by 1s (up to 3 times). Wanwan is untargetable and invincible. Can only cast on enemies with all weaknesses hit. Gains 100% Movement Speed during duration.",
+        "cooldown": "45-40s",
+        "damage": "60 (+35% Total Physical Attack) per arrow",
+        "effect": "Untargetable, invincible, resets on kill, requires all weaknesses hit"
+      }
+    },
+    "paquito": {
+      "passive": {
+        "name": "Champ Stance",
+        "description": "After every 3 skill casts, Paquito enters Champ Stance, gaining enhanced skill ignoring cooldowns. He gains 60% extra Movement Speed that decays over 2.5s after casting enhanced skill. Paquito's Basic Attacks only deal (+85% Total Physical Attack) Physical Damage.",
+        "cooldown": null,
+        "damage": "+85% Total Physical Attack",
+        "effect": "Enhanced skill every 3 casts, 60% movement speed"
+      },
+      "skill1": {
+        "name": "Heavy Left Punch",
+        "description": "Paquito throws punch in target direction, dealing 210-360 (+50% Total Physical Attack) Physical Damage. Gains 150-500 (+110% Total Physical Attack) shield for 2.5s if enemy hero is hit. Champ Stance: Damage increased to 350-600 (+100% Total Physical Attack), shield value increased to 120%.",
+        "cooldown": "5-4s",
+        "damage": "210-360 (+50% Total Physical Attack), Enhanced: 350-600 (+100% Total Physical Attack)",
+        "effect": "Shield on hero hit, enhanced version has more damage and shield"
+      },
+      "skill2": {
+        "name": "Jab",
+        "description": "Paquito dashes in target direction and throws jab, dealing 150-450 (+150% Total Physical Attack) Physical Damage. Paquito stops and throws jab early upon colliding with enemy hero or creep. Champ Stance: Damage increased to 240-720 (+240% Total Physical Attack).",
+        "cooldown": "7-5s",
+        "damage": "150-450 (+150% Total Physical Attack), Enhanced: 240-720 (+240% Total Physical Attack)",
+        "effect": "Dash, stops on collision with hero/creep"
+      },
+      "ultimate": {
+        "name": "Knockout Strike",
+        "description": "Paquito launches elbow strike in target direction, dealing 250-350 (+50% Total Physical Attack) Physical Damage and knocking back. Then throws haymaker, dealing 350-600 (+100% Total Physical Attack) Physical Damage and slowing by 75% for 1s. Champ Stance: Instead of haymaker, launches uppercut dealing 400-750 (+120% Total Physical Attack) and knocking airborne for 0.5s.",
+        "cooldown": "38-28s",
+        "damage": "Elbow: 250-350 (+50% Total Physical Attack), Haymaker: 350-600 (+100% Total Physical Attack), Enhanced Uppercut: 400-750 (+120% Total Physical Attack)",
+        "effect": "Knockback + slow, Enhanced: knockback + airborne"
+      }
+    },
+    "tigreal": {
+      "passive": {
+        "name": "Fearless",
+        "description": "Tigreal gains stack of Fearless each time he casts skill or is hit by Basic Attack. After getting 4 stacks, Tigreal will consume all Fearless stacks to block next incoming Basic Attack (including turret attacks).",
+        "cooldown": null,
+        "damage": null,
+        "effect": "Blocks next Basic Attack after 4 stacks"
+      },
+      "skill1": {
+        "name": "Attack Wave",
+        "description": "Tigreal smashes ground with hammer and sends shockwave forward that erupts 3 times, each dealing 270-520 (+70% Total Physical Attack) Physical Damage to enemies in fan-shaped area and slowing them by 20%/40%/60% for 1.5s.",
+        "cooldown": "10-8s",
+        "damage": "270-520 (+70% Total Physical Attack) per wave",
+        "effect": "3 waves, stacking slow up to 60%"
+      },
+      "skill2": {
+        "name": "Sacred Hammer",
+        "description": "Tigreal charges in target direction, dealing (+100% Total Physical Attack) Physical Damage and pushing enemies to end of charge. Used Again: Can cast again within 4s, dealing 280-380 (+60% Total Physical Attack) Physical Damage and knocking airborne for 1s.",
+        "cooldown": "14-11s",
+        "damage": "First cast: (+100% Total Physical Attack), Second: 280-380 (+60% Total Physical Attack)",
+        "effect": "Push then knockup, can Flicker during skill"
+      },
+      "ultimate": {
+        "name": "Implosion",
+        "description": "Tigreal unleashes power of hammer, stunning and pulling nearby enemies to him for 2s while dealing 270-430 (+130% Total Physical Attack) Physical Damage. First half can be interrupted by control effects. Second part cannot be interrupted except by Suppression.",
+        "cooldown": "42-38s",
+        "damage": "270-430 (+130% Total Physical Attack)",
+        "effect": "Pull + 2s stun, can Flicker during skill"
+      }
+    },
+    "khufra": {
+      "passive": {
+        "name": "Spell Curse",
+        "description": "Khufra activates Spell Curse every 12s, enhancing next Basic Attack with extra range dealing [(+120% Total Physical Attack) (+target's 6% Max HP) Magic Damage], slows target by 30% for 1.5s and heals Khufra by 8% Max HP. Each control effect applied to enemy hero reduces cooldown by 4s.",
+        "cooldown": "12s, reduced by 4s per control effect",
+        "damage": "(+120% Total Physical Attack) (+target's 6% Max HP) Magic Damage",
+        "effect": "30% slow, 8% Max HP heal, extended range"
+      },
+      "skill1": {
+        "name": "Tyrant's Revenge",
+        "description": "Khufra charges up then launches himself in specified direction, dealing 50-100 plus 7 (+1.5% Extra Physical Attack)% of Max HP Physical Damage to units on path. When reaching max distance or hitting enemy hero, stops and deals same damage to nearby enemies, knocking airborne up to 1.1s. Charge scales with channel time.",
+        "cooldown": "12-10s",
+        "damage": "50-100 plus 7 (+1.5% Extra Physical Attack)% Max HP",
+        "effect": "Knockup duration scales with charge time (max 1.1s)"
+      },
+      "skill2": {
+        "name": "Bouncing Ball",
+        "description": "Khufra wraps himself into magic bouncing ball, increasing Physical & Magic Defense by 30%-100%. Enemies trying to use blink skills across Khufra are knocked airborne. Each bounce deals Magic Damage equal to 50-100 plus 3 (+2% Extra Physical Attack)% Max HP and slows by 80% for 0.2s.",
+        "cooldown": "10-8s",
+        "damage": "50-100 plus 3 (+2% Extra Physical Attack)% Max HP per bounce",
+        "effect": "30%-100% def bonus, anti-dash, 80% slow per bounce"
+      },
+      "ultimate": {
+        "name": "Tyrant's Rage",
+        "description": "Khufra pulls back all enemy targets around him toward his front, dealing 300-600 (+100% Total Physical Attack) Physical Damage and slowing for 1.25-1.75s. If enemies knocked against walls, inflicts 150% extra damage and stuns instead of slows.",
+        "cooldown": "38-34s",
+        "damage": "300-600 (+100% Total Physical Attack), Wall hit: 450-900 (+150% Total Physical Attack)",
+        "effect": "Pull + slow, stun if hit wall"
+      }
+    },
+    "angela": {
+      "passive": {
+        "name": "Smart Heart",
+        "description": "Angela gains 7.5% extra Movement Speed for 4s each time she casts skill (up to 30%). When attached to allied hero, Movement Speed boost is transferred to allied hero.",
+        "cooldown": null,
+        "damage": null,
+        "effect": "7.5% movement speed per skill, max 30%, transfers when attached"
+      },
+      "skill1": {
+        "name": "Love Waves",
+        "description": "Angela sends Love Waves in target direction, dealing 170-320 (+80% Total Magic Power) Magic Damage, revealing positions briefly, and applying Lover's Mark (up to 5 stacks). Each stack increases damage by 20% and slows by 8% for 3s. Also restores 150-200 (+75% Total Magic Power) HP to allied heroes hit. Stores up to 5 charges.",
+        "cooldown": "10-8s per charge",
+        "damage": "170-320 (+80% Total Magic Power), +20% per Lover's Mark",
+        "effect": "8% slow per stack (max 40%), reveal, heal allies, 5 charges"
+      },
+      "skill2": {
+        "name": "Puppet-on-a-String",
+        "description": "Angela launches Puppet String at target enemy, dealing 300-450 (+40% Total Magic Power) Magic Damage and gradually slowing up to 80%. If connected for 3s, immobilizes for 1.5s and deals 450-675 (+60% Total Magic Power) Magic Damage. Each Lover's Mark increases final damage by 20%.",
+        "cooldown": "12-10s",
+        "damage": "Initial: 300-450 (+40% Total Magic Power), Final: 450-675 (+60% Total Magic Power)",
+        "effect": "Gradual slow to 80%, 1.5s immobilize after 3s"
+      },
+      "ultimate": {
+        "name": "Heartguard",
+        "description": "Angela channels for 2s, applying 1000-2000 (+200-300% Total Magic Power) shield lasting 6s to target allied hero regardless of distance. After channeling, attaches to ally for 12s, casting skills at zero Mana cost. Can cast again to detach by blinking away. Untargetable during attachment.",
+        "cooldown": "60-50s",
+        "damage": null,
+        "effect": "Large shield, 12s attachment, untargetable, zero mana skills, blink detach"
+      }
+    },
+    "freya": {
+      "passive": {
+        "name": "Power of War God",
+        "description": "Freya gains 1 stack of Sacred Orb every 2s (max 12 stacks). Each Basic Attack consumes 1 stack. When casting skills, Freya consumes all stacks to deal 30 (+30% Total Physical Attack) Physical Damage per stack to nearby enemies, up to 360 (+360% Total Physical Attack) at 12 stacks.",
+        "cooldown": null,
+        "damage": "30 (+30% Total Physical Attack) per stack",
+        "effect": "Gains stack every 2s, max 12, consumes on skill cast for AoE burst"
+      },
+      "skill1": {
+        "name": "Wings of Faith",
+        "description": "Freya leaps to target location, dealing 200-400 (+80% Total Physical Attack) Physical Damage to enemies on landing and slowing them by 40% for 1.5s. Increases her Attack Speed by 25%-50% for 4s.",
+        "cooldown": "10-8s",
+        "damage": "200-400 (+80% Total Physical Attack)",
+        "effect": "Leap, 40% slow, 25%-50% attack speed buff"
+      },
+      "skill2": {
+        "name": "Sacred Orb",
+        "description": "Freya gains shield equal to 250-400 (+120% Total Physical Attack) for 3s and unleashes shockwave dealing 300-500 (+120% Total Physical Attack) Physical Damage to nearby enemies and stunning them for 1.2s.",
+        "cooldown": "12-10s",
+        "damage": "300-500 (+120% Total Physical Attack)",
+        "effect": "Shield + 1.2s AoE stun"
+      },
+      "ultimate": {
+        "name": "Valkyrie Descent",
+        "description": "Freya spreads wings and gains power of Valkyrie for 10s. During this time, her Basic Attacks deal 110-130 (+80% Total Physical Attack) Physical Damage in a straight line to all enemies hit. Each attack applies 30% slow for 1s and grants her 10-15 Physical and Magic Defense, stacking up to 4 times. Prevents Sacred Orb stacking.",
+        "cooldown": "42-38s",
+        "damage": "110-130 (+80% Total Physical Attack) per attack",
+        "effect": "10s duration, AoE attacks, 30% slow, defensive stacks, prevents passive stacking"
+      }
+    },
+    "karina": {
+      "passive": {
+        "name": "Shadow Combo",
+        "description": "Karina's skills can mark enemy heroes. When marked enemy takes damage from Karina's Basic Attack or skills, the mark explodes, dealing 140 (+20% Total Magic Power) (+10% target's Lost HP) True Damage and reducing Ultimate cooldown by 0.5s.",
+        "cooldown": null,
+        "damage": "140 (+20% Total Magic Power) (+10% target's Lost HP) True Damage",
+        "effect": "Mark explosion, reduces Ultimate cooldown by 0.5s"
+      },
+      "skill1": {
+        "name": "Elusiveness",
+        "description": "Karina enters Shadow form for 3.5s, gaining 35%-50% Movement Speed, immunity to Basic Attacks, and 60% enhanced next Basic Attack or skill damage. If she kills enemy hero during this time, this skill's cooldown refreshes immediately.",
+        "cooldown": "6.5-5s",
+        "damage": null,
+        "effect": "3.5s Shadow form, immune to Basic Attacks, 35%-50% movement speed, 60% damage boost, resets on kill"
+      },
+      "skill2": {
+        "name": "Dance of Blades",
+        "description": "Karina dashes toward enemy while spinning blades, dealing 100-200 (+60% Total Magic Power) Magic Damage. If this skill hits, she can cast it again up to 2 more times in 5s. Each cast increases damage by 10% (up to 30%). Applies mark on hit.",
+        "cooldown": "9-7s",
+        "damage": "100-200 (+60% Total Magic Power), increases by 10% per cast",
+        "effect": "Triple dash, stacking damage, applies mark"
+      },
+      "ultimate": {
+        "name": "Shadow Rush",
+        "description": "Karina charges at target enemy hero, dealing 300-500 (+120% Total Magic Power) Magic Damage. Karina gains shield equal to 100-200 (+100% Total Magic Power) for 2s. If target dies within 3s, cooldown resets and 100 mana is refunded. Applies mark.",
+        "cooldown": "40-32s",
+        "damage": "300-500 (+120% Total Magic Power)",
+        "effect": "Shield, resets on kill, mana refund, applies mark"
+      }
+    },
+    "joy": {
+      "passive": {
+        "name": "Rhythm",
+        "description": "Every 6s, Joy's next Basic Attack or skill becomes a Charged Attack, dealing 180 (+100% Total Magic Power) extra Magic Damage and slowing enemy by 30% for 1s. When she or her partner hit same target within 1s, triggers Rhythm, dealing 160-240 (+60% Total Magic Power) Magic Damage and restoring 80-120 (+30% Total Magic Power) HP to both.",
+        "cooldown": "6s",
+        "damage": "Charged: 180 (+100% Total Magic Power), Rhythm: 160-240 (+60% Total Magic Power)",
+        "effect": "30% slow, duo damage + heal when hitting same target"
+      },
+      "skill1": {
+        "name": "Glee",
+        "description": "Joy summons music notes around her, each dealing 120-270 (+60% Total Magic Power) Magic Damage to enemies hit and slowing by 30% for 1s. Notes orbit for 6s. Can cast again to detonate all notes, each dealing 180-405 (+90% Total Magic Power) Magic Damage.",
+        "cooldown": "10-8s",
+        "damage": "Per note: 120-270 (+60% Total Magic Power), Detonate: 180-405 (+90% Total Magic Power)",
+        "effect": "30% slow, orbiting notes, manual detonation"
+      },
+      "skill2": {
+        "name": "Beat",
+        "description": "Joy dashes in specified direction and increases Movement Speed by 30%-50% for 2s. Next Basic Attack within 5s becomes Charged Attack. During dash, purifies control effects.",
+        "cooldown": "12-10s",
+        "damage": null,
+        "effect": "Dash, purify, 30%-50% movement speed, triggers Charged Attack"
+      },
+      "ultimate": {
+        "name": "Passion",
+        "description": "Joy links with target allied hero, both gaining 40%-70% Movement Speed for 3s. Linked ally's next 3 Basic Attacks each restore 50-80 HP to themselves and deal 120-220 (+70% Total Magic Power) extra Magic Damage. Joy can teleport to partner's location during link. 15s cooldown after link ends.",
+        "cooldown": "50-40s",
+        "damage": "120-220 (+70% Total Magic Power) per enhanced ally attack",
+        "effect": "3s link, 40%-70% movement speed, teleport, enhances ally attacks, 50-80 HP restore per hit"
+      }
+    },
+    "nana": {
+      "passive": {
+        "name": "Molina Smooch",
+        "description": "When suffering fatal damage, Nana immediately transforms into adorable Molina and runs to safety. During this time, Nana is immune to all damage and control effects. After 2.5s, she will resurrect at Molina's location with 30% HP. This can only occur once every 150s.",
+        "cooldown": "150s",
+        "damage": null,
+        "effect": "Revive with 30% HP, 2.5s invulnerability, immune to everything"
+      },
+      "skill1": {
+        "name": "Magic Boomerang",
+        "description": "Nana throws boomerang in target direction, dealing 280-480 (+120% Total Magic Power) Magic Damage to first enemy hit and slowing them by 25% for 2s. Boomerang returns, dealing 280-480 (+120% Total Magic Power) Magic Damage again to enemies hit and slowing by 30% for 2s.",
+        "cooldown": "8-6s",
+        "damage": "280-480 (+120% Total Magic Power) per hit (can hit twice)",
+        "effect": "25% slow going out, 30% slow returning, hits twice"
+      },
+      "skill2": {
+        "name": "Molina Blitz",
+        "description": "Nana summons Molina in target direction. Molina chases nearby enemies, dealing 180-280 (+70% Total Magic Power) Magic Damage on contact and transforming them into adorable Molina for 1.5-2s. Transformed enemies cannot attack or use skills, movement speed reduced to 220. Stores up to 2 Molinas.",
+        "cooldown": "11-9s per charge",
+        "damage": "180-280 (+70% Total Magic Power)",
+        "effect": "1.5-2s polymorph, reduces movement to 220, disables attacks/skills, 2 charges"
+      },
+      "ultimate": {
+        "name": "Molina Gift",
+        "description": "Nana throws magic ball at target location. After 1.5s delay, ball explodes dealing 400-600 (+180% Total Magic Power) Magic Damage to enemies in area and slowing them by 70% for 2.5s. Enemies at explosion center are stunned for 0.5-1s instead.",
+        "cooldown": "36-31s",
+        "damage": "400-600 (+180% Total Magic Power)",
+        "effect": "1.5s delay, 70% slow, 0.5-1s stun at center"
+      }
+    },
+    "harley": {
+      "passive": {
+        "name": "Poker Trick",
+        "description": "Every 4s, Harley's next Basic Attack fires poker card in fan shape dealing 200-350 (+100% Total Magic Power) Magic Damage to enemies hit. Each enemy hero hit by skills or Enhanced Basic Attack grants Harley 1 stack of Magic Mastery (max 10), each increasing Magic Power by 5-8.",
+        "cooldown": "4s",
+        "damage": "200-350 (+100% Total Magic Power)",
+        "effect": "Fan-shaped attack, gains 5-8 Magic Power per stack (max 10)"
+      },
+      "skill1": {
+        "name": "Poker Flash",
+        "description": "Harley throws 3 flying cards in target direction. Each card deals 200-350 (+60% Total Magic Power) Magic Damage to first enemy hit and returns. Harley recovers 40-80 HP when catching returning card.",
+        "cooldown": "8-6s",
+        "damage": "200-350 (+60% Total Magic Power) per card",
+        "effect": "3 cards, 40-80 HP per card caught, applies Magic Mastery"
+      },
+      "skill2": {
+        "name": "Space Escape",
+        "description": "Harley jumps into another dimension, leaving hat at his original location for 3s. Can recast to return to hat's location. While in alternate dimension, Harley gains 30% Movement Speed and immunity to all damage.",
+        "cooldown": "12-10s",
+        "damage": null,
+        "effect": "3s invulnerability, 30% movement speed, teleport back to hat"
+      },
+      "ultimate": {
+        "name": "Deadly Magic",
+        "description": "Harley summons 12 ring blades around target enemy, each dealing 130-190 (+45% Total Magic Power) Magic Damage. If only 1 enemy hero is hit, damage increases to 200-300 (+75% Total Magic Power) per blade. Slows target by 60% for 2s.",
+        "cooldown": "42-37s",
+        "damage": "130-190 (+45% Total Magic Power) per blade, Single target: 200-300 (+75% Total Magic Power) per blade (12 blades total)",
+        "effect": "60% slow, massive single-target burst, applies Magic Mastery"
+      }
+    },
+    "hanabi": {
+      "passive": {
+        "name": "Ninjutsu: Equinox",
+        "description": "Hanabi is immune to all control effects. Instead, she loses 15-30 Mana when hit by crowd control. If not enough Mana, loses 10% Max HP. Her Basic Attacks cannot crit but bounce to 4 nearby enemies, dealing 30%-45% damage with each bounce. Converts Critical Chance to Physical Penetration at 1:1 ratio.",
+        "cooldown": null,
+        "damage": "30%-45% per bounce (4 bounces)",
+        "effect": "CC immunity (costs mana/HP), crit immunity, converts crit to penetration, AoE basic attacks"
+      },
+      "skill1": {
+        "name": "Ninjutsu: Petal Barrage",
+        "description": "Hanabi unleashes 4 petal blades in fan-shaped area, each dealing 140-240 (+90% Total Physical Attack) Physical Damage and slowing enemies by 40% for 2s.",
+        "cooldown": "10-8s",
+        "damage": "140-240 (+90% Total Physical Attack) per blade",
+        "effect": "4 blades, 40% slow, fan-shaped AoE"
+      },
+      "skill2": {
+        "name": "Ninjutsu: Soul Scroll",
+        "description": "Hanabi generates Higanbana shield equal to 20-30% Max HP, lasting 2s. While shield is active, she gains 50% Movement Speed and immunity to slow effects. When shield breaks or expires, deals 120-220 (+50% Total Physical Attack) Physical Damage to nearby enemies.",
+        "cooldown": "18-16s",
+        "damage": "120-220 (+50% Total Physical Attack)",
+        "effect": "20-30% Max HP shield, 50% movement speed, slow immunity, AoE damage on end"
+      },
+      "ultimate": {
+        "name": "Forbidden Jutsu: Higanbana",
+        "description": "Hanabi launches Higanbana at target enemy, dealing 400-600 (+120% Total Physical Attack) Physical Damage. The Higanbana spreads to other enemies, dealing same damage. Enemies hit by Higanbana become linked. If any linked enemy takes damage, 20% damage is shared with other linked enemies. Lasts 5s.",
+        "cooldown": "50-42s",
+        "damage": "400-600 (+120% Total Physical Attack)",
+        "effect": "Spreads between enemies, 5s duration, 20% damage share between all linked targets"
+      }
+    },
+    "odette": {
+      "passive": {
+        "name": "Avian Authority",
+        "description": "Odette gains 1 stack of Avian Authority each time she deals damage with skills (max 10 stacks, lasts 6s). Each stack increases Magic Power by 4-10. When at full stacks, Odette and her swan deal 30% more damage.",
+        "cooldown": null,
+        "damage": null,
+        "effect": "4-10 Magic Power per stack (max 10), 30% damage boost at max stacks"
+      },
+      "skill1": {
+        "name": "Avian Sanctuary",
+        "description": "Odette summons swan around herself, dealing 200-350 (+80% Total Magic Power) Magic Damage to nearby enemies and slowing them by 40% for 2s. Odette also gains shield equal to 300-500 (+150% Total Magic Power) for 3s. Swan orbits for 3s, dealing 100-175 (+40% Total Magic Power) Magic Damage per second to enemies nearby.",
+        "cooldown": "8-6s",
+        "damage": "Initial: 200-350 (+80% Total Magic Power), Per second: 100-175 (+40% Total Magic Power)",
+        "effect": "40% slow, shield, orbiting swan damage"
+      },
+      "skill2": {
+        "name": "Blue Nova",
+        "description": "Odette releases energy ball in target direction, dealing 300-450 (+105% Total Magic Power) Magic Damage to first enemy hit and stunning them for 1s. The ball then returns, dealing same damage. If Odette catches returning ball, cooldown reduces by 40%.",
+        "cooldown": "11-9s",
+        "damage": "300-450 (+105% Total Magic Power) per hit (can hit twice)",
+        "effect": "1s stun, can hit twice, 40% cooldown reduction if caught"
+      },
+      "ultimate": {
+        "name": "Swan Song",
+        "description": "Odette channels for 2.5s, during which she and swan become one, continuously dealing 160-260 (+85% Total Magic Power) Magic Damage per wave to nearby enemies (7 waves total). During channeling, Odette cannot move but gains 30% damage reduction and immunity to crowd control.",
+        "cooldown": "46-41s",
+        "damage": "160-260 (+85% Total Magic Power) per wave (7 waves)",
+        "effect": "2.5s channel, 30% damage reduction, CC immunity, immobile, 7 damage waves"
+      }
+    },
+    "mathilda": {
+      "passive": {
+        "name": "Spirit of Annoyance",
+        "description": "After using skill, Mathilda's next Basic Attack deals 200-340 (+50% Total Magic Power) extra Magic Damage and steals 30%-50% Movement Speed from target for 1.5s. She also gains 15 Physical & Magic Defense for 3s.",
+        "cooldown": null,
+        "damage": "200-340 (+50% Total Magic Power)",
+        "effect": "Steal 30%-50% movement speed, gain 15 def"
+      },
+      "skill1": {
+        "name": "Soul Bloom",
+        "description": "Mathilda releases Abyssal energy that circles around her 3 times. Each circle deals 200-300 (+60% Total Magic Power) Magic Damage and slows enemies by 30% for 2s. Each hit increases damage by 12%. She gains 20%-30% Movement Speed while releasing energy.",
+        "cooldown": "10-8s",
+        "damage": "200-300 (+60% Total Magic Power) per circle, increases by 12% per hit",
+        "effect": "3 circles, 30% slow, 20%-30% movement speed, stacking damage"
+      },
+      "skill2": {
+        "name": "Guiding Wind",
+        "description": "Mathilda dashes in target direction, dealing 250-400 (+50% Total Magic Power) Magic Damage to enemies along path. Can recast up to 3 times in 8s. If she passes through allied hero, grants both 40% Movement Speed for 1s and enhanced next Basic Attack.",
+        "cooldown": "16-14s",
+        "damage": "250-400 (+50% Total Magic Power) per dash",
+        "effect": "Triple dash, buff allies touched, 40% movement speed"
+      },
+      "ultimate": {
+        "name": "Circling Eagle",
+        "description": "Mathilda hops onto target allied hero for 2.5s. During this time, target gains 20%-40% Attack and Movement Speed. When dismounting, Mathilda shockwaves nearby enemies, dealing 450-750 (+150% Total Magic Power) Magic Damage and pulling them towards landing point, then stunning for 0.75s.",
+        "cooldown": "42-37s",
+        "damage": "450-750 (+150% Total Magic Power)",
+        "effect": "2.5s ride, buff ally's attack/movement, AoE pull + 0.75s stun on dismount"
+      }
+    },
+    "estes": {
+      "passive": {
+        "name": "Moonlight Immersion",
+        "description": "Every 8s, Estes' next Basic Attack deals 250 (+90% Total Magic Power) extra Magic Damage and restores 35-60 (+15% Total Magic Power) HP to himself and nearby allies. Enhanced Basic Attack cannot crit and does not trigger attack effects.",
+        "cooldown": "8s",
+        "damage": "250 (+90% Total Magic Power)",
+        "effect": "Heal 35-60 (+15% Total Magic Power) to self and nearby allies"
+      },
+      "skill1": {
+        "name": "Moonlight Grace",
+        "description": "Estes calls upon Moonlight to heal target ally, restoring 280-430 (+90% Total Magic Power) HP immediately, then recovering 160-260 (+50% Total Magic Power) HP over 3s. During healing, target gains 50% Slow Resistance.",
+        "cooldown": "8-6s",
+        "damage": null,
+        "effect": "Instant heal + heal over time, 50% slow resistance"
+      },
+      "skill2": {
+        "name": "Domain of Moon Goddess",
+        "description": "Estes prays to Moon Goddess, dealing 250-400 (+50% Total Magic Power) Magic Damage to enemies in target area and slowing them by 60% for 2s. Simultaneously, all allied heroes in area recover 230-380 (+80% Total Magic Power) HP and gain immunity to slow effects for 2s.",
+        "cooldown": "11-9s",
+        "damage": "250-400 (+50% Total Magic Power)",
+        "effect": "60% slow to enemies, heal + slow immunity to allies"
+      },
+      "ultimate": {
+        "name": "Blessing of Moon Goddess",
+        "description": "Estes channels blessing of Moon Goddess for 3s, recovering HP equal to 340-480 (+120% Total Magic Power) per second to all nearby allied heroes. During channeling, Estes recovers 80% less HP. Can be interrupted by control effects.",
+        "cooldown": "46-41s",
+        "damage": null,
+        "effect": "3s channel, massive AoE heal per second, can be interrupted, Estes heals 80% less"
+      }
+    },
+    "selena": {
+      "passive": {
+        "name": "Symbiosis",
+        "description": "Selena has two forms with different skills and abilities. In Elven form, her skills apply Abyssal Mark (max 2 stacks) to enemy heroes. In Abyssal form, she gains 30% extra Movement Speed and her skills consume Abyssal Marks for extra effects. Switching forms has 2.5s cooldown.",
+        "cooldown": "2.5s form switch",
+        "damage": null,
+        "effect": "Dual form, marks in Elven, consumes marks in Abyssal, 30% movement speed in Abyssal"
+      },
+      "skill1": {
+        "name": "Abyssal Trap (Elven) / Abyssal Arrow (Abyssal)",
+        "description": "Elven: Selena summons Abyssal Devil at target location for 90s, granting vision. When enemy hero approaches, trap explodes dealing 250-500 (+30% Total Magic Power) Magic Damage, stunning for 0.5s and revealing for 5s. Stores 3 traps. Abyssal: Selena fires arrow in target direction, dealing 300-600 (+90% Total Magic Power) Magic Damage to first enemy hero hit and stunning for 0.5-3s based on distance. Consumes all marks for 120-320 (+80% Total Magic Power) extra True Damage per mark.",
+        "cooldown": "10-8s (Elven), 12-10s (Abyssal)",
+        "damage": "Elven: 250-500 (+30% Total Magic Power), Abyssal: 300-600 (+90% Total Magic Power) + 120-320 (+80% Total Magic Power) True Damage per mark",
+        "effect": "Elven: 3 traps, vision, 0.5s stun. Abyssal: 0.5-3s stun, consumes marks for True Damage"
+      },
+      "skill2": {
+        "name": "Abyssal Soul (Elven) / Primal Darkness (Abyssal)",
+        "description": "Elven: Selena summons Abyssal Soul at location, dealing 300-450 (+70% Total Magic Power) Magic Damage. Soul flies to nearby enemy heroes for 3s, dealing 80-130 (+30% Total Magic Power) Magic Damage per hit. Abyssal: Selena charges forward, dealing 200-350 (+100% Total Magic Power) Magic Damage. If she hits enemy with Abyssal Mark, dashes again and resets skill cooldown. Attacks consume all marks for 70-170 (+40% Total Magic Power) Magic Damage per mark.",
+        "cooldown": "11-9s (Elven), 8-6s (Abyssal)",
+        "damage": "Elven: 300-450 (+70% Total Magic Power) + 80-130 (+30% Total Magic Power) per hit. Abyssal: 200-350 (+100% Total Magic Power) + 70-170 (+40% Total Magic Power) per mark",
+        "effect": "Elven: Summons persistent soul. Abyssal: Dash, resets on marked enemy, consumes marks"
+      },
+      "ultimate": {
+        "name": "Primal Darkness (Elven→Abyssal) / Blessing of Moon God (Abyssal→Elven)",
+        "description": "Transforms between Elven and Abyssal forms. In Abyssal form, Selena gains 30% Movement Speed and her Basic Attacks become melee, dealing 50% more damage. Enhanced Basic Attacks apply Abyssal Taint, dealing 200-400 (+160% Total Magic Power) Magic Damage over 3s.",
+        "cooldown": "2.5s",
+        "damage": "Abyssal Basic Attack DoT: 200-400 (+160% Total Magic Power) over 3s",
+        "effect": "Form switch, Abyssal: 30% movement speed, melee attacks, 50% basic attack damage boost, DoT"
+      }
+    },
+    "julian": {
+      "passive": {
+        "name": "Smith's Legacy",
+        "description": "Julian has two forms with different abilities. Sword Form: Gains 8-16 Physical & Magic Defense and 20% extra Physical Lifesteal. Basic Attacks deal extra 50 (+30% Total Physical Attack) Physical Damage. Scythe Form: Gains 30-60 extra Physical & Magic Penetration and 20% extra Spell Vamp. Basic Attacks deal extra 60 (+60% Total Magic Power) Magic Damage.",
+        "cooldown": null,
+        "damage": "Sword: 50 (+30% Total Physical Attack), Scythe: 60 (+60% Total Magic Power)",
+        "effect": "Sword: 8-16 def, 20% Physical Lifesteal. Scythe: 30-60 penetration, 20% Spell Vamp"
+      },
+      "skill1": {
+        "name": "Flying Swords / Scythe Shred",
+        "description": "Sword: Julian throws flying swords forward, each dealing 150-250 (+60% Total Physical Attack) Physical Damage. Swords return, dealing 150-250 (+60% Total Physical Attack) Physical Damage again. Scythe: Julian charges scythe forward, dealing 300-500 (+90% Total Magic Power) Magic Damage. Scythe returns, dealing 300-500 (+90% Total Magic Power) Magic Damage and pulling enemies along path.",
+        "cooldown": "8-6s",
+        "damage": "Sword: 150-250 (+60% Total Physical Attack) per hit (2 hits), Scythe: 300-500 (+90% Total Magic Power) per hit (2 hits)",
+        "effect": "Sword: Dual damage. Scythe: Dual damage + pull on return"
+      },
+      "skill2": {
+        "name": "Blade Storm / Scythe Horror",
+        "description": "Sword: Julian dashes forward and swings sword, dealing 200-350 (+80% Total Physical Attack) Physical Damage. Can cast again to dash back, dealing same damage. Scythe: Julian blinks to location and swings scythe, dealing 250-450 (+100% Total Magic Power) Magic Damage. Can cast again to blink back, dealing same damage and slowing by 40% for 2s.",
+        "cooldown": "12-10s",
+        "damage": "Sword: 200-350 (+80% Total Physical Attack) per dash, Scythe: 250-450 (+100% Total Magic Power) per blink",
+        "effect": "Sword: Double dash. Scythe: Double blink + 40% slow"
+      },
+      "ultimate": {
+        "name": "Dissimilation",
+        "description": "Julian transforms between Sword and Scythe forms. Upon transformation, unleashes energy dealing 300-600 (+100% of Total Physical Attack and Total Magic Power) Hybrid Damage to nearby enemies. Sword→Scythe: Enemies are knocked airborne for 0.8s. Scythe→Sword: Creates shield equal to 500-900 (+100% of Total Physical Attack and Total Magic Power) for 3s.",
+        "cooldown": "18-14s",
+        "damage": "300-600 (+100% of Total Physical Attack and Total Magic Power) Hybrid",
+        "effect": "Sword→Scythe: 0.8s knockup. Scythe→Sword: Large shield"
+      }
