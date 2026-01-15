@@ -381,6 +381,10 @@
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 1rem;
         max-height: calc(90vh - 250px);
+        /* Performance optimizations */
+        contain: layout style paint;
+        will-change: scroll-position;
+        -webkit-overflow-scrolling: touch;
     }
 
     .hero-card {
@@ -391,6 +395,10 @@
         cursor: pointer;
         transition: all 0.3s ease;
         text-align: center;
+        /* Performance optimizations */
+        contain: layout style paint;
+        content-visibility: auto;
+        will-change: transform;
     }
 
     .hero-card:hover {
@@ -420,10 +428,11 @@
         margin-bottom: 0.5rem;
         /* Image optimization */
         image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
         transform: translateZ(0);
-        will-change: transform;
+        will-change: auto;
         backface-visibility: hidden;
+        /* Reduce image quality for grid view - saves memory */
+        image-rendering: auto;
     }
     
     /* Loading skeleton for images */
@@ -1640,6 +1649,67 @@
         setupEnhancedLazyLoading();
     });
     
+    // ===== PROGRESSIVE RENDERING OPTIMIZATION =====
+    let renderBatchTimeout = null;
+    const RENDER_BATCH_SIZE = 30; // Render 30 heroes at a time
+    const RENDER_BATCH_DELAY = 16; // ~60fps
+    
+    function enableProgressiveRendering() {
+        const heroGrid = document.getElementById('heroPickerGrid');
+        if (!heroGrid) return;
+        
+        const heroCards = Array.from(heroGrid.querySelectorAll('.hero-card'));
+        
+        // Initially hide all cards beyond the first batch
+        heroCards.forEach((card, index) => {
+            if (index >= RENDER_BATCH_SIZE) {
+                card.style.visibility = 'hidden';
+                card.style.opacity = '0';
+            }
+        });
+        
+        // Progressively reveal cards in batches
+        let currentBatch = RENDER_BATCH_SIZE;
+        const revealNextBatch = () => {
+            const batchEnd = Math.min(currentBatch + RENDER_BATCH_SIZE, heroCards.length);
+            
+            for (let i = currentBatch; i < batchEnd; i++) {
+                const card = heroCards[i];
+                requestAnimationFrame(() => {
+                    card.style.visibility = 'visible';
+                    card.style.opacity = '1';
+                    card.style.transition = 'opacity 0.2s ease-in';
+                });
+            }
+            
+            currentBatch = batchEnd;
+            
+            if (currentBatch < heroCards.length) {
+                renderBatchTimeout = setTimeout(revealNextBatch, RENDER_BATCH_DELAY);
+            }
+        };
+        
+        // Start revealing after initial render
+        setTimeout(revealNextBatch, 100);
+    }
+    
+    function cancelProgressiveRendering() {
+        if (renderBatchTimeout) {
+            clearTimeout(renderBatchTimeout);
+            renderBatchTimeout = null;
+        }
+        
+        // Reveal all cards immediately
+        const heroGrid = document.getElementById('heroPickerGrid');
+        if (heroGrid) {
+            heroGrid.querySelectorAll('.hero-card').forEach(card => {
+                card.style.visibility = 'visible';
+                card.style.opacity = '1';
+            });
+        }
+    }
+    // ===== END PROGRESSIVE RENDERING =====
+    
     // ===== END IMAGE OPTIMIZATION =====
     
     // State management
@@ -1662,12 +1732,20 @@
         document.getElementById('heroSearch').value = '';
         filterHeroes();
         updateHeroAvailability();
+        
+        // Enable progressive rendering to prevent hanging
+        requestAnimationFrame(() => {
+            enableProgressiveRendering();
+        });
     }
 
     // Close hero picker
     function closeHeroPicker() {
         document.getElementById('heroPicker').style.display = 'none';
         document.body.style.overflow = 'auto';
+        
+        // Cancel any pending progressive rendering
+        cancelProgressiveRendering();
     }
 
     // Filter heroes by search and role
@@ -1675,19 +1753,35 @@
         const searchTerm = document.getElementById('heroSearch').value.toLowerCase();
         const activeRole = document.querySelector('.filter-btn.active').dataset.role;
         
-        document.querySelectorAll('.hero-card').forEach(card => {
-            const heroName = card.dataset.name;
-            const heroRole = card.dataset.role;
+        // Use requestAnimationFrame for smoother filtering
+        requestAnimationFrame(() => {
+            const heroCards = document.querySelectorAll('.hero-card');
+            let visibleCount = 0;
             
-            const matchesSearch = heroName.includes(searchTerm);
-            const matchesRole = activeRole === 'all' || heroRole === activeRole;
+            heroCards.forEach(card => {
+                const heroName = card.dataset.name;
+                const heroRole = card.dataset.role;
+                
+                const matchesSearch = heroName.includes(searchTerm);
+                const matchesRole = activeRole === 'all' || heroRole === activeRole;
+                
+                if (matchesSearch && matchesRole) {
+                    card.style.display = 'block';
+                    // Ensure visibility for filtered results
+                    card.style.visibility = 'visible';
+                    card.style.opacity = '1';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
             
-            if (matchesSearch && matchesRole && !card.classList.contains('disabled')) {
-                card.style.display = 'block';
-            } else if (matchesSearch && matchesRole) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
+            // If filtering reduced visible items, no need for progressive rendering
+            if (visibleCount <= RENDER_BATCH_SIZE) {
+                cancelProgressiveRendering();
+            } else if (searchTerm === '' && activeRole === 'all') {
+                // Re-enable progressive rendering when showing all
+                enableProgressiveRendering();
             }
         });
     }
