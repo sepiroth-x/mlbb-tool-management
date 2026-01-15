@@ -1,0 +1,829 @@
+{
+  "heroes": [
+    {
+      "name": "Fanny",
+      "passive": {
+        "name": "Air Superiority",
+        "description": "During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 7 energy per stack for her."
+      },
+      "skill1": {
+        "name": "Tornado Strike",
+        "description": "Fanny whirls her blades, dealing 300–540 (+80% Total Physical Attack) Physical Damage to nearby enemies."
+      },
+      "skill2": {
+        "name": "Steel Cable",
+        "description": "Fanny shoots a cable in the target direction that pulls her to the first obstacle hit. She can cast this skill again within 2 seconds until her energy runs out. Each successive cast reduces the skill's energy cost by 2. Fanny automatically casts Tornado Strike upon hitting an enemy mid-flight."
+      },
+      "ultimate": {
+        "name": "Cut Throat",
+        "description": "Fanny leaps at the target enemy hero or Creep with her blades, dealing 500–860 (+240% Extra Physical Attack) Physical Damage. Each stack of Prey Mark of the target increases this damage by 20%."
+      }
+    },
+    {
+      "name": "Harley",
+      "passive": {
+        "name": "Magic Master",
+        "description": "Harley's mastery of magic allows his Basic Attack to deal 60 (+50% Total Physical Attack)(+60% Total Magic Power) Magic Damage. His attacks reduce the enemy's Magic Defense by 2 for 3 seconds on hit (up to 10 stacks)."
+      },
+      "skill1": {
+        "name": "Poker Trick",
+        "description": "Harley throws 3-5 waves of cards in the target direction, each dealing 130-210 (+25% Total Magic Power) Magic Damage to the first enemy hit and granting him 10% extra Attack Speed for 3 seconds on hit (up to 5-10 stacks)."
+      },
+      "skill2": {
+        "name": "Space Escape",
+        "description": "Harley blinks in the designated direction, leaving a magic hat at his place, increasing his Movement Speed by 30% for 2 seconds. Use Again within 4 seconds to return where the hat is and lose the speed boost."
+      },
+      "ultimate": {
+        "name": "Deadly Magic",
+        "description": "Harley casts a magic ring of fire at the target enemy hero, dealing them 200-400 (+60% Total Magic Power) Magic Damage and slowing them by 40% for 1.5 seconds. The magic ring stays around the enemy for 4 seconds. The ring explodes at the end dealing 100-200 (+30% Total Magic Power) plus 50% of the enemy's damage taken as Magic Damage."
+      }
+    },
+    {
+      "name": "Selena",
+      "passive": {
+        "name": "Symbiosis",
+        "description": "Selena can switch freely between her two forms. Elven Form: Selena applies Abyssal Mark with her skills (up to 2 stacks). Abyssal Form: All damage will consume 1 stack of Abyssal Mark to deal 225 (+15 × Hero Level) (+40% Total Magic Power) extra Magic Damage."
+      },
+      "skill1": {
+        "name": "Abyssal Trap / Soul Eater",
+        "description": "Elven: Selena summons an Abyssal Devil to lurk in a designated location. The Devil attaches to enemies and slows them by 70%, then deals 350–550 (+150% Total Magic Power) Magic Damage after 1 second. Abyssal: Selena dashes forward dealing 250–400 (+70% Total Magic Power) Magic Damage."
+      },
+      "skill2": {
+        "name": "Abyssal Arrow / Garotte",
+        "description": "Elven: Selena fires magic arrows dealing 250–400 (+20% Total Magic Power) to 500–800 Magic Damage and stunning 0.5-3 seconds based on distance. Abyssal: Selena charges at a target dealing 350–600 (+100% Total Magic Power) Magic Damage and granting 65% Movement Speed."
+      },
+      "ultimate": {
+        "name": "Primal Darkness / Blessing of the Moon God",
+        "description": "Elven: Selena enters Abyssal Form and increases Movement Speed by 30% for 0.8s. Basic Attacks deal (+25% Total Magic Power) extra Magic Damage. Abyssal: Returns to Elven Form restoring mana and increasing Movement Speed by 30%."
+      }
+    },
+    {
+      "name": "Angela",
+      "passive": {
+        "name": "Smart Heart",
+        "description": "Angela gains 7.5% extra Movement Speed for 4 seconds each time she casts a skill (up to 30%). When attached to an allied hero, the Movement Speed boost is transferred to them."
+      },
+      "skill1": {
+        "name": "Love Waves",
+        "description": "Angela sends Love Waves in the target direction, dealing 170–320 (+80% Total Magic Power) Magic Damage to enemies hit, applying Lover's Mark (up to 5 stacks). Each stack increases damage by 20% and slows by 8%. Also restores 150–200 (+75% Total Magic Power) HP to allied heroes hit."
+      },
+      "skill2": {
+        "name": "Puppet-on-a-String",
+        "description": "Angela launches a Puppet String at target enemy, dealing 300–450 (+40% Total Magic Power) Magic Damage and gradually slowing up to 80%. After 3 seconds, immobilizes for 1.5s and deals 450–675 (+60% Total Magic Power) Magic Damage."
+      },
+      "ultimate": {
+        "name": "Heartguard",
+        "description": "Angela begins channeling for 2 seconds, applying a 1000–2000 (+200–300% Total Magic Power) shield to target allied hero. After channeling completes, she attaches herself to the ally for 12 seconds, during which she can cast skills at zero Mana cost."
+      }
+    },
+    {
+      "name": "Diggie",
+      "passive": {
+        "name": "Young Again",
+        "description": "Upon death, Diggie reverses time and turns to egg form, in which he can continue to move around and gains a new set of skills. He cannot be targeted in egg form and will revive after a period of time."
+      },
+      "skill1": {
+        "name": "Auto Alarm Bomb",
+        "description": "Diggie flings an owl alarm to the target location. The alarm remains for 25 seconds or until it reacts to the first enemy in range, chasing them and exploding dealing 500–600 (+100% Total Magic Power) Magic Damage and slowing by 30%. Up to 5 owl alarms can exist."
+      },
+      "skill2": {
+        "name": "Reverse Time",
+        "description": "Diggie marks a target enemy hero for 4 seconds and pulls them back to their previous location after the duration ends, dealing 150–400 (+100% Total Magic Power) Magic Damage and slowing by 80%."
+      },
+      "ultimate": {
+        "name": "Time Journey",
+        "description": "Diggie removes all debuffs on nearby allied heroes and grants them 650–880 (+300% Total Magic Power) shield and Control Immunity for 3 seconds. He also gains 50% Movement Speed for 0.5 seconds."
+      }
+    },
+    {
+      "name": "Chip",
+      "passive": {
+        "name": "Snack Time!",
+        "description": "Chip starts eating potato chips when out of combat, regenerating HP equal to 150 plus 45% after finishing a whole bag (requires 5 bites). After eating a bag, Chip cannot eat again for 5 seconds."
+      },
+      "skill1": {
+        "name": "Crash Course",
+        "description": "Chip rams his hovercraft into the ground, dealing 220–370 plus target's Max HP Magic Damage and applying Chip's Mark. Chip gains a 300–800 (+60% Total Magic Power) shield upon hitting an enemy hero. Chip's next Basic Attack becomes ranged and detonates marks, stunning for 0.6s."
+      },
+      "skill2": {
+        "name": "Overtime",
+        "description": "Chip rushes forward for 2 seconds, gaining speed until reaching 65% extra Movement Speed, maintaining max speed for 2 seconds. His next Basic Attack causes him to charge at the enemy, dealing 200–300 (+30% Total Magic Power) Magic Damage and knocking back slightly."
+      },
+      "ultimate": {
+        "name": "Shortcut",
+        "description": "Chip drops the Main Portal on an enemy hero, dealing 200–300 (+60% Total Magic Power) Magic Damage and slowing by 30% for 2.5s. Creates Connecting Portals near allied heroes. Main Portal deals 600–900 (+180% Total Magic Power) Magic Damage after a delay and knocks airborne for 0.8s."
+      }
+    },
+    {
+      "name": "Faramis",
+      "passive": {
+        "name": "Vicious Retrieval",
+        "description": "Every 4 seconds, Faramis's next skill against enemy heroes generates a soul fragment. Faramis can absorb fragments to restore 100 (+50% Total Magic Power) HP and gain 2 extra Magic Power (up to 40 stacks). Upon death, consumes absorbed fragments to reduce respawn timer by 3% each (up to 90%)."
+      },
+      "skill1": {
+        "name": "Shadow Stampede",
+        "description": "Faramis enters Shadow state for 3 seconds, gaining 70% extra Movement Speed, 25 extra Physical and Magic Defense, 20% cooldown reduction, and ability to move through terrain. Enemies contacted are marked. Upon leaving, drags marked enemies toward him dealing 250–400 (+60% Total Magic Power) Magic Damage."
+      },
+      "skill2": {
+        "name": "Ghost Bursters",
+        "description": "Faramis gathers Nether energy in a fan-shaped area, dealing 330–480 (+144% Total Magic Power) Magic Damage. The energy splits and bounces to nearby enemies, dealing 200–300 (+72% Total Magic Power) Magic Damage (splits up to 2 times on hero hits)."
+      },
+      "ultimate": {
+        "name": "Nether Realm",
+        "description": "Faramis turns his surroundings into Nether Realm for 6s, making affected allied heroes enter Specter state granting them 400–800 plus 10 (+5% Total Magic Power)% extra HP and 50% extra Movement Speed for 1s. When Specter state breaks, clears all debuffs and enters brief Resurrection state for 1s."
+      }
+    },
+    {
+      "name": "Lunox",
+      "passive": {
+        "name": "Dreamland Twist",
+        "description": "Lunox is twisted by the powers of Chaos and Order. When using Power of Order, she gains 0.5% Spell Vamp for every 1% Magic Penetration. When using Power of Chaos, she gains 0.5% Magic Penetration for every 1% of Spell Vamp."
+      },
+      "skill1": {
+        "name": "Starlight Pulse",
+        "description": "Lunox summons a rain of starlight upon nearby enemies, dealing 200–350 (+110% Total Magic Power) Magic Damage. The starlight returns to Lunox, each restoring 75–100 (+30% Total Magic Power) HP (doubled when hitting enemy heroes). Grants one stack of Power of Order after use."
+      },
+      "skill2": {
+        "name": "Chaos Assault",
+        "description": "Lunox unleashes Chaos Energy at an enemy, dealing 250–350 (+120% Total Magic Power) (+target's 2.5%–5% Total HP) Magic Damage (1.5%–3% of Max HP against Creeps). Grants one stack of Power of Chaos after use."
+      },
+      "skill3": {
+        "name": "Cosmic Fission",
+        "description": "When Lunox uses the power of Order and Chaos, she deals 300–500 (+150% Total Magic Power) Magic Damage to targets along the way and slows them by 40% for 2 seconds."
+      },
+      "ultimate": {
+        "name": "Order & Chaos",
+        "description": "Power of Order: Lunox gains Brilliance and becomes invincible while dealing continuous damage to nearby enemies. Power of Chaos: Lunox gains Darkening and can blink in a target direction, greatly reducing Chaos Assault cooldown for a brief period."
+      }
+    },
+    {
+      "name": "Tigreal",
+      "passive": {
+        "name": "Fearless",
+        "description": "Tigreal gains a stack of Fearless each time he casts a skill or is hit by Basic Attack. After getting 4 stacks, Tigreal will consume all stacks to block the next incoming Basic Attack (including attacks from turrets)."
+      },
+      "skill1": {
+        "name": "Attack Wave",
+        "description": "Tigreal smashes the ground with his hammer and sends a shockwave forward that erupts 3 times, each dealing 270–520 (+70% Total Physical Attack) Physical Damage and slowing by 20%/40%/60% for 1.5 seconds."
+      },
+      "skill2": {
+        "name": "Sacred Hammer",
+        "description": "Tigreal charges in a target direction, dealing (+100% Total Physical Attack) Physical Damage and pushing enemies to the end of the charge. Use Again within 4 seconds to deal 280–380 (+60% Total Physical Attack) Physical Damage and knock airborne for 1 second."
+      },
+      "ultimate": {
+        "name": "Implosion",
+        "description": "Tigreal unleashes the power of his hammer, stunning and pulling nearby enemies to him for 2 seconds while dealing 270–430 (+130% Total Physical Attack) Physical Damage. The first half can be interrupted by control effects. The second part cannot be interrupted except by Suppression."
+      }
+    },
+    {
+      "name": "Grock",
+      "passive": {
+        "name": "Bastion of Stone",
+        "description": "Grock gains a Shield equal to 10% of his Max HP and empowers the next Basic Attack to deal 4 (+2% Total Physical Defense)% of the target's Max HP as Physical Damage (capped at 300 (+20 × Hero Level) against non-hero units). This has 18-12s cooldown (reduces by 200% when near terrain). Gains Control Immunity while casting skills and 30 (+6 × Hero Level)% extra Physical Defense while Shield is active."
+      },
+      "skill1": {
+        "name": "Mighty Swing",
+        "description": "Grock strikes forward with massive force, dealing 240–440 (+100% Extra Physical Attack) Physical Damage. Enemies with obstacles behind are launched airborne, taking extra 4 (+2% Total Physical Defense)% of their Max HP as Physical Damage (capped at 300 (+20 × Hero Level) against non-hero units)."
+      },
+      "skill2": {
+        "name": "Earthen Rampart",
+        "description": "After a brief delay, Grock summons a stone wall in the target area, dealing 100–200 (+60% Extra Physical Attack) Physical Damage and knocking enemies towards him. Use Again to cancel the wall early."
+      },
+      "ultimate": {
+        "name": "Tectonic Charge",
+        "description": "Grock charges forward, dealing 100 (+50% Total Physical Attack) Physical Damage to enemies in his path. Upon hitting terrain, he stops and triggers a massive explosion knocking nearby enemies airborne for 1 second, dealing (+300% Total Physical Attack) Physical Damage. If doesn't hit terrain, 50% of cooldown is refunded."
+      }
+    },
+    {
+      "name": "Minotaur",
+      "passive": {
+        "name": "Rage Incarnate",
+        "description": "When Minotaur uses a skill, he gains Motivation for 3 seconds and heals himself for 5 (+1 × Hero Level)% of damage dealt by enemy heroes. These effects are doubled in Enraged state."
+      },
+      "skill1": {
+        "name": "Despair Stomp",
+        "description": "Minotaur jumps to the target location, dealing 280–355 (+60% Total Physical Attack) Physical Damage and briefly knocking enemies airborne. Enemies hit are slowed by 40% while enhancing his Basic Attacks to deal (+3% Total HP) extra Physical Damage for 2 seconds. Enraged: Increases AOE range and damage by (+3% Total HP)."
+      },
+      "skill2": {
+        "name": "Motivation Roar",
+        "description": "Minotaur motivates himself and nearby most wounded hero, restoring 220–320 (+60% Total Magic Power) HP and healing himself based on his 8% lost HP. Enraged: Minotaur heals himself and nearby allies."
+      },
+      "ultimate": {
+        "name": "Minoan Fury",
+        "description": "Minotaur enters Enraged State and smashes the ground 3 times. First 2 hits deal 180–300 (+85% Total Physical Attack) Physical Damage and slow by 60%. Final hit deals 200–300 (+85% Total Physical Attack) True Damage and knocks airborne for 0.8s. Minotaur is immune to control effects during this attack. Enraged state lasts 12 seconds."
+      }
+    },
+    {
+      "name": "Miya",
+      "passive": {
+        "name": "Moon Blessing",
+        "description": "Each Basic Attack gains 5% Attack Speed for 4s, stacking to 5 times. After reaching full stacks, summons Moonlight Shadow with each Basic Attack dealing 30 (+25% Total Physical Attack) Physical Damage, inheriting portion of Attack Effects."
+      },
+      "skill1": {
+        "name": "Moon Arrow",
+        "description": "Shoots two extra arrows with each Basic Attack dealing 10-35 (+100% Total Physical Attack) Physical Damage to target and 30% damage to nearby targets, lasting 4s. Each extra arrow inherits portion of Attack Effects."
+      },
+      "skill2": {
+        "name": "Arrow of Eclipse",
+        "description": "Launches empowered arrow dealing 270-420 (+45% Total Physical Attack) Physical Damage, immobilizing for 1.2s. Arrow splits into 6 minor arrows each dealing 40-105 (+20% Total Physical Attack) Physical Damage, slowing 30% for 2s."
+      },
+      "ultimate": {
+        "name": "Hidden Moonlight",
+        "description": "Removes all debuffs, concealing herself and gaining 65% extra Movement Speed lasting 2s or until launching attack. Gains full stacks of Moon Blessing upon leaving state."
+      }
+    },
+    {
+      "name": "Clint",
+      "passive": {
+        "name": "Double Shot",
+        "description": "After each skill cast, Clint's next Basic Attack within 4s penetrates line of enemies dealing 150 (+100% Total Physical Attack) Physical Damage. Damage can trigger attack effects, Physical Attack portion can critically strike."
+      },
+      "skill1": {
+        "name": "Quick Draw",
+        "description": "Fires 5 bullets in quick succession dealing 250-400 (+85% Total Physical Attack) Physical Damage each. Bullets spread evenly across enemies in fan-shaped area. Enemies hit by multiple bullets take 30%-50% damage after first bullet."
+      },
+      "skill2": {
+        "name": "Trapping Recoil",
+        "description": "Shoots trap net slightly jumping back, dealing 140-240 (+30% Total Physical Attack) (+150% Total Magic Power) Physical Damage to first enemy hit, immobilizing 1.2s. Successfully hitting enemy reduces cooldown 40%."
+      },
+      "ultimate": {
+        "name": "Grenade Bombardment",
+        "description": "Launches grenade exploding on first enemy hit, dealing 280-400 (+100% Total Physical Attack) Physical Damage, slowing 25% for 1.2s. Gains grenade recharge every 12-10s (up to 5)."
+      }
+    },
+    {
+      "name": "Bruno",
+      "passive": {
+        "name": "Mecha Legs",
+        "description": "Gains 2% extra Crit Chance each time deals damage with skills (up to 10 stacks). Has higher Physical Attack but only gains 80% extra Attack Speed from all sources."
+      },
+      "skill1": {
+        "name": "Volley Shot",
+        "description": "Kicks Powerball on next Basic Attack dealing 145-320 (+100% Total Physical Attack) Physical Damage, slowing 30% for 0.5s. Powerball bounces back to ground for retrieval, reducing Flying Tackle cooldown 1s."
+      },
+      "skill2": {
+        "name": "Flying Tackle",
+        "description": "Makes slide tackle dealing 140-265 (+40% Total Physical Attack) Physical Damage, stunning 0.5s. If Powerball bouncing back, also draws Powerball toward him."
+      },
+      "ultimate": {
+        "name": "Worldie",
+        "description": "Kicks Energy Ball at target enemy hero dealing 250-450 (+83% Total Physical Attack) Physical Damage, knocking back. Energy Ball bounces between nearby enemies up to 10 times, each dealing 150-270 (+50% Total Physical Attack) Physical Damage, reducing enemy Physical Defense 4%-8% for 8s (up to 3 stacks)."
+      }
+    },
+    {
+      "name": "Ixia",
+      "passive": {
+        "name": "Siphon Starlium",
+        "description": "Basic Attacks/skills apply stack of Starlium Charge. When performing Basic Attack on enemy with two stacks, consumes stacks dealing (+150% Total Physical Attack) (+200 × Lifesteal) (+10 × Hero Level) Physical Damage, recovering HP equal to damage dealt (only 20 (+100 × Lifesteal)% against non-hero units). Cannot critically strike. Basic Attacks cannot trigger Lifesteal."
+      },
+      "skill1": {
+        "name": "Dual Beam",
+        "description": "Fires 2 Starlium-charged energy beams along ground dealing 120-225 (+80% Total Physical Attack) Physical Damage in rectangular area, slowing enemy heroes 40%. Upon hitting enemy hero gains 40% Movement Speed for 3s. Enemies hit by both beams take double damage."
+      },
+      "skill2": {
+        "name": "Star Helix",
+        "description": "Launches canister of Starlium energy knocking back nearby enemies, pulling enemies to center line after short delay dealing 200-300 (+60% Total Physical Attack) Physical Damage."
+      },
+      "ultimate": {
+        "name": "Full Barrage",
+        "description": "Disassembles weapon into 6 smaller weapons entering Barrage state 4s. Basic Attacks/skills hit enemies in large fan-shaped area, hitting up to 6 enemy units (prioritizes heroes). Siphon Starlium fires simultaneously with normal Basic Attacks. Cannot target turrets during Barrage state."
+      }
+    },
+    {
+      "name": "Kimmy",
+      "passive": {
+        "name": "Aerial Dominance",
+        "description": "Can move and aim in different directions when using Spray Gun. Spray Gun attack deals (+22% Total Physical Attack) (+27% Total Magic Power) Magic Damage. Hitting enemy heroes/non-hero units restores 6/3 Starlium. At max Starlium Basic Attacks enhanced to (+27% Total Physical Attack) (+32% Total Magic Power) piercing through targets. Doesn't stop moving while shooting, no Attack Speed Bonus. Every 1% Attack Speed converts to 1 Magic Power."
+      },
+      "skill1": {
+        "name": "Anti-Grav Thruster",
+        "description": "Uses jetpack to take flight removing/becoming immune to Slow Effects, can pass through terrain gaining 90% Movement Speed for 1s. During flight fires 4 Chemical Bolts at nearby enemies each dealing 20 (+25% Total Physical Attack) (+30% Total Magic Power) Magic Damage, slowing 50% for 0.5s."
+      },
+      "skill2": {
+        "name": "Starlium Beam",
+        "description": "Fires Starlium Beam immobilizing enemies in path dealing 300 (+50% Total Physical Attack) (+60% Total Magic Power) Magic Damage for 2s. Gain 20 Starlium for each enemy hero hit."
+      },
+      "ultimate": {
+        "name": "Traction Pulse",
+        "description": "Charges/fires Traction Pulse. Upon hitting enemy or reaching max range explodes dealing 200 (+60% Total Physical Attack) (+72% Total Magic Power) Magic Damage, creating force field slowing enemies 75%. After 1s field contracts pulling all enemy heroes to center dealing 15% of current HP as Magic Damage. Gain 40 Starlium for each enemy hero hit."
+      }
+    },
+    {
+      "name": "Popol and Kupa",
+      "passive": {
+        "name": "We Are Friends",
+        "description": "Kupa recovers 10% Max HP per second after not taking damage 5s. When Kupa down, Popol can pray 3s to bring back (30s cooldown). After launching 3 consecutive attacks on enemy, Kupa enhances Popol's next attack dealing (+220% Total Physical Attack) Physical Damage. Kupa has 2500 (+1200% Total Physical Attack) HP inheriting 100% of Popol's other attributes."
+      },
+      "skill1": {
+        "name": "Bite 'em, Kupa!",
+        "description": "Popol throws spear at target dealing 80-170 (+100% Total Physical Attack) Physical Damage, ordering Kupa to bite dealing 100-190 (+100% Total Physical Attack) Physical Damage following attacks 3s. Alpha Wolf Form: Kupa strikes ferociously stunning target 1s with 3 rapid bites."
+      },
+      "skill2": {
+        "name": "Kupa, Help!",
+        "description": "Popol summons Kupa to protect gaining 240-330 (+200% Extra Physical Attack) shield, dealing 240-330 (+50% Total Physical Attack) Physical Damage to nearby enemies slowing 35% for 0.5s. Kupa assists Popol in battle 3s. Alpha Wolf Form: Kupa darts back knocking nearby enemies airborne 0.2s, shield/damage increased to 125%."
+      },
+      "skill3": {
+        "name": "Popol's Surprise",
+        "description": "Sets trap detonating after short delay dealing 70-100 (+20% Total Magic Power) Magic Damage, immobilizing 1s, creating frost zone 4s reducing Movement Speed 20%. Can store up to 3 traps gaining 1 charge per 22-16s."
+      },
+      "ultimate": {
+        "name": "We Are Angry!",
+        "description": "Popol and Kupa enter Enraged state 12s: both gain 15% extra Movement Speed and increase Attack Speed to 1.3 times. Kupa turns into Alpha Wolf Form gaining 1500-3500 HP enhancing other skills, fully restoring HP."
+      }
+    },
+    {
+      "name": "Vale",
+      "passive": {
+        "name": "Windtalk",
+        "description": "Gains 1 stack of Windtalk each kill/assist increasing Movement Speed 8 (up to 10 stacks)."
+      },
+      "skill1": {
+        "name": "Wind Blade",
+        "description": "Unleashes two wind blades toward left/right of target area each dealing 250-450 (+80% Total Magic Power) Magic Damage."
+      },
+      "skill2": {
+        "name": "Windblow",
+        "description": "Sends whirlwind dealing 300-400 (+80% Total Magic Power) Magic Damage, knocking airborne 1s (each enemy once). When whirlwind reaches destination remains 1.6s continuously dealing total 200-400 (+80% Total Magic Power) Magic Damage to enemies in range."
+      },
+      "ultimate": {
+        "name": "Windstorm",
+        "description": "Summons windstorm at target location dealing total 150-300 (+30% Total Magic Power) Magic Damage, slowing 20%, continuously pulling into center. After 1.6s windstorm explodes dealing 1000-1400 (+200% Total Magic Power) Magic Damage. Remaining whirlwinds also pulled into center."
+      }
+    },
+    {
+      "name": "Yve",
+      "passive": {
+        "name": "Galactic Power",
+        "description": "Gains stack of Galactic Power each time hits enemy hero with Void Blast or Void Crystal (up to 10 stacks). Each stack allows launching extra attack on next Real World Manipulation cast and increases shield gained 5%."
+      },
+      "skill1": {
+        "name": "Void Blast",
+        "description": "Detonates Galactic Energy at target location dealing 350-600 (+150% Total Magic Power) Magic Damage. Successfully hitting enemy grants 55% extra Movement Speed (halved if non-hero) decaying over 1s."
+      },
+      "skill2": {
+        "name": "Void Crystal",
+        "description": "Summons Void Crystal at target location dealing 220-420 (+40% Total Magic Power) Magic Damage to nearby enemies. Use Again commands Crystal fire materialized energy 2.7s dealing 105-180 (+20% Total Magic Power) Magic Damage every 0.45s, slowing 30%. Enemies hit multiple times slowed extra 6% per hit after first (up to 60%)."
+      },
+      "ultimate": {
+        "name": "Real World Manipulation",
+        "description": "Creates Starfield lasting 15s gaining Displacement Immunity and 400-800 (+120% Total Magic Power) shield. Can launch up to 15 attacks (Tap: 340-540 (+120% Total Magic Power) Magic Damage; Slide: 65-125 (+10% Total Magic Power) Magic Damage every 0.45s for 2.7s, slowing 50%). Enemies leaving/entering Starfield immobilized 0.8s (once per target)."
+      }
+    },
+    {
+      "name": "Wanwan",
+      "passive": {
+        "name": "Tiger Pace",
+        "description": "After using a skill or hitting an enemy's Weakness, Wanwan immediately gains 50% Attack Speed for 2.5s. Her Basic Attacks deal extra 80 (+60% Extra Physical Attack) Physical Damage to enemies that are Slowed. She has 100% Critical Damage but can only gain 50% extra Critical Damage from all sources. Every 1% Critical Chance she gains is converted to 1 Physical Attack."
+      },
+      "skill1": {
+        "name": "Swallow's Path",
+        "description": "Wanwan darts in a designated direction and strengthens Basic Attacks. Every Basic Attack can trigger an extra attack dealing 150-250 (+60% Total Physical Attack) Physical Damage to nearby enemy (up to 4 times). Casting this skill removes all slowing effects on Wanwan."
+      },
+      "skill2": {
+        "name": "Needles in Flower",
+        "description": "Wanwan throws needles forward, dealing 280-480 (+100% Total Physical Attack) Physical Damage to the first enemy hit, slowing them by 80% for 2s, then slowing by 40% for the next 1s. Hitting an enemy's weakness removes 1s of Swallow's Path and Needles in Flower cooldown."
+      },
+      "ultimate": {
+        "name": "Crossbow of Tang",
+        "description": "Wanwan removes all Weaknesses of the target (only enemy heroes) and goes airborne for 2.5s, continuously shooting darts, each dealing 200-300 (+125% Total Physical Attack) Physical Damage (the damage dealt to the same enemy gradually decreases after 4 darts). This skill can be interrupted by control immune skills. During this skill, Wanwan is unable to move."
+      }
+    },
+    {
+      "name": "Claude",
+      "passive": {
+        "name": "Battle Side-by-Side",
+        "description": "Claude's Basic Attacks deal 50 (+10% Total Physical Attack) (+12% Total Magic Power) extra Magic Damage. After Claude uses Art of Thievery or Blazing Duet, Dexter will release enhanced Basic Attacks for 6s, increasing Claude's Attack Speed by 15% (stacks up to 10 times). While enhanced, Dexter's Basic Attacks will deal 30% damage to nearby enemies. Enhanced Basic Attacks can critically strike."
+      },
+      "skill1": {
+        "name": "Art of Thievery",
+        "description": "Claude makes Dexter steal one or a random buff from nearby enemies (including jungle buffs & shield) and increases Claude's and nearby allied heroes' Movement Speed by 40% for 2s. Claude gains 1-1.5s (increases with skill level) Shield that lasts 2s. Shield amount is equal to 10% of Claude's Max HP (200% against Creeps). Shield amount increases by 50% per enemy hero hit."
+      },
+      "skill2": {
+        "name": "Blazing Duet",
+        "description": "Claude switches places with Dexter and removes all slowing effects on himself. Claude's next Basic Attack deals 190-340 (+60% Total Physical Attack) Physical Damage to enemies within range and slows them by 60%. This skill's cooldown is decreased by 0.5s when Claude's enhanced Basic Attacks hit enemy heroes."
+      },
+      "ultimate": {
+        "name": "Blazing Showdown",
+        "description": "Claude and Dexter create a battle zone for 6s around them. All Claude's Basic Attacks are enhanced for the duration (even after his passive ends). His enhanced Basic Attack deals 150-200 (+100% Total Physical Attack) Physical Damage and slows enemies by 80% for 1.5s. Nearby allied heroes will also gain 20%-40% Attack Speed for the duration. Claude gains Control Immunity during the first 1s of casting this skill."
+      }
+    },
+    {
+      "name": "Hanabi",
+      "passive": {
+        "name": "Ninjutsu: Equinox",
+        "description": "Hanabi's Basic Attacks have 50% chance of dealing extra 20% Physical Damage and bouncing to 4 other enemy units nearby. Bounced attacks deal 100% (+50% Extra Physical Attack) Physical Damage. These bounced attacks can trigger on-hit effects and can critically strike. Hanabi is immune to all Crowd Control effects when her shield is not broken. When all her shields are removed, this effect will have a 5s cooldown."
+      },
+      "skill1": {
+        "name": "Ninjutsu: Petal Barrage",
+        "description": "Hanabi fires a petal that deals 300-500 (+150% Total Physical Attack) Physical Damage to the first enemy hit and slows them by 60%. The petal then bounces to nearby enemies up to 3 times, dealing 300-500 (+150% Total Physical Attack) Physical Damage to the same target or other enemies. It also slows the target by 15%."
+      },
+      "skill2": {
+        "name": "Ninjutsu: Soul Scroll",
+        "description": "Hanabi generates a shield that absorbs 300-400 (+150% Total Physical Attack) damage, lasts for 3s. She then releases energy in a fan-shaped area, dealing 120-170 (+50% Total Physical Attack) Physical Damage to enemies hit and slows them by 60% for 1.5s."
+      },
+      "ultimate": {
+        "name": "Forbidden Jutsu: Higanbana",
+        "description": "Hanabi summons Higanbana in the target area, dealing 400-600 (+220% Total Physical Attack) Physical Damage to enemies hit and immobilizing them for 2s. She restores 15% of her Max HP per enemy hero hit and gains extra 400-600 (+220% Total Physical Attack) Shield for 5s."
+      }
+    },
+    {
+      "name": "Melissa",
+      "passive": {
+        "name": "Falling!~",
+        "description": "Melissa's Basic Attacks apply a stack of Her Highness's Mark to enemy heroes (up to 5 stacks). Each stack reduces their Physical Defense by 4-8 (based on hero level) and slows them by 6%. At max stacks, Melissa gains 35 (+2 × Hero Level) extra Physical Attack and her Basic Attacks become empowered for 3s. While empowered, Melissa's Basic Attacks slow enemies by 25% and deal (+15% Extra Physical Attack) extra Physical Damage."
+      },
+      "skill1": {
+        "name": "Go Away!~",
+        "description": "Melissa deals 240-390 (+50% Total Physical Attack) Physical Damage to enemies in a rectangular area ahead and applies a stack of Her Highness's Mark on enemy heroes. Then she dashes back dealing 140-240 (+50% Total Physical Attack) Physical Damage to enemies along the way and applies a stack of Her Highness's Mark on enemy heroes."
+      },
+      "skill2": {
+        "name": "I'm Flying!~",
+        "description": "Melissa dashes in a target direction, increasing her Movement Speed by 30% for 2s. Her next Basic Attack becomes a ranged attack that deals 200-300 (+80% Total Physical Attack) Physical Damage and slows by 25% for 1s. Melissa can dash again after using her Basic Attack 3 times (up to 3 dashes). If Melissa dashes towards a marked enemy hero, the dash distance is increased by 50%."
+      },
+      "ultimate": {
+        "name": "Cuddles!~",
+        "description": "Melissa commands Muddles to charge at target enemy hero, dealing 450-750 (+150% Total Physical Attack) Physical Damage and pulling them back for a distance. During the pull, the target takes 90-150 (+30% Total Physical Attack) Physical Damage every 0.2s. Melissa's Basic Attacks against the target restore 80 HP for her for 3s."
+      }
+    },
+    {
+      "name": "Irithel",
+      "passive": {
+        "name": "Jungle Heart",
+        "description": "Irithel can fire while moving without reducing her Movement Speed. She can also attack and use skills while moving on her Mount Leo. She does not benefit from Attack Speed but every 1% Attack Speed grants 0.5% Physical Attack. Her Critical Damage is capped at 200% but gains 10% Physical Lifesteal."
+      },
+      "skill1": {
+        "name": "Strafe",
+        "description": "Irithel rapidly fires 5 shots in the target direction, each dealing 100-150 (+40% Total Physical Attack) Physical Damage to enemies hit, slowing them by 12% that stacks up to 5 times. Basic Attacks reduce this skill's cooldown by 0.7s. Each shot that hits enemy heroes regenerates 1% of her max HP."
+      },
+      "skill2": {
+        "name": "Force of the Queen",
+        "description": "Leo roars and charges toward target direction, dealing 200-350 (+50% Total Physical Attack) Physical Damage to enemies along the way and knocking them back. Enemies hit will also be slowed by 60% for 2s."
+      },
+      "ultimate": {
+        "name": "Heavy Crossbow",
+        "description": "Irithel summons 3 Crossbow Bolts overhead for 15s and gains 30% Attack Speed. She can use this skill again to fire 1 bolt at the target location, dealing 300-500 (+120% Total Physical Attack) Physical Damage and slowing enemies by 40% for 2s."
+      }
+    },
+    {
+      "name": "Karrie",
+      "passive": {
+        "name": "Lightwheel Mark",
+        "description": "Karrie's Basic Attacks apply a stack of Lightwheel Mark on enemies (up to 5 stacks). The 5th stack deals 7-13% of target's Max HP as True Damage (capped at 1500 against Creeps) and removes all stacks."
+      },
+      "skill1": {
+        "name": "Dual Wield",
+        "description": "Karrie casts Dual Wield towards target direction, throwing 2 Lightwheels dealing 175-325 (+80% Total Physical Attack) Physical Damage and slowing enemies by 20% for 1.5s. Enemies hit by both Lightwheels are slowed by 50% instead."
+      },
+      "skill2": {
+        "name": "Phantomstep",
+        "description": "Karrie dashes to target location and strengthens next Basic Attack, dealing 160-260 (+50% Total Physical Attack) Physical Damage and applying 2 stacks of Lightwheel Mark. Using Basic Attacks reduces cooldown by 0.5s (doubled when hitting enemy heroes)."
+      },
+      "ultimate": {
+        "name": "Phantom Opening",
+        "description": "Karrie enhances her Lightwheels for 10s, gaining 25% extra Movement Speed and 50% Attack Speed. Her enhanced Basic Attacks deal an extra 40-80 (+40% Total Physical Attack) Physical Damage and apply 2 stacks of Lightwheel Mark per attack."
+      }
+    },
+    {
+      "name": "Lesley",
+      "passive": {
+        "name": "Master of Camouflage",
+        "description": "When out of combat for 2s, Lesley gains camouflage and extra 30% Movement Speed. Her next Basic Attack deals 40-200 (scales with level) (+35% Extra Physical Attack) extra Physical Damage and grants vision of the target."
+      },
+      "skill1": {
+        "name": "Master of Pursuit",
+        "description": "Lesley locks onto an enemy, firing her rifle dealing 350-550 (+150% Total Physical Attack) Physical Damage and slowing by 70% for 0.5s. If the bullet successfully hits, Lesley gains 15% Movement Speed and 15% Attack Speed for 3s. Damage is increased by 30% if target is 7 units away."
+      },
+      "skill2": {
+        "name": "Tactical Grenade",
+        "description": "Lesley throws a tactical grenade at target location, dealing 450-700 (+100% Total Physical Attack) Physical Damage and knocking back enemies. The grenade also blocks vision in the area for 3s."
+      },
+      "ultimate": {
+        "name": "Ultimate Snipe",
+        "description": "Lesley channels for 1s then fires an armor-piercing bullet at target enemy hero, dealing 800-1200 (+180% Total Physical Attack) Physical Damage. She gains vision of the target for 3s. When Lesley is channeling, she can recast this skill to cancel it, refunding 50% of cooldown. Enemies can use teammates to block the bullet, but it will pierce through the first target dealing reduced damage."
+      }
+    },
+    {
+      "name": "Moskov",
+      "passive": {
+        "name": "Spear of Quiescence",
+        "description": "Moskov's Basic Attacks can pierce through targets, dealing 30% damage to enemies behind. When Basic Attacks hit enemies against obstacles, they are stunned for 0.5-1s (stun duration increases with Moskov's Attack Speed) and take 80 (+10 × Hero Level) extra Physical Damage."
+      },
+      "skill1": {
+        "name": "Abyss Walker",
+        "description": "Moskov dashes toward target direction and strengthens his next Basic Attack within 3s to deal 140-240 (+60% Total Physical Attack) Physical Damage and knock back enemies a certain distance. Using Basic Attacks reduces this skill's cooldown by 0.8s."
+      },
+      "skill2": {
+        "name": "Spear of Destruction",
+        "description": "Moskov throws a spear forward, dealing 300-500 (+170% Total Physical Attack) Physical Damage to the first enemy hit and knocking them back until they hit an obstacle or edge of map. Enemies hit by the spear are slowed by 90% that decays over 2s."
+      },
+      "ultimate": {
+        "name": "Spear of Doom",
+        "description": "Moskov channels for 1.5s then releases phantom spears in a fan-shaped area, each dealing 250-350 (+70% Total Physical Attack) Physical Damage. He can move while channeling but cannot use other skills or Basic Attacks. Moskov gains a shield equal to 10% of his Max HP for each enemy hero hit."
+      }
+    },
+    {
+      "name": "Roger",
+      "passive": {
+        "name": "Wild Power",
+        "description": "Roger gains 4% extra Physical & Magic Lifesteal. In Wolf Form, he gains 30% extra Movement Speed and 30% Attack Speed. His Basic Attacks in Wolf Form deal 20 (+50% Total Physical Attack) extra Physical Damage and reduce target's Physical Defense by 5 (up to 6 stacks) for 2s."
+      },
+      "skill1": {
+        "name": "First Skill varies by form",
+        "description": "Human: Fires penetrating shot dealing 200-300 (+80% Total Physical Attack) Physical Damage to all enemies in a line, slowing by 50% for 1s. Wolf: Pounces on target enemy dealing 200-300 (+100% Total Physical Attack) Physical Damage and slowing by 50% for 1s."
+      },
+      "skill2": {
+        "name": "Second Skill varies by form", 
+        "description": "Human: Throws stun grenade dealing 250-450 (+70% Total Physical Attack) Physical Damage and stunning for 1s. Wolf: Roger gains 60% extra Attack Speed for 5s. Passive: Gains 20-30% extra Physical Lifesteal when HP below 40%."
+      },
+      "ultimate": {
+        "name": "Wolf Transformation",
+        "description": "Roger transforms between Human and Wolf form. When transforming to Wolf form, deals 150-250 (+80% Total Physical Attack) Physical Damage to nearby enemies and gains 30% Movement Speed and 30% Attack Speed. When transforming to Human form, restores 30% HP."
+      }
+    },
+    {
+      "name": "Brody",
+      "passive": {
+        "name": "Abyss Corrosion",
+        "description": "Brody's Basic Attacks apply a stack of Abyss Corrosion to enemies (up to 5 stacks). Each stack increases Brody's damage by 8% and slows enemies by 8%. At max stacks, Brody's Basic Attack becomes enhanced, dealing extra Physical Damage equal to 15-90 (+6% target's Lost HP) and removing all stacks. Brody cannot gain extra Attack Speed but every 1% Attack Speed converts to 0.5 Physical Attack."
+      },
+      "skill1": {
+        "name": "Abyss Impact",
+        "description": "Brody shoots forward dealing 250-450 (+120% Total Physical Attack) Physical Damage to all enemies in a line and knocking them back slightly. Basic Attacks reduce this skill's cooldown by 0.5s."
+      },
+      "skill2": {
+        "name": "Corrosive Strike",
+        "description": "Brody dashes and strikes with his Abyss energy, dealing 200-300 (+80% Total Physical Attack) Physical Damage to all enemies in the path, knocking them airborne for 0.75s and applying a stack of Abyss Corrosion. If this skill hits enemy heroes, Brody gains a shield equal to 350-450 (+150% Total Physical Attack) for 2s."
+      },
+      "ultimate": {
+        "name": "Torn-Apart Memory",
+        "description": "Brody locks onto an enemy hero within 9 units, dealing 500-700 (+150% Total Physical Attack) Physical Damage. This skill can pierce through up to 2 enemy heroes, dealing reduced damage to subsequent targets. Enemies hit take extra damage based on their missing HP and are slowed by 60% for 2s. Brody gains 100% Movement Speed for 0.6s after casting."
+      }
+    },
+    {
+      "name": "Beatrix",
+      "passive": {
+        "name": "Mechanical Genius",
+        "description": "Beatrix can switch between 4 weapons each with unique Basic Attack and skill effects. Renner (Shotgun): Close-range burst. Bennett (Sniper): Long-range precision. Nibiru (Rocket Launcher): AoE splash damage. Wesker (SMG): Rapid fire. She gains 6% Physical Lifesteal and can carry 2 weapons at once."
+      },
+      "skill1": {
+        "name": "Skill varies by weapon",
+        "description": "Renner: Fires scatter shot dealing 250-400 (+100% Total Physical Attack) Physical Damage. Bennett: Marks enemy dealing 300-500 (+120% Total Physical Attack) Physical Damage and revealing them. Nibiru: Launches rocket dealing 300-500 (+90% Total Physical Attack) Physical Damage in AoE. Wesker: Throws grenade dealing 250-400 (+80% Total Physical Attack) Physical Damage and slowing."
+      },
+      "skill2": {
+        "name": "Skill varies by weapon",
+        "description": "Renner: Dash and knock back enemies. Bennett: Increases range and damage. Nibiru: Places mine that explodes. Wesker: Dash and increase fire rate. Each weapon has unique secondary skill with tactical advantages."
+      },
+      "ultimate": {
+        "name": "Dawnbreak",
+        "description": "Beatrix enters Dawnbreak mode for 12s, swapping to her backup weapon and gaining unlimited ammo. She gains 40% Movement Speed and can freely swap weapons without cooldown. Her weapons deal 20-40% extra damage based on skill level."
+      }
+    },
+    {
+      "name": "Natan",
+      "passive": {
+        "name": "Entanglement",
+        "description": "Natan's Basic Attacks create a Reverse-Clone behind the target after 1s, dealing 30% (+5% per 10% Attack Speed) of Basic Attack damage as Physical Damage. His Critical Chance is halved but he gains 100% Critical Damage. Every 1% of extra Physical Attack is converted to 0.6% Attack Speed."
+      },
+      "skill1": {
+        "name": "Superposition",
+        "description": "Natan enters Superposition state for 1s then blinks to target location, leaving behind a Quantum Shadow that mimics his Basic Attacks (dealing 50% damage) for 6s. While in Superposition, Natan gains 40% Movement Speed and immunity to slowing effects. Cooldown reduced by 0.5s when Basic Attack hits."
+      },
+      "skill2": {
+        "name": "Interference",
+        "description": "Natan releases quantum energy forward dealing 200-400 (+80% Total Physical Attack) Physical Damage and creating 3 Quantum Rifts along the path. After 0.5s, energy converges back dealing 250-450 (+100% Total Physical Attack) Physical Damage. Enemies hit by both waves are slowed by 40% for 1.5s."
+      },
+      "ultimate": {
+        "name": "Reverse Clone",
+        "description": "Natan summons a Reverse-Clone at target location for 8s that mimics his movements and attacks (dealing 45-65% of his damage). The clone inherits Natan's stats and attributes. Natan and his clone share a link - when one takes damage, both take 40% of that damage."
+      }
+    },
+    {
+      "name": "Granger",
+      "passive": {
+        "name": "Caprice",
+        "description": "Granger's Basic Attacks use bullets (6 per reload, 4s reload). The 6th bullet deals Critical Damage and extra 50-200 (+200% Extra Physical Attack) Physical Damage. He cannot gain extra Attack Speed but every 1% Attack Speed converts to 2 Physical Attack. His Critical Damage is capped at 200%."
+      },
+      "skill1": {
+        "name": "Rondo",
+        "description": "Granger fires a bullet in target direction dealing 200-300 (+80% Total Physical Attack) Physical Damage to the first enemy hit. If the bullet hits a target, the remaining energy will explode dealing 50% damage to nearby enemies. This skill does not use his Basic Attack bullets."
+      },
+      "skill2": {
+        "name": "Rhapsody",
+        "description": "Granger dashes in target direction and reloads his gun with 3 bullets instantly. His Movement Speed is increased by 30% for 1.5s after dashing. Cooldown reduced by 0.5s each time his Basic Attacks hit enemy heroes."
+      },
+      "ultimate": {
+        "name": "Death Sonata",
+        "description": "Granger continuously fires 9 Super Bullets in a fan-shaped area, each dealing 280-400 (+150% Total Physical Attack) Physical Damage. Each bullet slows enemies by 5% (stacks up to 6 times). While casting, Granger has 36% extra Movement Speed and slow immunity but cannot use other skills or Basic Attacks."
+      }
+    },
+    {
+      "name": "Layla",
+      "passive": {
+        "name": "Malefic Gunner",
+        "description": "Layla's attack range increases by 0.5 every level (max 6.5). The farther her target, the more damage she deals (up to 20% extra damage). When her HP is below 30%, she gains 40% extra Attack Speed."
+      },
+      "skill1": {
+        "name": "Malefic Bomb",
+        "description": "Layla fires an energy ball at target area, dealing 250-500 (+60% Total Physical Attack) Physical Damage and slowing enemies by 60% for 1.5s. After the initial hit, the energy continues to burn, dealing 150-300 (+36% Total Physical Attack) Physical Damage over 3s."
+      },
+      "skill2": {
+        "name": "Void Projectile",
+        "description": "Layla fires an energy cannon forward, dealing 140-240 (+50% Total Physical Attack) Physical Damage and knocking back the first enemy hit. She also knocks herself back a distance."
+      },
+      "ultimate": {
+        "name": "Destruction Rush",
+        "description": "Layla fires her energy cannon for 3s, rapidly shooting energy shots in target direction. Each shot deals 80-130 (+35% Total Physical Attack) Physical Damage. Layla can adjust the cannon's direction while firing. She gains 20% extra damage range during this skill."
+      }
+    },
+    {
+      "name": "Freya",
+      "passive": {
+        "name": "Spirit Combo",
+        "description": "Every 2 Basic Attacks, Freya's next Basic Attack is enhanced, dealing 120 (+60% Total Physical Attack) (+50% Total Magic Power) extra Magic Damage and restoring 60-120 HP. Enhanced attacks also mark the enemy. After hitting the same enemy 3 times, they are marked with Sacred Orb for 3s."
+      },
+      "skill1": {
+        "name": "Leap of Faith",
+        "description": "Freya leaps to target location dealing 200-350 (+100% Total Physical Attack) Physical Damage to enemies in the area and slowing them by 40% for 2s. She gains a shield equal to 300-500 (+100% Total Magic Power) for 3s and 10% extra Attack Speed for 4s."
+      },
+      "skill2": {
+        "name": "Sacred Orb",
+        "description": "Freya summons 4 Sacred Orbs around her for 8s. The orbs attack enemies marked by her passive, each dealing 150-250 (+80% Total Magic Power) Magic Damage. Her Basic Attacks also slow enemies by 30% for 1s while this skill is active."
+      },
+      "ultimate": {
+        "name": "Valkyrie Descent",
+        "description": "Freya spreads her wings and flies for 7s, gaining 50% Attack Speed, 50 extra Physical Attack, and the ability to pass through terrain. She can move freely and cannot be targeted by non-AOE skills. Her Basic Attacks become ranged but deal 80% damage."
+      }
+    },
+    {
+      "name": "Masha",
+      "passive": {
+        "name": "Ancient Strength",
+        "description": "Masha has 3 HP Bars (each HP Bar is 1/3 of her Max HP). When losing an HP Bar, Masha gains 30% Physical & Magic Defense for 3s. When the 3rd HP Bar is destroyed, Masha enters Weakened state for 3s, unable to attack but able to use skills and move. Losing an HP Bar reduces all skill cooldowns by 40%."
+      },
+      "skill1": {
+        "name": "Howl Shock",
+        "description": "Masha howls dealing 150-300 (+100% Total Physical Attack) Physical Damage and slowing enemies by 60% for 2s in a fan-shaped area. She also gains 30% Movement Speed for 2s. If Masha is in Weakened state, this skill stuns enemies for 1s instead."
+      },
+      "skill2": {
+        "name": "Wild Power",
+        "description": "Masha increases her Attack Speed by 50% and gains 20% Physical Lifesteal for 5s. If Masha is in Weakened state, she immediately recovers 25% HP of 1 HP Bar and can use this skill for free."
+      },
+      "ultimate": {
+        "name": "Thunderous Force",
+        "description": "Masha slams the ground dealing 400-700 (+120% Total Physical Attack) Physical Damage to enemies in the area and stunning them for 1.5s. After the slam, the ground cracks dealing 50-100 (+15% Total Physical Attack) Physical Damage every 0.5s for 3s to enemies standing on it. She gains a shield equal to 500-900 (+200% Total Physical Attack) for 5s."
+      }
+    },
+    {
+      "name": "Zilong",
+      "passive": {
+        "name": "Dragon Flurry",
+        "description": "Every 6s, Zilong's next Basic Attack deals 50-200 (increases with level) (+50% Total Physical Attack) extra Physical Damage and flips the target over, dealing additional damage equal to 10% of target's Max HP (capped at 500 against Creeps) as Physical Damage."
+      },
+      "skill1": {
+        "name": "Spear Flip",
+        "description": "Zilong thrusts his spear forward, dealing 250-400 (+120% Total Physical Attack) Physical Damage to the first enemy hit and flipping them over. This skill can critically strike. Passive: Zilong gains 20-30% Attack Speed after casting any skill for 4s."
+      },
+      "skill2": {
+        "name": "Spear Strike",
+        "description": "Zilong strikes with his spear, dealing 120-270 (+70% Total Physical Attack) Physical Damage to enemies in front and slowing them by 40% for 2s. The next 2 Basic Attacks within 5s deal 30-80 (+60% Total Physical Attack) extra Physical Damage."
+      },
+      "ultimate": {
+        "name": "Supreme Warrior",
+        "description": "Zilong gains immunity to slowing effects and 40% Movement Speed for 5s. He gains 30-60% extra Physical Attack and 100% extra Attack Speed for the duration. While this skill is active, his passive cooldown is reduced by 4s."
+      }
+    },
+    {
+      "name": "Alucard",
+      "passive": {
+        "name": "Pursuit",
+        "description": "When only one enemy is hit by Alucard's skill or Basic Attack, he deals 1.2 times damage and gains extra Physical Lifesteal equal to 100% of his Physical Lifesteal (Unique Passive can only trigger once for multiple hits within a short period)."
+      },
+      "skill1": {
+        "name": "Groundsplitter",
+        "description": "Alucard leaps to target location, dealing 280-480 (+100% Total Physical Attack) Physical Damage to enemies in the area and slowing them by 40% for 1s. He restores 10% HP for each enemy hero hit. This skill can be cast again within 3s."
+      },
+      "skill2": {
+        "name": "Whirling Smash",
+        "description": "Alucard strikes around him, dealing 200-400 (+80% Total Physical Attack) Physical Damage twice to nearby enemies. He gains 40% Physical Lifesteal for 4s after casting."
+      },
+      "ultimate": {
+        "name": "Fission Wave",
+        "description": "Alucard slashes in target direction, dealing 480-880 (+200% Total Physical Attack) Physical Damage to all enemies hit and marking them. Within 5s, Alucard can recast to dash to marked enemy's location, dealing 280-480 (+100% Total Physical Attack) Physical Damage to nearby enemies. He gains a shield equal to 300-500 (+150% Total Physical Attack) for 3s."
+      }
+    },
+    {
+      "name": "Saber",
+      "passive": {
+        "name": "Enemy's Bane",
+        "description": "Saber gains extra Physical Attack equal to 5% of target's Max HP (capped at 50 Physical Attack) when damaging enemies that have more than 50% HP. After using his ultimate, Saber gains 45% extra Physical Penetration for 5s."
+      },
+      "skill1": {
+        "name": "Orbiting Swords",
+        "description": "Saber summons 5 Orbiting Swords around him for 5s. Each sword deals 60-110 (+40% Total Physical Attack) Physical Damage when hitting enemies. Enemies hit are slowed by 15% (stacks up to 5 times). Casting this skill again recalls the swords, each dealing 80-130 (+50% Total Physical Attack) Physical Damage."
+      },
+      "skill2": {
+        "name": "Charge",
+        "description": "Saber charges in target direction, dealing 200-300 (+80% Total Physical Attack) Physical Damage to enemies along the way. For each enemy hero hit, Saber gains 1 Sword and reduces this skill's cooldown by 2s (up to 5 Swords)."
+      },
+      "ultimate": {
+        "name": "Triple Sweep",
+        "description": "Saber dashes to target enemy hero and performs 4 quick slashes, each dealing 200-300 (+90% Total Physical Attack) Physical Damage. Target is knocked airborne during the slashes. After casting, Saber gains 45% extra Physical Penetration for 5s."
+      }
+    },
+    {
+      "name": "Karina",
+      "passive": {
+        "name": "Shadow Combo",
+        "description": "Every 2 Basic Attacks, Karina's next skill or Basic Attack will deal extra 140 (+50% Total Magic Power) True Damage. Using skills or Basic Attacks grants 1 stack (up to 2). If Karina eliminates an enemy hero, all her skill cooldowns are reset and she gains 30% extra Movement Speed for 2s."
+      },
+      "skill1": {
+        "name": "Elusiveness",
+        "description": "Karina dashes to target direction and enhances her next 2 Basic Attacks within 4s. Enhanced Basic Attacks deal 180-280 (+70% Total Magic Power) Magic Damage and she gains 35% Movement Speed for 0.5s. This skill removes all slowing effects."
+      },
+      "skill2": {
+        "name": "Dance of Blades",
+        "description": "Karina unleashes a barrage of blades in a fan-shaped area, dealing 260-360 (+100% Total Magic Power) Magic Damage to enemies hit and marking them. Marked enemies take 20% extra damage from Karina for 4s."
+      },
+      "ultimate": {
+        "name": "Shadow Rush",
+        "description": "Karina dashes to target enemy hero, dealing 400-600 (+150% Total Magic Power) Magic Damage and reducing their Magic Defense by 10-20 for 5s. After casting, Karina gains a shield equal to 300-500 (+100% Total Magic Power) for 3s."
+      }
+    },
+    {
+      "name": "Hayabusa",
+      "passive": {
+        "name": "Trace of Shadow",
+        "description": "After casting a skill, Hayabusa's next Basic Attack deals 50-200 (increases with level) (+80% Extra Physical Attack) extra Physical Damage and restores 20 Energy. If target is marked by Shadow, this damage is doubled and he gains 25% Movement Speed for 1.5s."
+      },
+      "skill1": {
+        "name": "Phantom Shuriken",
+        "description": "Hayabusa throws 3 Phantom Shurikens forward, each dealing 180-280 (+60% Total Physical Attack) Physical Damage. When a shuriken hits an enemy, it will bounce to nearby enemies up to 4 times. Each shuriken marks enemies hit with Shadow for 5s."
+      },
+      "skill2": {
+        "name": "Quad Shadow",
+        "description": "Hayabusa creates 4 Shadow clones at different locations and becomes invincible for 2s. He can recast to dash to a shadow's location. Shadows explode after 3s or when Hayabusa dashes to them, dealing 140-240 (+80% Total Physical Attack) Physical Damage to nearby enemies and slowing them by 60% for 1.5s."
+      },
+      "ultimate": {
+        "name": "Ougi: Shadow Kill",
+        "description": "Hayabusa enters Invincible state and attacks target enemy hero 5 times continuously, each dealing 140-240 (+60% Total Physical Attack) Physical Damage. Target is immobilized during the ultimate. Final strike deals 200-400 (+100% Total Physical Attack) Physical Damage. If target dies during the ultimate, cooldown is reduced by 40%."
+      }
+    },
+    {
+      "name": "Lancelot",
+      "passive": {
+        "name": "Soul Cutter",
+        "description": "When Lancelot attacks an enemy from behind, he deals 15% extra damage and gains immunity to Basic Attacks for 1s (3s cooldown). Every 10s, Lancelot's Puncture skill will be enhanced, dealing double damage and increasing dash distance by 50%."
+      },
+      "skill1": {
+        "name": "Puncture",
+        "description": "Lancelot charges in target direction, dealing 250-400 (+130% Total Physical Attack) Physical Damage to enemies along the way. He gains Invincibility for 0.5s while charging. This skill can be cast up to 3 times. Using Basic Attacks reduces cooldown by 1s (only for first charge)."
+      },
+      "skill2": {
+        "name": "Thorned Rose",
+        "description": "Lancelot performs an elegant sword dance, dealing 300-500 (+150% Total Physical Attack) Physical Damage to nearby enemies. He gains immunity to Basic Attacks for 1s and 15% extra Movement Speed for 1.5s after casting."
+      },
+      "ultimate": {
+        "name": "Phantom Execution",
+        "description": "Lancelot dashes to target enemy hero and slashes continuously, dealing 400-600 (+200% Total Physical Attack) Physical Damage in total (3 strikes). Each strike applies stack of Soul Cutter mark. If target has 3 marks, final strike deals 40% extra damage and Lancelot recovers 20% of his Max HP."
+      }
+    },
+    {
+      "name": "Gusion",
+      "passive": {
+        "name": "Dagger Umbra",
+        "description": "Gusion's skills and Basic Attacks apply Sword Scar to enemies for 4s (up to 2 marks). When an enemy has 2 Sword Scars, his next skill or Basic Attack detonates them, dealing 180 (+100% Total Magic Power) Magic Damage. His skills and Basic Attacks deal 30% extra damage to enemies with low HP (below 50%)."
+      },
+      "skill1": {
+        "name": "Sword Spike",
+        "description": "Gusion throws 5 daggers in a fan-shaped area, each dealing 75-125 (+40% Total Magic Power) Magic Damage. After 2s or upon recast, the daggers return dealing 75-125 (+40% Total Magic Power) Magic Damage and slowing enemies by 40% for 1s."
+      },
+      "skill2": {
+        "name": "Shadowblade Slaughter",
+        "description": "Gusion dashes to target direction and enhances his next Basic Attack within 5s to deal 250-400 (+100% Total Magic Power) Magic Damage. If he hits an enemy hero, he can dash again (up to 2 dashes). Using this skill resets his Basic Attack."
+      },
+      "ultimate": {
+        "name": "Incandescence",
+        "description": "Gusion blinks to target enemy hero, dealing 300-450 (+120% Total Magic Power) Magic Damage and applying 1 Sword Scar. All his daggers from Sword Spike are instantly recalled and converge on the target, each dealing 75-125 (+40% Total Magic Power) Magic Damage."
+      }
+    },
+    {
+      "name": "Ling",
+      "passive": {
+        "name": "Cloud Walker",
+        "description": "Ling can walk on walls with his Lightness skill. While on walls, he gains 15% extra Movement Speed and can see nearby enemies. Ling gains 5 Energy per second (max 100). Using skills consumes Energy. His Basic Attacks deal 30 (+100% Total Physical Attack) Physical Damage. Every 4th Basic Attack is empowered, dealing 150% damage."
+      },
+      "skill1": {
+        "name": "Finch Poise",
+        "description": "Ling dashes and slashes in target direction, dealing 250-450 (+100% Total Physical Attack) Physical Damage to enemies hit. If cast from wall, Ling leaps down dealing 300-550 (+120% Total Physical Attack) Physical Damage and slowing enemies by 60% for 1s. Consumes 30 Energy."
+      },
+      "skill2": {
+        "name": "Defiant Sword",
+        "description": "Ling strikes 4 times rapidly in target direction, each dealing 80-140 (+35% Total Physical Attack) Physical Damage. If all 4 strikes hit the same enemy hero, the final strike deals 50% extra damage and Ling gains 40 Energy. Consumes 50 Energy."
+      },
+      "ultimate": {
+        "name": "Tempest of Blades",
+        "description": "Ling jumps onto walls or leaps to target area, creating a storm of blades for 3s that deals 250-400 (+100% Total Physical Attack) Physical Damage per 0.5s to enemies inside. Ling becomes untargetable during the ultimate and gains full Energy after casting."
+      }
+    }
+  ]
+}
