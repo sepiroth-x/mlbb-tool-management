@@ -1562,24 +1562,10 @@
                 </div>
 
                 <div class="hero-picker-grid" id="heroPickerGrid">
-                    @foreach($heroes as $hero)
-                    <div class="hero-card" 
-                         data-slug="{{ $hero['slug'] }}" 
-                         data-role="{{ $hero['role'] }}" 
-                         data-name="{{ strtolower($hero['name']) }}"
-                         data-hero-name="{{ $hero['name'] }}"
-                         data-hero-image="{{ $hero['image'] }}">
-                        <img src="{{ asset('modules/mlbb-tool-management/images/heroes/' . $hero['image']) }}" 
-                             alt="{{ $hero['name'] }}" 
-                             loading="lazy"
-                             decoding="async"
-                             width="120"
-                             height="120"
-                             class="hero-card-image">
-                        <span class="hero-name">{{ $hero['name'] }}</span>
-                        <span class="hero-role">{{ $hero['role'] }}</span>
+                    <!-- Heroes will be rendered dynamically on-demand to prevent hanging -->
+                    <div class="loading-heroes" style="text-align: center; padding: 2rem; color: #94a3b8;">
+                        Loading heroes...
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -1718,8 +1704,86 @@
         teamB: [],
         currentTeam: null,
         currentSlot: null,
-        allHeroes: @json($heroes)
+        allHeroes: @json($heroes),
+        heroesRendered: false
     };
+
+    // ===== DYNAMIC HERO RENDERING (ON-DEMAND) =====
+    function renderHeroesOnDemand() {
+        if (matchupState.heroesRendered) return; // Already rendered
+        
+        const heroGrid = document.getElementById('heroPickerGrid');
+        const loadingDiv = heroGrid.querySelector('.loading-heroes');
+        
+        if (loadingDiv) {
+            loadingDiv.textContent = 'Rendering heroes...';
+        }
+        
+        // Clear the loading message
+        heroGrid.innerHTML = '';
+        
+        const imageBasePath = '{{ asset("modules/mlbb-tool-management/images/heroes/") }}';
+        
+        // Render heroes in batches to prevent hanging
+        const BATCH_SIZE = 25;
+        let currentIndex = 0;
+        
+        function renderBatch() {
+            const fragment = document.createDocumentFragment();
+            const endIndex = Math.min(currentIndex + BATCH_SIZE, matchupState.allHeroes.length);
+            
+            for (let i = currentIndex; i < endIndex; i++) {
+                const hero = matchupState.allHeroes[i];
+                
+                const heroCard = document.createElement('div');
+                heroCard.className = 'hero-card';
+                heroCard.dataset.slug = hero.slug;
+                heroCard.dataset.role = hero.role;
+                heroCard.dataset.name = hero.name.toLowerCase();
+                heroCard.dataset.heroName = hero.name;
+                heroCard.dataset.heroImage = hero.image;
+                
+                heroCard.innerHTML = `
+                    <img src="${imageBasePath}/${hero.image}" 
+                         alt="${hero.name}" 
+                         loading="lazy"
+                         decoding="async"
+                         width="120"
+                         height="120"
+                         class="hero-card-image">
+                    <span class="hero-name">${hero.name}</span>
+                    <span class="hero-role">${hero.role}</span>
+                `;
+                
+                // Add click handler
+                heroCard.addEventListener('click', function() {
+                    if (!this.classList.contains('disabled')) {
+                        const slug = this.dataset.slug;
+                        const name = this.dataset.heroName;
+                        const image = this.dataset.heroImage;
+                        selectHero(slug, name, image);
+                    }
+                });
+                
+                fragment.appendChild(heroCard);
+            }
+            
+            heroGrid.appendChild(fragment);
+            currentIndex = endIndex;
+            
+            // Continue rendering if there are more heroes
+            if (currentIndex < matchupState.allHeroes.length) {
+                requestAnimationFrame(renderBatch);
+            } else {
+                matchupState.heroesRendered = true;
+                console.log(`All ${matchupState.allHeroes.length} heroes rendered successfully!`);
+            }
+        }
+        
+        // Start rendering
+        requestAnimationFrame(renderBatch);
+    }
+    // ===== END DYNAMIC HERO RENDERING =====
 
     // Open hero picker
     function openHeroPicker(team, slot) {
@@ -1728,15 +1792,22 @@
         document.getElementById('heroPicker').style.display = 'block';
         document.body.style.overflow = 'hidden';
         
+        // Render heroes on first open (lazy initialization)
+        if (!matchupState.heroesRendered) {
+            renderHeroesOnDemand();
+        }
+        
         // Reset search and filters
         document.getElementById('heroSearch').value = '';
-        filterHeroes();
-        updateHeroAvailability();
         
-        // Enable progressive rendering to prevent hanging
-        requestAnimationFrame(() => {
-            enableProgressiveRendering();
-        });
+        // Wait for heroes to be rendered before filtering
+        const waitForRender = setInterval(() => {
+            if (matchupState.heroesRendered || document.querySelectorAll('.hero-card').length > 0) {
+                clearInterval(waitForRender);
+                filterHeroes();
+                updateHeroAvailability();
+            }
+        }, 50);
     }
 
     // Close hero picker
