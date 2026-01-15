@@ -2601,6 +2601,57 @@
                     </p>
                 </div>
 
+                <!-- Interactive Chat Section -->
+                <div class="chat-section">
+                    <div class="chat-header" onclick="toggleChat()">
+                        <div class="chat-header-content">
+                            <span class="chat-icon">💬</span>
+                            <h4>Ask AI About This Analysis</h4>
+                            <span class="chat-subtitle">Have questions? Chat with AI for more insights</span>
+                        </div>
+                        <span class="chat-toggle-icon" id="chatToggleIcon">▼</span>
+                    </div>
+                    <div class="chat-container" id="chatContainer" style="display: none;">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message assistant">
+                                <div class="message-avatar">🤖</div>
+                                <div class="message-content">
+                                    <p>Hi! I've analyzed this matchup. Feel free to ask me questions like:</p>
+                                    <ul>
+                                        <li>"What items should I build on [hero]?"</li>
+                                        <li>"How should we play early game?"</li>
+                                        <li>"What are our win conditions?"</li>
+                                        <li>"Why is [hero] strong/weak here?"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" 
+                                   id="chatInput" 
+                                   class="chat-input" 
+                                   placeholder="Ask a question about this matchup..."
+                                   onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                            <button class="chat-send-btn" onclick="sendChatMessage()" id="chatSendBtn">
+                                <span>Send</span>
+                                <span style="margin-left: 0.5rem;">➤</span>
+                            </button>
+                        </div>
+                        <div class="chat-loading" id="chatLoading" style="display: none;">
+                            <div class="chat-message assistant">
+                                <div class="message-avatar">🤖</div>
+                                <div class="message-content">
+                                    <div class="typing-indicator">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Support Section -->
                 <div class="support-section">
                     <div class="support-icon">☕💖</div>
@@ -2630,54 +2681,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Interactive Chat Section -->
-            <div class="chat-section">
-                <div class="chat-header" onclick="toggleChat()">
-                    <div class="chat-header-content">
-                        <span class="chat-icon">💬</span>
-                        <h4>Ask AI About This Analysis</h4>
-                        <span class="chat-subtitle">Have questions? Chat with AI for more insights</span>
-                    </div>
-                    <span class="chat-toggle-icon" id="chatToggleIcon">▼</span>
-                </div>
-                <div class="chat-container" id="chatContainer" style="display: none;">
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="chat-message assistant">
-                            <div class="message-avatar">🤖</div>
-                            <div class="message-content">
-                                <p>Hi! I've analyzed this matchup. Feel free to ask me questions like:</p>
-                                <ul>
-                                    <li>"What items should I build on [hero]?"</li>
-                                    <li>"How should we play early game?"</li>
-                                    <li>"What are our win conditions?"</li>
-                                    <li>"Why is [hero] strong/weak here?"</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-input-container">
-                        <input type="text" 
-                               id="chatInput" 
-                               class="chat-input" 
-                               placeholder="Ask a question about this matchup..."
-                               onkeypress="if(event.key === 'Enter') sendChatMessage()">
-                        <button class="chat-send-btn" onclick="sendChatMessage()" id="chatSendBtn">
-                            <span>Send</span>
-                            <span style="margin-left: 0.5rem;">➤</span>
-                        </button>
-                    </div>
-                    <div class="chat-loading" id="chatLoading" style="display: none;">
-                        <div class="chat-message assistant">
-                            <div class="message-avatar">🤖</div>
-                            <div class="message-content">
-                                <div class="typing-indicator">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
