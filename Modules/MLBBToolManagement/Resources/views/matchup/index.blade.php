@@ -1977,80 +1977,117 @@
         heroesRendered: false
     };
 
-    // ===== DYNAMIC HERO RENDERING (ON-DEMAND) =====
+    // ===== DYNAMIC HERO RENDERING WITH INFINITE SCROLL =====
+    let heroRenderState = {
+        currentIndex: 0,
+        isLoading: false,
+        allLoaded: false
+    };
+    
     function renderHeroesOnDemand() {
-        if (matchupState.heroesRendered) return; // Already rendered
+        if (matchupState.heroesRendered) return; // Already initialized
         
         const heroGrid = document.getElementById('heroPickerGrid');
         const loadingDiv = heroGrid.querySelector('.loading-heroes');
         
         if (loadingDiv) {
-            loadingDiv.textContent = 'Rendering heroes...';
+            loadingDiv.textContent = 'Loading heroes...';
         }
         
         // Clear the loading message
         heroGrid.innerHTML = '';
         
+        // Reset render state
+        heroRenderState.currentIndex = 0;
+        heroRenderState.isLoading = false;
+        heroRenderState.allLoaded = false;
+        
+        // Load initial batch (18 heroes)
+        loadMoreHeroes(18);
+        
+        // Mark as initialized
+        matchupState.heroesRendered = true;
+        
+        // Setup infinite scroll
+        setupInfiniteScroll();
+    }
+    
+    function loadMoreHeroes(count = 10) {
+        if (heroRenderState.isLoading || heroRenderState.allLoaded) return;
+        
+        heroRenderState.isLoading = true;
+        const heroGrid = document.getElementById('heroPickerGrid');
         const imageBasePath = '{{ asset("modules/mlbb-tool-management/images/heroes/") }}';
         
-        // Render heroes in batches to prevent hanging
-        const BATCH_SIZE = 25;
-        let currentIndex = 0;
+        const fragment = document.createDocumentFragment();
+        const endIndex = Math.min(
+            heroRenderState.currentIndex + count,
+            matchupState.allHeroes.length
+        );
         
-        function renderBatch() {
-            const fragment = document.createDocumentFragment();
-            const endIndex = Math.min(currentIndex + BATCH_SIZE, matchupState.allHeroes.length);
+        for (let i = heroRenderState.currentIndex; i < endIndex; i++) {
+            const hero = matchupState.allHeroes[i];
             
-            for (let i = currentIndex; i < endIndex; i++) {
-                const hero = matchupState.allHeroes[i];
-                
-                const heroCard = document.createElement('div');
-                heroCard.className = 'hero-card';
-                heroCard.dataset.slug = hero.slug;
-                heroCard.dataset.role = hero.role;
-                heroCard.dataset.name = hero.name.toLowerCase();
-                heroCard.dataset.heroName = hero.name;
-                heroCard.dataset.heroImage = hero.image;
-                
-                heroCard.innerHTML = `
-                    <img src="${imageBasePath}/${hero.image}" 
-                         alt="${hero.name}" 
-                         loading="lazy"
-                         decoding="async"
-                         width="120"
-                         height="120"
-                         class="hero-card-image">
-                    <span class="hero-name">${hero.name}</span>
-                    <span class="hero-role">${hero.role}</span>
-                `;
-                
-                // Add click handler
-                heroCard.addEventListener('click', function() {
-                    if (!this.classList.contains('disabled')) {
-                        const slug = this.dataset.slug;
-                        const name = this.dataset.heroName;
-                        const image = this.dataset.heroImage;
-                        selectHero(slug, name, image);
-                    }
-                });
-                
-                fragment.appendChild(heroCard);
-            }
+            const heroCard = document.createElement('div');
+            heroCard.className = 'hero-card';
+            heroCard.dataset.slug = hero.slug;
+            heroCard.dataset.role = hero.role;
+            heroCard.dataset.name = hero.name.toLowerCase();
+            heroCard.dataset.heroName = hero.name;
+            heroCard.dataset.heroImage = hero.image;
             
-            heroGrid.appendChild(fragment);
-            currentIndex = endIndex;
+            heroCard.innerHTML = `
+                <img src="${imageBasePath}/${hero.image}" 
+                     alt="${hero.name}" 
+                     loading="lazy"
+                     decoding="async"
+                     width="120"
+                     height="120"
+                     class="hero-card-image">
+                <span class="hero-name">${hero.name}</span>
+                <span class="hero-role">${hero.role}</span>
+            `;
             
-            // Continue rendering if there are more heroes
-            if (currentIndex < matchupState.allHeroes.length) {
-                requestAnimationFrame(renderBatch);
-            } else {
-                matchupState.heroesRendered = true;
-                console.log(`All ${matchupState.allHeroes.length} heroes rendered successfully!`);
-            }
+            // Add click handler with ROLE parameter included
+            heroCard.addEventListener('click', function() {
+                if (!this.classList.contains('disabled')) {
+                    const slug = this.dataset.slug;
+                    const name = this.dataset.heroName;
+                    const image = this.dataset.heroImage;
+                    const role = this.dataset.role;
+                    selectHero(slug, name, image, role);
+                }
+            });
+            
+            fragment.appendChild(heroCard);
         }
         
-        // Start rendering
-        requestAnimationFrame(renderBatch);
+        heroGrid.appendChild(fragment);
+        heroRenderState.currentIndex = endIndex;
+        
+        // Check if all heroes loaded
+        if (heroRenderState.currentIndex >= matchupState.allHeroes.length) {
+            heroRenderState.allLoaded = true;
+            console.log(`All ${matchupState.allHeroes.length} heroes loaded via infinite scroll!`);
+        }
+        
+        heroRenderState.isLoading = false;
+    }
+    
+    function setupInfiniteScroll() {
+        const heroGrid = document.getElementById('heroPickerGrid');
+        if (!heroGrid) return;
+        
+        heroGrid.addEventListener('scroll', function() {
+            // Check if user scrolled near bottom (within 200px)
+            const scrollPosition = this.scrollTop + this.clientHeight;
+            const scrollHeight = this.scrollHeight;
+            
+            if (scrollPosition >= scrollHeight - 200) {
+                // Load 10 more heroes
+                loadMoreHeroes(10);
+            }
+        });
     }
     // ===== END DYNAMIC HERO RENDERING =====
 
