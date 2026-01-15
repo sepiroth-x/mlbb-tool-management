@@ -5,7 +5,7 @@ namespace Modules\MLBBToolManagement\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\MLBBToolManagement\Services\OverlaySyncService;
-use Modules\MLBBToolManagement\Models\Match;
+use Modules\MLBBToolManagement\Models\MLBBMatch;
 
 /**
  * Overlay API Controller
@@ -47,7 +47,7 @@ class OverlayApiController extends Controller
     public function syncMatch(Request $request, $matchId)
     {
         try {
-            $match = Match::findOrFail($matchId);
+            $match = MLBBMatch::findOrFail($matchId);
             $matchState = $this->overlaySyncService->getMatchStateWithDetails($matchId);
 
             return response()->json([

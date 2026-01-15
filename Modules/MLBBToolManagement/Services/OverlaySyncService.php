@@ -3,7 +3,7 @@
 namespace Modules\MLBBToolManagement\Services;
 
 use Illuminate\Support\Facades\Cache;
-use Modules\MLBBToolManagement\Models\Match as MatchModel;
+use Modules\MLBBToolManagement\Models\MLBBMatch as MatchModel;
 
 /**
  * Overlay Sync Service

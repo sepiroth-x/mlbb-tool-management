@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\MLBBToolManagement\Services\HeroDataService;
 use Modules\MLBBToolManagement\Services\OverlaySyncService;
-use Modules\MLBBToolManagement\Models\Match as MatchModel;
+use Modules\MLBBToolManagement\Models\MLBBMatch as MatchModel;
 
 /**
  * Overlay Controller
