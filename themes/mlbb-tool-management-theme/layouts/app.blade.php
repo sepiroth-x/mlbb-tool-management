@@ -355,7 +355,7 @@
                             </button>
                         </form>
                     @else
-                        <a href="{{ route('mlbb.auth.login') }}">Login</a>
+                        <a href="{{ route('login') }}">Login</a>
                     @endauth
                 </div>
             </div>
@@ -403,7 +403,7 @@
                         @auth
                             <li><a href="/admin">Admin</a></li>
                         @else
-                            <li><a href="{{ route('mlbb.auth.login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
                         @endauth
                     </ul>
                 </div>

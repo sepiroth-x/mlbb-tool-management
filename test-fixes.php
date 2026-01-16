@@ -95,10 +95,10 @@ echo "Test 5: OpenAI Service\n";
 try {
     if (class_exists(\Modules\MLBBToolManagement\Services\OpenAIService::class)) {
         $openaiService = app(\Modules\MLBBToolManagement\Services\OpenAIService::class);
-        if (method_exists($openaiService, 'chat')) {
-            $successes[] = "✅ OpenAI Service configured with chat method";
+        if (method_exists($openaiService, 'handleMatchupChat')) {
+            $successes[] = "✅ OpenAI Service configured with handleMatchupChat method";
         } else {
-            $errors[] = "❌ OpenAI Service missing chat method";
+            $errors[] = "❌ OpenAI Service missing handleMatchupChat method";
         }
     } else {
         $errors[] = "❌ OpenAI Service class not found";
