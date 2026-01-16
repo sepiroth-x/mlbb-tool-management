@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\MLBBToolManagement\Services\HeroDataService;
 use Modules\MLBBToolManagement\Services\MatchupAnalyzerService;
+use Modules\MLBBToolManagement\Services\StatisticsTrackingService;
 
 /**
  * Matchup Controller
@@ -16,13 +17,16 @@ class MatchupController extends Controller
 {
     protected HeroDataService $heroDataService;
     protected MatchupAnalyzerService $matchupAnalyzerService;
+    protected StatisticsTrackingService $statisticsService;
 
     public function __construct(
         HeroDataService $heroDataService,
-        MatchupAnalyzerService $matchupAnalyzerService
+        MatchupAnalyzerService $matchupAnalyzerService,
+        StatisticsTrackingService $statisticsService
     ) {
         $this->heroDataService = $heroDataService;
         $this->matchupAnalyzerService = $matchupAnalyzerService;
+        $this->statisticsService = $statisticsService;
     }
 
     /**
@@ -56,6 +60,20 @@ class MatchupController extends Controller
                 $request->input('team_a'),
                 $request->input('team_b')
             );
+
+            // Track statistics in background
+            try {
+                $this->statisticsService->trackMatchupAnalysis(
+                    $analysis['team_a']['heroes'],
+                    $analysis['team_b']['heroes'],
+                    $analysis
+                );
+            } catch (\Exception $e) {
+                // Log error but don't fail the request
+                \Log::warning('Failed to track matchup statistics', [
+                    'error' => $e->getMessage()
+                ]);
+            }
 
             if ($request->expectsJson()) {
                 return response()->json([
@@ -121,6 +139,110 @@ class MatchupController extends Controller
         return response()->json([
             'success' => true,
             'data' => array_values($heroes),
+        ]);
+    }
+    
+    /**
+     * Get top performing lineups
+     */
+    public function getTopLineups(Request $request)
+    {
+        $limit = $request->query('limit', 10);
+        $lineups = $this->statisticsService->getTopLineups($limit);
+        
+        return response()->json([
+            'success' => true,
+            'data' => $lineups,
+        ]);
+    }
+    
+    /**
+     * Get detailed lineup statistics
+     */
+    public function getLineupDetails(Request $request)
+    {
+        $heroes = $request->query('heroes'); // Comma-separated hero slugs
+        
+        if (!$heroes) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Heroes parameter is required',
+            ], 400);
+        }
+        
+        $heroSlugs = explode(',', $heroes);
+        
+        if (count($heroSlugs) !== 5) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Exactly 5 heroes are required',
+            ], 400);
+        }
+        
+        $lineup = \Modules\MLBBToolManagement\Models\LineupStatistic::where(
+            'lineup_hash',
+            \Modules\MLBBToolManagement\Models\LineupStatistic::generateLineupHash($heroSlugs)
+        )->first();
+        
+        if (!$lineup) {
+            return response()->json([
+                'success' => false,
+                'message' => 'No statistics found for this lineup',
+            ], 404);
+        }
+        
+        // Get hero details
+        $heroesData = $this->heroDataService->getHeroesBySlugs($heroSlugs);
+        
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'lineup' => $lineup,
+                'heroes' => $heroesData,
+            ],
+        ]);
+    }
+    
+    /**
+     * Get hero statistics
+     */
+    public function getHeroStatistics(string $slug)
+    {
+        $stats = $this->statisticsService->getHeroStatistics($slug);
+        
+        if (!$stats) {
+            return response()->json([
+                'success' => false,
+                'message' => 'No statistics found for this hero',
+            ], 404);
+        }
+        
+        // Get hero details
+        $heroData = $this->heroDataService->getHeroBySlug($slug);
+        
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'statistics' => $stats,
+                'hero' => $heroData,
+            ],
+        ]);
+    }
+    
+    /**
+     * Get statistics dashboard data
+     */
+    public function getStatisticsDashboard()
+    {
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'top_lineups' => $this->statisticsService->getTopLineups(10),
+                'trending_lineups' => $this->statisticsService->getTrendingLineups(10),
+                'top_picked_heroes' => $this->statisticsService->getTopPickedHeroes(10),
+                'highest_winrate_heroes' => $this->statisticsService->getHighestWinRateHeroes(10),
+                'most_banned_heroes' => $this->statisticsService->getMostBannedHeroes(10),
+            ],
         ]);
     }
 }

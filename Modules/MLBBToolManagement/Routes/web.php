@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\MLBBToolManagement\Http\Controllers\MatchupController;
 use Modules\MLBBToolManagement\Http\Controllers\OverlayController;
+use Modules\MLBBToolManagement\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,22 @@ use Modules\MLBBToolManagement\Http\Controllers\OverlayController;
 |
 */
 
+// Authentication Routes (for MLBB Tournament Theme)
+Route::prefix('mlbb')->name('mlbb.')->group(function() {
+    Route::prefix('auth')->name('auth.')->group(function() {
+        Route::middleware(['guest'])->group(function() {
+            Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+            Route::post('/login', [AuthController::class, 'login']);
+            Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+            Route::post('/register', [AuthController::class, 'register']);
+        });
+        
+        Route::middleware(['auth'])->group(function() {
+            Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+        });
+    });
+});
+
 Route::prefix('mlbb')->name('mlbb.')->group(function() {
     
     // Team Matchup Probability Tool Routes
@@ -20,6 +37,17 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
         Route::get('/', [MatchupController::class, 'index'])->name('index');
         Route::post('/analyze', [MatchupController::class, 'analyze'])->name('analyze');
         Route::get('/heroes', [MatchupController::class, 'getHeroes'])->name('heroes');
+        
+        // Statistics page
+        Route::get('/statistics', function() {
+            return view('mlbb-tool-management::matchup.statistics');
+        })->name('statistics');
+        
+        // Statistics API endpoints
+        Route::get('/statistics/dashboard', [MatchupController::class, 'getStatisticsDashboard'])->name('statistics.dashboard');
+        Route::get('/statistics/top-lineups', [MatchupController::class, 'getTopLineups'])->name('statistics.top-lineups');
+        Route::get('/statistics/lineup-details', [MatchupController::class, 'getLineupDetails'])->name('statistics.lineup-details');
+        Route::get('/statistics/hero/{slug}', [MatchupController::class, 'getHeroStatistics'])->name('statistics.hero');
     });
     
     // Live Pick/Ban Overlay Routes

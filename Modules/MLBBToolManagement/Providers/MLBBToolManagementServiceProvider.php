@@ -33,6 +33,33 @@ class MLBBToolManagementServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+        $this->registerAuthenticationViews();
+    }
+    
+    /**
+     * Register custom authentication views when MLBB theme is active
+     *
+     * @return void
+     */
+    protected function registerAuthenticationViews()
+    {
+        // Check if the MLBB Tournament theme is active
+        $activeTheme = config('cms.themes.active_theme', 'BasicTheme');
+        
+        if ($activeTheme === 'mlbb-tool-management-theme') {
+            // Override default Laravel authentication routes
+            $this->app->booted(function () {
+                // Redirect default login route to MLBB auth login
+                \Illuminate\Support\Facades\Route::redirect('/login', '/mlbb/auth/login')
+                    ->middleware('guest')
+                    ->name('login.redirect');
+                
+                // Redirect default register route to MLBB auth register
+                \Illuminate\Support\Facades\Route::redirect('/register', '/mlbb/auth/register')
+                    ->middleware('guest')
+                    ->name('register.redirect');
+            });
+        }
     }
 
     /**

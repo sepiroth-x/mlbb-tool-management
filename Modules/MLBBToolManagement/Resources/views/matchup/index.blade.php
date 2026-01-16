@@ -1743,6 +1743,11 @@
         <div class="page-header">
             <h2>Team Matchup Probability Analyzer</h2>
             <p>Select 5 heroes for each team to analyze winning probability and strategies</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="{{ route('mlbb.matchup.statistics') }}" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #00d9ff, #7b2ff7); border-radius: 8px; color: #fff; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                    📊 View Statistics & Insights
+                </a>
+            </div>
         </div>
 
         <div class="teams-container">
@@ -2785,6 +2790,7 @@
                         </div>
                     </div>
 
+                    <!-- Skill Set Section - Temporarily Hidden
                     <div class="hero-detail-section hero-skills-section">
                         <h4>🎯 Skill Set</h4>
                         ${skills.map(skill => `
@@ -2805,6 +2811,7 @@
                             </div>
                         `).join('')}
                     </div>
+                    -->
 
                     <div class="hero-detail-section">
                         <h4>📊 Combat Statistics</h4>
