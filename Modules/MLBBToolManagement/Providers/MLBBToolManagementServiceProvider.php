@@ -43,23 +43,8 @@ class MLBBToolManagementServiceProvider extends ServiceProvider
      */
     protected function registerAuthenticationViews()
     {
-        // Check if the MLBB Tournament theme is active
-        $activeTheme = config('cms.themes.active_theme', 'BasicTheme');
-        
-        if ($activeTheme === 'mlbb-tool-management-theme') {
-            // Override default Laravel authentication routes
-            $this->app->booted(function () {
-                // Redirect default login route to MLBB auth login
-                \Illuminate\Support\Facades\Route::redirect('/login', '/mlbb/auth/login')
-                    ->middleware('guest')
-                    ->name('login.redirect');
-                
-                // Redirect default register route to MLBB auth register
-                \Illuminate\Support\Facades\Route::redirect('/register', '/mlbb/auth/register')
-                    ->middleware('guest')
-                    ->name('register.redirect');
-            });
-        }
+        // Authentication routes are now handled in web.php
+        // No need to override here - routes already configured
     }
 
     /**

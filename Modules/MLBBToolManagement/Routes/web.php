@@ -52,9 +52,7 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
         Route::post('/chat', [MatchupController::class, 'chat'])->name('chat');
         
         // Statistics page
-        Route::get('/statistics', function() {
-            return view('mlbb-tool-management::matchup.statistics');
-        })->name('statistics');
+        Route::get('/statistics', [MatchupController::class, 'showStatistics'])->name('statistics');
         
         // Statistics API endpoints
         Route::get('/statistics/dashboard', [MatchupController::class, 'getStatisticsDashboard'])->name('statistics.dashboard');

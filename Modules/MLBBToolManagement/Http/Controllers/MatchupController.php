@@ -44,6 +44,14 @@ class MatchupController extends Controller
     }
 
     /**
+     * Display the statistics page
+     */
+    public function showStatistics()
+    {
+        return view('mlbb-tool-management::matchup.statistics');
+    }
+
+    /**
      * Analyze matchup between two teams
      */
     public function analyze(Request $request)
