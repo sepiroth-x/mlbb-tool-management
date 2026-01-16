@@ -2555,7 +2555,7 @@
                                 ${matchupState.teamA.filter(h => h).map(slug => {
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
-                                        <div class="hero-detail-card" style="cursor: default;">
+                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')" style="cursor: pointer;">
                                             <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
                                                  alt="${hero.name}"
                                                  loading="lazy"
@@ -2575,7 +2575,7 @@
                                 ${matchupState.teamB.filter(h => h).map(slug => {
                                     const hero = matchupState.allHeroes.find(h => h.slug === slug);
                                     return hero ? `
-                                        <div class="hero-detail-card" style="cursor: default;">
+                                        <div class="hero-detail-card" onclick="showHeroDetails('${hero.slug}')" style="cursor: pointer;">
                                             <img src="${window.location.origin}/modules/mlbb-tool-management/images/heroes/${hero.image}" 
                                                  alt="${hero.name}"
                                                  loading="lazy"
@@ -3131,12 +3131,12 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
                 },
                 body: JSON.stringify({
                     message: message,
-                    context: chatState.matchupContext,
-                    history: chatState.conversationHistory
+                    analysis: chatState.matchupContext || {}
                 })
             });
             
@@ -3149,7 +3149,7 @@
             const data = await response.json();
             
             // Add assistant response to chat
-            addChatMessage(data.response, 'assistant');
+            addChatMessage(data.message, 'assistant');
             
             // Update conversation history
             chatState.conversationHistory.push({
@@ -3158,7 +3158,7 @@
             });
             chatState.conversationHistory.push({
                 role: 'assistant',
-                content: data.response
+                content: data.message
             });
             
         } catch (error) {

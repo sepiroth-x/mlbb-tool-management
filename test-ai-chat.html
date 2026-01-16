@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="YOUR_CSRF_TOKEN_HERE">
+    <title>Test AI Chat Feature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #00d9ff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+
+        .test-section {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .test-section h2 {
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .test-info {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        .test-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #00d9ff, #667eea);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .test-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .test-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .result-box {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            min-height: 100px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .result-box.success {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .result-box.error {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .loading {
+            text-align: center;
+            color: #00d9ff;
+            padding: 2rem;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .status-badge.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid #10b981;
+        }
+
+        .status-badge.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Chat Feature Test</h1>
+
+        <div class="test-section">
+            <h2>Test Configuration</h2>
+            <div class="test-info">
+                <strong>Endpoint:</strong> /mlbb/matchup/chat<br>
+                <strong>Method:</strong> POST<br>
+                <strong>Required Fields:</strong> message, analysis
+            </div>
+            
+            <label for="apiUrl" style="display: block; margin-bottom: 0.5rem; color: #94a3b8;">API Base URL:</label>
+            <input type="text" id="apiUrl" class="test-input" value="https://mlbb.vantapress.com" placeholder="https://mlbb.vantapress.com">
+        </div>
+
+        <div class="test-section">
+            <h2>Test 1: Basic Chat Request</h2>
+            <div class="test-info">
+                Sends a simple question with mock analysis data to test the endpoint.
+            </div>
+            
+            <label for="testMessage" style="display: block; margin-bottom: 0.5rem; color: #94a3b8;">Test Message:</label>
+            <input type="text" id="testMessage" class="test-input" value="What are the best counter picks for Fanny?" placeholder="Enter your test question...">
+            
+            <button class="test-button" onclick="runBasicTest()">Run Basic Test</button>
+            
+            <div id="basicResult" class="result-box" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test 2: Full Analysis Chat</h2>
+            <div class="test-info">
+                Sends a question with complete matchup analysis data.
+            </div>
+            
+            <button class="test-button" onclick="runFullTest()">Run Full Analysis Test</button>
+            
+            <div id="fullResult" class="result-box" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test 3: Error Handling</h2>
+            <div class="test-info">
+                Tests how the endpoint handles invalid requests.
+            </div>
+            
+            <button class="test-button" onclick="runErrorTest()">Run Error Test</button>
+            
+            <div id="errorResult" class="result-box" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        async function runBasicTest() {
+            const resultBox = document.getElementById('basicResult');
+            const button = event.target;
+            const apiUrl = document.getElementById('apiUrl').value;
+            const message = document.getElementById('testMessage').value;
+            
+            button.disabled = true;
+            resultBox.style.display = 'block';
+            resultBox.className = 'result-box';
+            resultBox.innerHTML = '<div class="loading">Testing AI Chat</div>';
+            
+            try {
+                const response = await fetch(`${apiUrl}/mlbb/matchup/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        message: message,
+                        analysis: {
+                            team_a: ['fanny', 'tigreal', 'valir', 'beatrix', 'ling'],
+                            team_b: ['khufra', 'estes', 'pharsa', 'natan', 'lancelot'],
+                            win_probability: { team_a: 45, team_b: 55 }
+                        }
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    resultBox.className = 'result-box success';
+                    resultBox.innerHTML = `
+                        <div class="status-badge success">✅ TEST PASSED</div>
+                        <h3 style="margin-top: 1rem; color: #00d9ff;">Response:</h3>
+                        <pre>${data.message}</pre>
+                        <hr style="margin: 1rem 0; border: 1px solid rgba(0, 217, 255, 0.2);">
+                        <h3 style="color: #00d9ff;">Raw JSON:</h3>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    throw new Error(data.message || 'Request failed');
+                }
+            } catch (error) {
+                resultBox.className = 'result-box error';
+                resultBox.innerHTML = `
+                    <div class="status-badge error">❌ TEST FAILED</div>
+                    <h3 style="margin-top: 1rem; color: #ef4444;">Error:</h3>
+                    <pre>${error.message}</pre>
+                `;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        async function runFullTest() {
+            const resultBox = document.getElementById('fullResult');
+            const button = event.target;
+            const apiUrl = document.getElementById('apiUrl').value;
+            
+            button.disabled = true;
+            resultBox.style.display = 'block';
+            resultBox.className = 'result-box';
+            resultBox.innerHTML = '<div class="loading">Testing Full Analysis Chat</div>';
+            
+            const fullAnalysis = {
+                team_a: ['fanny', 'tigreal', 'valir', 'beatrix', 'ling'],
+                team_b: ['khufra', 'estes', 'pharsa', 'natan', 'lancelot'],
+                win_probability: { team_a: 45, team_b: 55 },
+                role_composition: {
+                    team_a: { tank: 1, fighter: 1, assassin: 1, mage: 1, marksman: 1 },
+                    team_b: { tank: 1, fighter: 0, assassin: 1, mage: 1, marksman: 1, support: 1 }
+                },
+                team_synergy: {
+                    team_a: { score: 75, key_combos: ['Tigreal + Valir'] },
+                    team_b: { score: 82, key_combos: ['Khufra + Pharsa'] }
+                }
+            };
+            
+            try {
+                const response = await fetch(`${apiUrl}/mlbb/matchup/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        message: 'Based on this analysis, what should be Team A strategy to win?',
+                        analysis: fullAnalysis
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    resultBox.className = 'result-box success';
+                    resultBox.innerHTML = `
+                        <div class="status-badge success">✅ TEST PASSED</div>
+                        <h3 style="margin-top: 1rem; color: #00d9ff;">AI Response:</h3>
+                        <pre>${data.message}</pre>
+                    `;
+                } else {
+                    throw new Error(data.message || 'Request failed');
+                }
+            } catch (error) {
+                resultBox.className = 'result-box error';
+                resultBox.innerHTML = `
+                    <div class="status-badge error">❌ TEST FAILED</div>
+                    <h3 style="margin-top: 1rem; color: #ef4444;">Error:</h3>
+                    <pre>${error.message}</pre>
+                `;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        async function runErrorTest() {
+            const resultBox = document.getElementById('errorResult');
+            const button = event.target;
+            const apiUrl = document.getElementById('apiUrl').value;
+            
+            button.disabled = true;
+            resultBox.style.display = 'block';
+            resultBox.className = 'result-box';
+            resultBox.innerHTML = '<div class="loading">Testing Error Handling</div>';
+            
+            try {
+                const response = await fetch(`${apiUrl}/mlbb/matchup/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        // Missing required fields intentionally
+                        message: ''
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    resultBox.className = 'result-box success';
+                    resultBox.innerHTML = `
+                        <div class="status-badge success">✅ ERROR HANDLING WORKS</div>
+                        <h3 style="margin-top: 1rem; color: #00d9ff;">Expected Error Response:</h3>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                        <p style="margin-top: 1rem; color: #94a3b8;">Status Code: ${response.status}</p>
+                    `;
+                } else {
+                    throw new Error('Expected validation error but request succeeded');
+                }
+            } catch (error) {
+                if (error.message.includes('Expected validation error')) {
+                    resultBox.className = 'result-box error';
+                    resultBox.innerHTML = `
+                        <div class="status-badge error">❌ ERROR HANDLING FAILED</div>
+                        <h3 style="margin-top: 1rem; color: #ef4444;">Problem:</h3>
+                        <pre>Endpoint should reject invalid requests</pre>
+                    `;
+                } else {
+                    resultBox.className = 'result-box success';
+                    resultBox.innerHTML = `
+                        <div class="status-badge success">✅ ERROR HANDLING WORKS</div>
+                        <h3 style="margin-top: 1rem; color: #00d9ff;">Error:</h3>
+                        <pre>${error.message}</pre>
+                    `;
+                }
+            } finally {
+                button.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

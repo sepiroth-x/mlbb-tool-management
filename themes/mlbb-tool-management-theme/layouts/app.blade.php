@@ -348,14 +348,14 @@
                 <div class="user-menu">
                     @auth
                         <span>{{ auth()->user()->name }}</span>
-                        <form method="POST" action="{{ route('filament.admin.auth.logout') }}" style="display: inline; margin-left: 10px;">
+                        <form method="POST" action="{{ route('mlbb.auth.logout') }}" style="display: inline; margin-left: 10px;">
                             @csrf
                             <button type="submit" style="color: #667eea; font-weight: 600; background: none; border: none; cursor: pointer; text-decoration: none; font-size: inherit; font-family: inherit; padding: 0;">
                                 Logout
                             </button>
                         </form>
                     @else
-                        <a href="/admin/login">Login</a>
+                        <a href="{{ route('mlbb.auth.login') }}">Login</a>
                     @endauth
                 </div>
             </div>
@@ -403,7 +403,7 @@
                         @auth
                             <li><a href="/admin">Admin</a></li>
                         @else
-                            <li><a href="/admin/login">Login</a></li>
+                            <li><a href="{{ route('mlbb.auth.login') }}">Login</a></li>
                         @endauth
                     </ul>
                 </div>
