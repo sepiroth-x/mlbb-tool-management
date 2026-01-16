@@ -1982,7 +1982,7 @@
         heroesRendered: false
     };
 
-    // ===== DYNAMIC HERO RENDERING WITH INFINITE SCROLL =====
+    // ===== DYNAMIC HERO RENDERING WITH LAZY LOADING =====
     let heroRenderState = {
         currentIndex: 0,
         isLoading: false,
@@ -2007,8 +2007,8 @@
         heroRenderState.isLoading = false;
         heroRenderState.allLoaded = false;
         
-        // Load initial batch (18 heroes)
-        loadMoreHeroes(18);
+        // Load ALL heroes at once (images will lazy load as they enter viewport)
+        loadMoreHeroes(matchupState.allHeroes.length);
         
         // Mark as initialized
         matchupState.heroesRendered = true;
@@ -2079,20 +2079,11 @@
         heroRenderState.isLoading = false;
     }
     
+    // Infinite scroll no longer needed - all heroes loaded with lazy image loading
     function setupInfiniteScroll() {
-        const heroGrid = document.getElementById('heroPickerGrid');
-        if (!heroGrid) return;
-        
-        heroGrid.addEventListener('scroll', function() {
-            // Check if user scrolled near bottom (within 200px)
-            const scrollPosition = this.scrollTop + this.clientHeight;
-            const scrollHeight = this.scrollHeight;
-            
-            if (scrollPosition >= scrollHeight - 200) {
-                // Load 10 more heroes
-                loadMoreHeroes(10);
-            }
-        });
+        // All heroes are now rendered at once
+        // Images lazy load automatically via loading="lazy" attribute
+        // This provides better UX than progressive hero card rendering
     }
     // ===== END DYNAMIC HERO RENDERING =====
 

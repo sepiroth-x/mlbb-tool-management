@@ -131,6 +131,10 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
 
 Route::get('/livewire-test', function() { return view('livewire-test'); });
 
+// MLBB Authentication Routes (must be before catch-all)
+Route::get('/login', [\Modules\MLBBToolManagement\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
+Route::get('/register', [\Modules\MLBBToolManagement\Http\Controllers\AuthController::class, 'showRegister'])->name('register');
+
 // Theme Customizer (Full-page, WordPress-style)
 Route::middleware(['auth'])->group(function () {
     Route::get('/theme-customizer/{id}', [App\Http\Controllers\ThemeCustomizerController::class, 'show'])

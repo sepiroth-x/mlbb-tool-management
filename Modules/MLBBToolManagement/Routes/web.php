@@ -14,10 +14,6 @@ use Modules\MLBBToolManagement\Http\Controllers\AuthController;
 |
 */
 
-// Global login route alias (required by Laravel auth middleware)
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-
 // Authentication Routes (for MLBB Tournament Theme)
 Route::prefix('mlbb')->name('mlbb.')->group(function() {
     
