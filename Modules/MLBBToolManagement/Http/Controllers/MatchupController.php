@@ -154,9 +154,10 @@ class MatchupController extends Controller
             ]);
 
             $openaiService = app(\Modules\MLBBToolManagement\Services\OpenAIService::class);
-            $response = $openaiService->chat(
+            $response = $openaiService->handleMatchupChat(
                 $request->input('message'),
-                $request->input('analysis')
+                $request->input('analysis'),
+                [] // conversation history
             );
 
             return response()->json([
