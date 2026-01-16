@@ -46,7 +46,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('filament.admin.pages.dashboard'));
+            return redirect()->intended(route('mlbb.dashboard'));
         }
 
         throw ValidationException::withMessages([
@@ -94,7 +94,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('filament.admin.pages.dashboard');
+        return redirect()->route('mlbb.dashboard');
     }
     
     /**

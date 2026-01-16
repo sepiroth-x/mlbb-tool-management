@@ -16,6 +16,14 @@ use Modules\MLBBToolManagement\Http\Controllers\AuthController;
 
 // Authentication Routes (for MLBB Tournament Theme)
 Route::prefix('mlbb')->name('mlbb.')->group(function() {
+    
+    // User Dashboard (protected)
+    Route::middleware(['auth'])->group(function() {
+        Route::get('/dashboard', function() {
+            return view('mlbb-tool-management-theme::pages.dashboard');
+        })->name('dashboard');
+    });
+    
     Route::prefix('auth')->name('auth.')->group(function() {
         Route::middleware(['guest'])->group(function() {
             Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -54,10 +62,10 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
     // Live Pick/Ban Overlay Routes
     Route::prefix('overlay')->name('overlay.')->group(function() {
         
-        // Redirect base overlay route to dashboard or registration
+        // Redirect base overlay route to user dashboard or registration
         Route::get('/', function() {
             if (auth()->check()) {
-                return redirect()->route('filament.admin.pages.dashboard');
+                return redirect()->route('mlbb.dashboard');
             }
             return redirect()->route('mlbb.auth.register');
         });
