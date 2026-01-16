@@ -89,6 +89,12 @@ class MLBBToolManagementServiceProvider extends ServiceProvider
         ], ['views', $this->moduleNameLower . '-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
+        
+        // Register MLBB theme views namespace
+        $themePath = base_path('themes/mlbb-tool-management-theme');
+        if (\File::exists($themePath)) {
+            view()->addNamespace('mlbb-tool-management-theme', $themePath);
+        }
     }
 
     /**

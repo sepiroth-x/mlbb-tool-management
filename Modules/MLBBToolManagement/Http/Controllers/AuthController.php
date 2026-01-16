@@ -21,14 +21,8 @@ class AuthController extends Controller
      */
     public function showLogin()
     {
-        $activeTheme = config('cms.themes.active_theme', 'BasicTheme');
-        
-        if ($activeTheme === 'mlbb-tool-management-theme') {
-            return view('mlbb-tool-management-theme::pages.login');
-        }
-        
-        // Fallback to Filament login
-        return redirect()->route('filament.admin.auth.login');
+        // Always show MLBB-themed login page
+        return view('mlbb-tool-management-theme::pages.login');
     }
     
     /**
@@ -59,14 +53,8 @@ class AuthController extends Controller
      */
     public function showRegister()
     {
-        $activeTheme = config('cms.themes.active_theme', 'BasicTheme');
-        
-        if ($activeTheme === 'mlbb-tool-management-theme') {
-            return view('mlbb-tool-management-theme::pages.register');
-        }
-        
-        // Fallback to Filament
-        return redirect()->route('filament.admin.auth.login');
+        // Always show MLBB-themed registration page
+        return view('mlbb-tool-management-theme::pages.register');
     }
     
     /**

@@ -135,6 +135,13 @@ Route::get('/livewire-test', function() { return view('livewire-test'); });
 Route::get('/login', [\Modules\MLBBToolManagement\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
 Route::get('/register', [\Modules\MLBBToolManagement\Http\Controllers\AuthController::class, 'showRegister'])->name('register');
 
+// MLBB Module Routes (must be before catch-all) 
+Route::prefix('mlbb')->name('mlbb.')->group(function() {
+    Route::prefix('matchup')->name('matchup.')->group(function() {
+        Route::get('/statistics', [\Modules\MLBBToolManagement\Http\Controllers\MatchupController::class, 'showStatistics'])->name('statistics');
+    });
+});
+
 // Theme Customizer (Full-page, WordPress-style)
 Route::middleware(['auth'])->group(function () {
     Route::get('/theme-customizer/{id}', [App\Http\Controllers\ThemeCustomizerController::class, 'show'])
