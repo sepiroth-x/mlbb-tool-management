@@ -806,10 +806,99 @@
         line-height: 1.6;
     }
 
+    /* Essential Item Builds Section */
+    .ai-builds-section {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(234, 179, 8, 0.3);
+        border-radius: 8px;
+    }
+
+    .ai-builds-section h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fbbf24;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .builds-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .builds-card {
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 8px;
+        padding: 1.25rem;
+    }
+
+    .builds-card.team-a-builds {
+        border-left: 3px solid #3b82f6;
+    }
+
+    .builds-card.team-b-builds {
+        border-left: 3px solid #ef4444;
+    }
+
+    .builds-card h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #e2e8f0;
+    }
+
+    .builds-card.team-a-builds h5 {
+        color: #93c5fd;
+    }
+
+    .builds-card.team-b-builds h5 {
+        color: #fca5a5;
+    }
+
+    .builds-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .build-item {
+        background: rgba(15, 23, 42, 0.7);
+        border-radius: 6px;
+        padding: 0.875rem;
+        border-left: 2px solid rgba(234, 179, 8, 0.5);
+    }
+
+    .item-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #fbbf24;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+    }
+
+    .item-name::before {
+        content: "⚔️";
+        font-size: 0.875rem;
+    }
+
+    .item-reason {
+        font-size: 0.875rem;
+        color: #cbd5e1;
+        line-height: 1.5;
+    }
+
     @media (max-width: 1024px) {
         .win-probability,
         .team-analysis-grid,
-        .ai-strategy-grid {
+        .ai-strategy-grid,
+        .builds-grid {
             grid-template-columns: 1fr;
         }
 
@@ -2441,6 +2530,42 @@
                             <h4>Phase Advantage Analysis</h4>
                             <p>${analysis.ai_insights.phase_advantage}</p>
                         </div>
+
+                        <!-- Essential Item Builds Section -->
+                        ${analysis.ai_insights.team_a_builds || analysis.ai_insights.team_b_builds ? `
+                            <div class="ai-builds-section">
+                                <h4>🛡️ Essential Item Builds for This Matchup</h4>
+                                <div class="builds-grid">
+                                    ${analysis.ai_insights.team_a_builds && analysis.ai_insights.team_a_builds.length > 0 ? `
+                                        <div class="builds-card team-a-builds">
+                                            <h5>Team A Priority Items</h5>
+                                            <div class="builds-list">
+                                                ${analysis.ai_insights.team_a_builds.map(build => `
+                                                    <div class="build-item">
+                                                        <div class="item-name">${build.item}</div>
+                                                        <div class="item-reason">${build.reason}</div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    ${analysis.ai_insights.team_b_builds && analysis.ai_insights.team_b_builds.length > 0 ? `
+                                        <div class="builds-card team-b-builds">
+                                            <h5>Team B Priority Items</h5>
+                                            <div class="builds-list">
+                                                ${analysis.ai_insights.team_b_builds.map(build => `
+                                                    <div class="build-item">
+                                                        <div class="item-name">${build.item}</div>
+                                                        <div class="item-reason">${build.reason}</div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        ` : ''}
                     </div>
                 ` : ''}
 

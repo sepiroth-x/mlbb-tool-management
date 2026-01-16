@@ -220,13 +220,22 @@ Provide a concise strategic analysis covering:
 2. **Team A Strategy**: Specific tactical advice using their heroes' real skill sets
 3. **Team B Strategy**: Specific tactical advice using their heroes' real skill sets
 4. **Game Phase Advantage**: Which team is stronger in early/mid/late game based on hero power spikes and skill scaling
+5. **Essential Item Builds**: For each team, recommend 3-4 CRUCIAL items that would be most effective in THIS SPECIFIC matchup, with brief explanations why
 
 Keep the response focused and actionable. Format your response as JSON with these keys:
 {
     "key_insights": ["insight1", "insight2", "insight3"],
     "team_a_strategy": "strategy text",
     "team_b_strategy": "strategy text",
-    "phase_advantage": "phase advantage analysis"
+    "phase_advantage": "phase advantage analysis",
+    "team_a_builds": [
+        {"item": "Item Name", "reason": "why this item is crucial for this matchup"},
+        {"item": "Item Name", "reason": "why this item is crucial"}
+    ],
+    "team_b_builds": [
+        {"item": "Item Name", "reason": "why this item is crucial for this matchup"},
+        {"item": "Item Name", "reason": "why this item is crucial"}
+    ]
 }
 PROMPT;
     }
