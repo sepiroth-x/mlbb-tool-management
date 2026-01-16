@@ -3067,7 +3067,7 @@
     // Close overlay when clicking outside
     document.addEventListener('click', function(e) {
         const overlay = document.getElementById('heroOverlay');
-        if (overlay && e.target === overlay) {
+        if (overlay && e.target.classList.contains('hero-overlay')) {
             closeHeroOverlay();
         }
     });

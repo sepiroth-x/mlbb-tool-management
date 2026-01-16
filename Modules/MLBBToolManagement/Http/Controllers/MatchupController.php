@@ -143,6 +143,41 @@ class MatchupController extends Controller
     }
     
     /**
+     * Chat with AI about matchup analysis
+     */
+    public function chat(Request $request)
+    {
+        try {
+            $request->validate([
+                'message' => 'required|string',
+                'analysis' => 'required|array',
+            ]);
+
+            $openaiService = app(\Modules\MLBBToolManagement\Services\OpenAIService::class);
+            $response = $openaiService->chat(
+                $request->input('message'),
+                $request->input('analysis')
+            );
+
+            return response()->json([
+                'success' => true,
+                'message' => $response,
+            ]);
+        } catch (\Exception $e) {
+            \Log::error('AI Chat error', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Sorry, I encountered an error. Please try again.',
+                'error' => config('app.debug') ? $e->getMessage() : null,
+            ], 500);
+        }
+    }
+    
+    /**
      * Get top performing lineups
      */
     public function getTopLineups(Request $request)

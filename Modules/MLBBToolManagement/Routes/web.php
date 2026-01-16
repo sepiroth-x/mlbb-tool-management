@@ -37,6 +37,7 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
         Route::get('/', [MatchupController::class, 'index'])->name('index');
         Route::post('/analyze', [MatchupController::class, 'analyze'])->name('analyze');
         Route::get('/heroes', [MatchupController::class, 'getHeroes'])->name('heroes');
+        Route::post('/chat', [MatchupController::class, 'chat'])->name('chat');
         
         // Statistics page
         Route::get('/statistics', function() {
@@ -52,6 +53,14 @@ Route::prefix('mlbb')->name('mlbb.')->group(function() {
     
     // Live Pick/Ban Overlay Routes
     Route::prefix('overlay')->name('overlay.')->group(function() {
+        
+        // Redirect base overlay route to dashboard or registration
+        Route::get('/', function() {
+            if (auth()->check()) {
+                return redirect()->route('filament.admin.pages.dashboard');
+            }
+            return redirect()->route('mlbb.auth.register');
+        });
         
         // Admin Panel Routes (protected by auth middleware)
         Route::middleware(['auth'])->group(function() {
